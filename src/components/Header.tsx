@@ -16,6 +16,7 @@ import {ExpandableMenuItem} from "@/components/ExpandableMenuItem";
 import {SecondaryMenu} from "@/components/SecondaryMenu";
 import Image from "next/image";
 import {LargeButton} from "@/components/LargeButton";
+import Link from "next/link";
 
 const solutions = [
     {
@@ -52,7 +53,7 @@ export const Header: FC<{ company: string }> = ({company}) => {
                 <div
                     className="mx-auto flex max-w-7xl items-center p-2 md:p-6 md:justify-start justify-between md:space-x-10 lg:px-8">
                     <div className="flex justify-start items-center pr-12 h-20">
-                        <a href="/">
+                        <Link href="/">
                             <span className="sr-only">{company}</span>
                             <Image
                                 className="h-16 w-auto"
@@ -61,7 +62,7 @@ export const Header: FC<{ company: string }> = ({company}) => {
                                 width={200}
                                 height={50}
                             />
-                        </a>
+                        </Link>
                     </div>
                     <div className="-my-2 -mr-2 md:hidden">
                         <Popover.Button
