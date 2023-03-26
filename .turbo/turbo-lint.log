@@ -1,0 +1,8 @@
+
+> centenary-bank-website@0.1.0 lint
+> next lint
+
+warn  - You have enabled experimental feature (scrollRestoration) in next.config.js.
+warn  - Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use at your own risk.
+
+✔ No ESLint warnings or errors
