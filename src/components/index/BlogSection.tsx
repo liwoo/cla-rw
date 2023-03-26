@@ -1,4 +1,5 @@
 import {FC} from "react";
+import Image from "next/image";
 import {PageTitle} from "@/components/PageTitle";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
@@ -77,7 +78,10 @@ export const BlogSection = () => {
                             key={post.id}
                             className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-60 sm:pt-48 lg:pt-60"
                         >
-                            <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover aspect-video" />
+                            <Image 
+                            width={1000}
+                            height={1000}
+                            src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover aspect-video" />
                             <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
                             <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
