@@ -32,6 +32,7 @@ export const MediaHero: FC<MediaHeroProps> = ({children, title, description, ima
                             blurDataURL={blurDataURL}
                             className="h-full w-full object-cover"
                             alt="People working on laptops"
+                        
                         />
                         <div
                             className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-200 mix-blend-multiply"/>

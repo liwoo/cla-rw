@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import Image from "next/image";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
@@ -22,11 +23,18 @@ export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, descript
     
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
+<<<<<<< HEAD
             <div className="image-blend absolute inset-0"></div>
             <Image
                 {...useNextSanityImage(browserClient, coverImage)}
                 placeholder={"blur"}
                 blurDataURL={coverImage.asset.metadata.lqip}
+=======
+            <Image
+            width={1000}
+            height={1000}
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+>>>>>>> b4bfdaf (added Image and url for splash)
                 alt=""
                 className="absolute inset-0 -z-10 h-full w-full object-cover object-top image-filters"
             />
