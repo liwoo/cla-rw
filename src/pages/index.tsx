@@ -23,20 +23,33 @@ export default function Home() {
     const welcomeTitle = "Welcome to Christian Life Assembly";
     const welcomeDescription = "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!";
 
+    const noticeTitle = "The Season of being rooted";
+    const noticeSubtitle = "Being rooted in truth, Bearing fruit and Extending influence";
     return (
-        <MainLayout seo={pageDetails}>
-            <Container className={"mt-8 md:mt-16"}>
-                <Notice
-                    description={"We are currently experiencing technical difficulties with our online banking platform. We are working to resolve this issue as soon as possible."}
-                    title={"Technical Difficulties"}/>
-                <MediaHeroAction/>
-                <div className="my-4 lg:my-20">
-                    <PageTitle title={welcomeTitle} description={welcomeDescription}/>
-                </div>
-                <Highlights/>
-            </Container>
-            <FindCell/>
-            <BlogSection/>
-        </MainLayout>
+        <>
+            <SEO
+                title={pageDetails.title}
+                description={pageDetails.description}
+                image={pageDetails.image}
+                url={pageDetails.url}
+                keywords={pageDetails.keywords}
+            />
+            <Header company="CLA Rwanda"/>
+            <main className={"bg-surface"}>
+                <Container className={"mt-32 md:mt-40"}>
+                    <Notice
+                        description={noticeSubtitle}
+                        title={noticeTitle}/>
+                    <MediaHeroAction/>
+                    <div className="my-4 lg:my-20">
+                        <PageTitle title={welcomeTitle} description={welcomeDescription}/>
+                    </div>
+                    <Highlights />
+                </Container>
+                <FindCell />
+                <BlogSection />
+            </main>
+            <Footer/>
+        </>
     )
 }

@@ -13,9 +13,9 @@ export const FindCell = () => {
                 <div className="flex flex-col md:flex-row flex-wrap justify-between my-16">
                     <div className="w-full md:w-1/2 lg:w-2/5">
                         <Image
-                        width={1000}
-                        height={1000}
-                            src="https://images.unsplash.com/photo-1526746323784-6bc814d79273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        width={1200}
+                        height={1200}
+                            src="https://res.cloudinary.com/dpbuspblx/image/upload/v1679958910/cla-cta/Home_cells_Facebook_b9pwvj.png"
                             className="w-full rounded-md" alt="Cell Group"/>
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 md:px-12 lg:px-20">
