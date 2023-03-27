@@ -1,39 +1,101 @@
-import React, {FC} from "react";
-import {Card} from "@/components/index/Card";
-import {P} from "@/components/typography/P";
-import {ArrowRightIcon} from "@heroicons/react/20/solid";
+import React, { FC } from 'react'
+import { Card } from '@/components/index/Card'
+import { P } from '@/components/typography/P'
+import { ArrowRightIcon } from '@heroicons/react/20/solid'
 
 export const Highlights: FC = () => {
-    return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-6 my-16 items-stretch">
-            <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title"
-                      subtitle="Some other boring subtitle over here which is supposed to truncate after 2 lines, maybe"/>
-            </div>
-            <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
-            </div>
-            <div className="col-span-1 row-span-1 md:row-span-2 lg:row-span-3 hidden md:block">
-                <div className="h-full overflow-hidden relative rounded-md bg-cover bg-[url('https://images.unsplash.com/photo-1658273114791-6942e762fd78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')]" />
-            </div>
-            <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
-            </div>
-            <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
-            </div>
-            <div
-                className="col-span-1 md:col-span-2 row-span-1 hover:shadow-lg p-4 hover:rounded-md transition-all cursor-pointer">
-                <a className="text-lg font-semibold flex items-center text-primary">
-                    Become a Christian
-                    <ArrowRightIcon className="h-5 w-5 mx-1"/>
-                </a>
-                <P>
-                    This can stand, from the other options or services that the church provides. It agrees with the main
-                    goal of a church, to bring more souls to Christ. Provide some description, not more that 3 lines, to
-                    prevent an overlap of this section.
-                </P>
-            </div>
-        </div>
-    )
+  const images = [
+    {
+      id: 1,
+      title: 'Volunteer',
+      subtitle: 'An opportuntity for you to serve in one of our ministries',
+      imageUrl:
+        'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/volunteer_2_qsvhks.png',
+      href: '#',
+      imageWidth: '500',
+      imageHeight: '500',
+    },
+    {
+      id: 2,
+      title: 'Find A Cell',
+      subtitle: 'CLA is a Cell based church, join a cell',
+      imageUrl:
+        'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/Find_a_cell_ux9g0m.png',
+      href: '#',
+      imageWidth: '500',
+      imageHeight: '500',
+    },
+    {
+      id: 3,
+      title: 'Talk To A Pastor',
+      subtitle: 'Our Pastors and elders are happy to server you',
+      imageUrl:
+        'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/talk_to_a_pastor_dx5ewc.png',
+      href: '#',
+      imageWidth: '500',
+      imageHeight: '500',
+    },
+
+    {
+      id: 4,
+      title: 'Online Service',
+      subtitle: 'Unable To Physically be at Church Join Our Online Service',
+      imageUrl:
+        'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955492/cla-cta/online_service_ccspkn.png',
+      href: '#',
+      imageWidth: '500',
+      imageHeight: '500',
+    },
+  ]
+
+  return (
+    <div className="my-16 grid grid-cols-1 grid-rows-3 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {images.splice(0, 2).map((image) => {
+        return (
+          <div key={image.id} className="col-span-1 row-span-1">
+            <Card
+              title={image.title}
+              subtitle={image.subtitle}
+              image={image.imageUrl}
+              imageHeight={image.imageHeight}
+              imageWidth={image.imageWidth}
+              href={image.href}
+            />
+          </div>
+        )
+      })}
+
+      <div className="col-span-1 row-span-1 hidden md:row-span-2 md:block lg:row-span-3">
+        <div className="relative h-full overflow-hidden rounded-md bg-[url('https://res.cloudinary.com/dpbuspblx/image/upload/v1679958148/cla-cta/worship_and_creative_arts_image_wd5yav.jpg')] bg-cover" />
+      </div>
+
+      {images.splice(0, 2).map((image) => {
+        return (
+          <div key={image.id} className="col-span-1 row-span-1">
+            <Card
+              title={image.title}
+              subtitle={image.subtitle}
+              image={image.imageUrl}
+              imageHeight={image.imageHeight}
+              imageWidth={image.imageWidth}
+              href={image.href}
+            />
+          </div>
+        )
+      })}
+
+      <div className="col-span-1 row-span-1 cursor-pointer p-4 transition-all hover:rounded-md hover:shadow-lg md:col-span-2">
+        <a className="flex items-center text-lg font-semibold text-primary">
+          Become a Christian
+          <ArrowRightIcon className="mx-1 h-5 w-5" />
+        </a>
+        <P>
+          This can stand, from the other options or services that the church
+          provides. It agrees with the main goal of a church, to bring more
+          souls to Christ. Provide some description, not more that 3 lines, to
+          prevent an overlap of this section.
+        </P>
+      </div>
+    </div>
+  )
 }
