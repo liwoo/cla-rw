@@ -1,6 +1,7 @@
 import React, {FC, ReactNode} from "react";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
+import Image from "next/image";
 
 export const MediaHero: FC<{ children: ReactNode }> = ({children}) => {
     return (
@@ -9,7 +10,10 @@ export const MediaHero: FC<{ children: ReactNode }> = ({children}) => {
             <div className="mx-auto">
                 <div className="relative shadow-xl sm:overflow-hidden sm:rounded-xl">
                     <div className="absolute inset-0">
-                        <img
+                        <Image
+                            width={2830}
+                            height={1887}
+                            priority={true}
                             className="h-full w-full object-cover"
                             src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
                             alt="People working on laptops"

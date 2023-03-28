@@ -92,7 +92,7 @@ export const Footer = () => {
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
-            <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-8 lg:px-8 lg:pt-12">
+            <div className="mx-auto max-w-7xl px-6 pb-8 pt-10 sm:pt-8 lg:px-8 lg:pt-12">
                 <div className={"my-8 text-center"}>
                     <H2>Footer Title</H2>
                     <P color={"white"}>Footer Description</P>

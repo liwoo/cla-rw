@@ -57,6 +57,7 @@ export const Header: FC<{ company: string }> = ({company}) => {
                             <span className="sr-only">{company}</span>
                             <Image
                                 className="h-16 w-auto"
+                                priority={true}
                                 src={logo}
                                 alt=""
                                 width={200}
@@ -131,6 +132,7 @@ export const Header: FC<{ company: string }> = ({company}) => {
                                             src={logo}
                                             width={200}
                                             height={50}
+                                            priority={true}
                                             alt={company}
                                         />
                                     </div>

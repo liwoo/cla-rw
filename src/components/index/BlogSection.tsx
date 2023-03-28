@@ -3,6 +3,7 @@ import {PageTitle} from "@/components/PageTitle";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
 import {CalendarIcon} from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 export interface Blog {
     id: number
@@ -18,11 +19,11 @@ export interface Blog {
     }
 }
 
-const posts = [
+const posts: Blog[] = [
     {
         id: 1,
         title: 'Boost your conversion rate',
-        href: '#',
+        href: '/posts/boost-your-conversion-rate',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl:
@@ -38,7 +39,7 @@ const posts = [
     {
         id: 2,
         title: 'Improve Your Productivity',
-        href: '#',
+        href: '/posts/improve-your-productivity',
         description: 'Dolorum voluptatem ab molestias in magni nostrum. Sint deleniti corporis nam et deserunt illo consequatur. Cupiditate expedita fugit illum. Officia veniam atque dolorem a. Quisquam corrupti eveniet nam. Est fugit doloremque repellendus omnis quis id voluptatum.',
         imageUrl: 'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
         date: 'May 12, 2020',
@@ -51,7 +52,7 @@ const posts = [
     {
         id: 3,
         title: 'Discover New Technologies',
-        href: '#',
+        href: '/posts/discover-new-technologies',
         description: 'Velit voluptate voluptas qui architecto alias aut. Et suscipit autem. Omnis distinctio sequi a velit maiores. Eum maxime necessitatibus et cumque. Porro maiores rem nesciunt. Nihil quae qui quae ipsa.',
         imageUrl: 'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
         date: 'Aug 22, 2020',
@@ -82,10 +83,10 @@ export const BlogSection = () => {
 
                            
                             <H2>
-                                <a href={post.href}>
+                                <Link href={post.href}>
                                     <span className="absolute inset-0" />
                                     {post.title}
-                                </a>
+                                </Link>
                             </H2>
                             <Subheading classOverrides={"flex items-center text-white gap-x-2"}>
                                 <CalendarIcon className="flex-shrink-0 h-5 w-5 text-white" aria-hidden="true" />
