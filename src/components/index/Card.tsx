@@ -16,7 +16,7 @@ export const Card = ({ title, subtitle, image, href,imageWidth,imageHeight }: Ca
     <a className="pointer-cursor relative flex cursor-pointer items-center space-x-3 rounded-lg border border-gray-300 bg-white p-2 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
       <div className="min-w-1/3 flex-1">
         <Image
-          className="rounded-md"
+          className="rounded-md object-fill"
           width= {Number(imageWidth)}
           height={Number(imageHeight)}
           src={image}
