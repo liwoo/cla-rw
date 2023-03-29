@@ -2,7 +2,7 @@ import React, {FC, ReactNode} from "react";
 import Image from "next/image";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
-import Image from "next/image";
+
 
 export const MediaHero: FC<{ children: ReactNode }> = ({children}) => {
     return (
