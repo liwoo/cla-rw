@@ -61,7 +61,7 @@ export const Highlights: FC = () => {
         )
       })}
 
-      <div className="col-span-1 row-span-1 hidden md:row-span-2 md:block lg:row-span-3">
+      <div className="col-span-1 row-span-1 hidden md:row-span-2 lg:block lg:row-span-3">
         <div className="relative h-full overflow-hidden rounded-md bg-[url('https://res.cloudinary.com/dpbuspblx/image/upload/v1679958148/cla-cta/worship_and_creative_arts_image_wd5yav.jpg')] bg-cover" />
       </div>
 
