@@ -1,27 +1,38 @@
 import React from "react";
-import {SEOProps} from "@/components/SEO";
+import {SEO, SEOProps} from "@/components/SEO";
 import {BlogSection} from "@/components/index/BlogSection";
 import {Container} from "@/components/Container";
-import {Notice, NoticeWithImage} from "@/components/cta/Notice";
+import {Notice} from "@/components/cta/Notice";
 import {MediaHeroAction} from "@/components/index/MediaHeroAction";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
 import {FindCell} from "@/components/index/FindCell";
-import {MainLayout} from "@/components/layouts/MainLayout";
 import {getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
-import {Notices, Sermon} from "@/sanity/schema";
-import {useNextSanityImage} from "next-sanity-image";
-import client from "@/sanity/client";
-import {createClient} from "@sanity/client";
-import browserClient from "@/sanity/browser-client";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+
 
 
 const pageDetails: SEOProps = {
-    title: "Welcome to Christian Life Assembly",
-    description: "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!",
-    image: "https://i.ytimg.com/vi/VKcrBGDRyVc/maxresdefault.jpg",
-    url: "https://clarwanda.org/",
-    keywords: ["Christian Life Assembly", "CLA", "Rwanda", "Church", "Cell Based Church", "Christian", "Jesus", "Christ", "Bible", "Bible Study", "Bible Study Group", "Bible Study Cell"],
+  title: 'Welcome to Christian Life Assembly',
+  description:
+    'CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!',
+  image: 'https://i.ytimg.com/vi/VKcrBGDRyVc/maxresdefault.jpg',
+  url: 'https://clarwanda.org/',
+  keywords: [
+    'Christian Life Assembly',
+    'CLA',
+    'Rwanda',
+    'Church',
+    'Cell Based Church',
+    'Christian',
+    'Jesus',
+    'Christ',
+    'Bible',
+    'Bible Study',
+    'Bible Study Group',
+    'Bible Study Cell',
+  ],
 }
 
 interface ServerProps {
