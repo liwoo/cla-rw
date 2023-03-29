@@ -16,7 +16,7 @@ export const FindCell = () => {
                         width={1200}
                         height={1200}
                             src="https://res.cloudinary.com/dpbuspblx/image/upload/v1679958910/cla-cta/Home_cells_Facebook_b9pwvj.png"
-                            className="w-full rounded-md" alt="Cell Group"/>
+                            className="w-full h-full rounded-md" alt="Cell Group"/>
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 md:px-12 lg:px-20">
                         <Subheading classOverrides="text-dark my-8">

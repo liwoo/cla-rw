@@ -12,8 +12,7 @@ export const Highlights: FC = () => {
       imageUrl:
         'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/volunteer_2_qsvhks.png',
       href: '#',
-      imageWidth: '500',
-      imageHeight: '500',
+  
     },
     {
       id: 2,
@@ -22,8 +21,7 @@ export const Highlights: FC = () => {
       imageUrl:
         'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/Find_a_cell_ux9g0m.png',
       href: '#',
-      imageWidth: '500',
-      imageHeight: '500',
+    
     },
     {
       id: 3,
@@ -32,8 +30,7 @@ export const Highlights: FC = () => {
       imageUrl:
         'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955491/cla-cta/talk_to_a_pastor_dx5ewc.png',
       href: '#',
-      imageWidth: '500',
-      imageHeight: '500',
+    
     },
 
     {
@@ -43,8 +40,7 @@ export const Highlights: FC = () => {
       imageUrl:
         'https://res.cloudinary.com/dpbuspblx/image/upload/v1679955492/cla-cta/online_service_ccspkn.png',
       href: '#',
-      imageWidth: '500',
-      imageHeight: '500',
+     
     },
   ]
 
@@ -57,8 +53,8 @@ export const Highlights: FC = () => {
               title={image.title}
               subtitle={image.subtitle}
               image={image.imageUrl}
-              imageHeight={image.imageHeight}
-              imageWidth={image.imageWidth}
+              imageHeight={'500'}
+              imageWidth={'500'}
               href={image.href}
             />
           </div>
@@ -76,8 +72,8 @@ export const Highlights: FC = () => {
               title={image.title}
               subtitle={image.subtitle}
               image={image.imageUrl}
-              imageHeight={image.imageHeight}
-              imageWidth={image.imageWidth}
+              imageHeight={'500'}
+              imageWidth={'500'}
               href={image.href}
             />
           </div>
