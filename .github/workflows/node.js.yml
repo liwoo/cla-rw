@@ -29,3 +29,13 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present
+      env: # Add your environment variables here
+        SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+        SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+        SANITY_USE_CDN: ${{ secrets.SANITY_USE_CDN }}
+        SANITY_API_VERSION: "2021-03-25"
+        NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+        NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+        NEXT_PUBLIC_SANITY_API_VERSION: "2021-03-25"
+        NEXT_PUBLIC_SANITY_USE_CDN: ${{ secrets.SANITY_USE_CDN }}
+

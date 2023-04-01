@@ -17,8 +17,6 @@ R
 "src/components/icons/Copyright.tsx,a/a/aa93078cc32fea0a661f4cc2616480bcb7ddbde4
 X
 (src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 G
 src/pages/_document.jsx,7/0/706595127b995066d115a4a615cd58de24096ac1
 S
