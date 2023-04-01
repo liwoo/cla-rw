@@ -37,11 +37,13 @@ interface PostProps {
 }
 
 export default function PostPage({post}: PostProps) {
-    const authorImageProps = useNextSanityImage(browserClient, post.author.image);
-    const mainImageProps = useNextSanityImage(browserClient, post.mainImage);
     if (!post) {
         return <NotFound />
     }
+    
+    const authorImageProps = useNextSanityImage(browserClient, post.author.image);
+    const mainImageProps = useNextSanityImage(browserClient, post.mainImage);
+    
     return (
         <MainLayout seo={{title: post.title, description: post.title}}>
             <Container className={"md:mt-8 lg:mt-10"}>
