@@ -11,8 +11,6 @@ M
 src/components/index/Card.tsx,6/d/6dfc492a7454eb4092e9169cc223946ba6fc5dd9
 P
  src/components/typography/H2.tsx,a/0/a03de5e3a61560b22605598e48d4af5f16748186
-O
-src/components/typography/P.tsx,a/5/a51f17f5dd6d9a7216c4aa099378090d06faaef5
 R
 "src/components/icons/Copyright.tsx,a/a/aa93078cc32fea0a661f4cc2616480bcb7ddbde4
 X

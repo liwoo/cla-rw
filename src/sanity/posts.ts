@@ -7,6 +7,26 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post> {
-    const query = `*[_type == "post" && slug.current == $slug][0]`;
+    const query = `*[_type == "post" && slug.current == $slug][0] {
+  ..., 
+  mainImage {
+        asset-> {
+            ...,
+            metadata
+        }
+    },
+  "author": author->{
+    _id,
+    name,
+    bio,
+    "image": image {
+        asset-> {
+            ...,
+            metadata
+        }
+    },
+    slug
+  }
+}`;
     return await client.fetch(query, {slug});
 }
