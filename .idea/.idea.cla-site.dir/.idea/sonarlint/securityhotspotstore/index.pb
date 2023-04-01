@@ -13,8 +13,6 @@ P
  src/components/typography/H2.tsx,a/0/a03de5e3a61560b22605598e48d4af5f16748186
 R
 "src/components/icons/Copyright.tsx,a/a/aa93078cc32fea0a661f4cc2616480bcb7ddbde4
-X
-(src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
 G
 src/pages/_document.jsx,7/0/706595127b995066d115a4a615cd58de24096ac1
 S
@@ -57,16 +55,10 @@ L
 next.config.js,8/1/811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
 D
 src/sanity/schema.ts,1/f/1f5af737c3914e0c09a6555dafde1b28662d9395
-X
-(src/components/index/MediaHeroAction.tsx,f/2/f244343ec4cfb3215a247e76d638fcb4b1877a9e
-P
- src/components/cta/MediaHero.tsx,2/4/24a3ace29bb90a61950824af4ce6ea5c927ea58c
 B
 .env.local.example,9/5/9558c8cde3b80d95bda0dc569658b6913c24dc24
 G
 src/styles/tailwind.css,5/2/525cdc3b33fc29ce3dc659f9ab85df06ef7b784b
-M
-src/components/cta/Notice.tsx,0/6/0660e3da7e8918922bff6eeb9ff556008487aec7
 T
 $src/components/index/BlogSection.tsx,8/6/86a5ff1a1daf6851744984f71589bf4e470df13f
 D

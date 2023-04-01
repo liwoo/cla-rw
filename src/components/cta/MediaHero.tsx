@@ -6,6 +6,7 @@ import {truncateString} from "@/utils/helpers";
 import {SanityAsset} from "@sanity/image-url/lib/types/types";
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
 import client from "@/sanity/client";
+import {H1} from "@/components/typography/H1";
 
 interface MediaHeroProps {
     children: ReactNode;
@@ -38,8 +39,8 @@ export const MediaHero: FC<MediaHeroProps> = ({children, title, description, ima
                     <div
                         className="relative lg:w-1/2 py-20 px-6 md:py-24 xl:py-28 flex flex-col gap-y-24 lg:gap-y-32 lg:px-8">
                         <div>
-                            <H2>{title}</H2>
-                            <Subheading>{truncateString(description, 170)}</Subheading>
+                            <H1>{title}</H1>
+                            <Subheading classOverrides={"hidden lg:block text-white"}>{truncateString(description, 170)}</Subheading>
                         </div>
                         <div className="mt-10 flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
                             {children}

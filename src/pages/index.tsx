@@ -32,16 +32,14 @@ interface ServerProps {
 export default function Home({notice, sermon}: ServerProps) {
     const welcomeTitle = "Welcome to Christian Life Assembly";
     const welcomeDescription = "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!";
-    const sermonImageProps = useNextSanityImage(browserClient, sermon.mainImage);
-    const noticeImageProps = useNextSanityImage(browserClient, notice.coverImage);
     return (
         <MainLayout seo={pageDetails}>
             <Container className={"mt-8 md:mt-16"}>
                 <Notice
-                    imageProps={noticeImageProps}
+                    imageProps={useNextSanityImage(browserClient, notice.coverImage)}
                     description={notice.description}
                     title={notice.title}/>
-                <MediaHeroAction sermon={sermon} imageProps={sermonImageProps} />
+                <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage)} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>
                 </div>

@@ -36,51 +36,57 @@ interface PostProps {
     post: PostWithAuthor
 }
 
-export default function PostPage({post}: PostProps) {
-    if (!post) {
-        return <NotFound />
-    }
-    
+function PostPageContent(post: PostWithoutAuthor & { author: AuthorWithImage; mainImage: { asset: SanityImageAsset } }) {
     const authorImageProps = useNextSanityImage(browserClient, post.author.image);
-    const mainImageProps = useNextSanityImage(browserClient, post.mainImage);
-    
+    const mainImageProps =  useNextSanityImage(browserClient, post.mainImage);
     return (
         <MainLayout seo={{title: post.title, description: post.title}}>
             <Container className={"md:mt-8 lg:mt-10"}>
-                <PageTitle title={post.title}  />
+                <PageTitle title={post.title}/>
             </Container>
             <Container>
                 <div className={"flex items-center space-x-2 justify-center my-4"}>
-                    <Image 
-                        {...authorImageProps} 
-                        className={"h-12 w-12 rounded-full"} 
-                        alt={post.author.name} 
-                        width={1000} 
-                        height={1000} 
+                    <Image
+                        {...authorImageProps}
+                        className={"h-12 w-12 rounded-full"}
+                        alt={post.author.name}
+                        width={1000}
+                        height={1000}
                         placeholder={"blur"}
                         blurDataURL={post.author.image.asset.metadata.lqip}
                     />
                     <P>by <strong>{post.author.name}</strong></P>
                     <time className={"text-gray-600"}>{getHumanReadableDate(post._updatedAt)}</time>
                 </div>
-                <Image 
+                <Image
                     {...mainImageProps}
-                    className={"rounded-md mb-8 aspect-video object-cover"} 
-                    alt={"Some Cool Post"} 
-                    width={1920} 
-                    height={1080} 
+                    className={"rounded-md mb-8 aspect-video object-cover"}
+                    alt={"Some Cool Post"}
+                    width={1920}
+                    height={1080}
                     placeholder={"blur"}
                     blurDataURL={post.mainImage.asset.metadata.lqip}
                 />
                 <article className={"mx-0 md:mx-24 lg:mx-40 xl:mx-60"}>
-                    <PortableText 
+                    <PortableText
                         components={components}
-                        value={post.body} 
+                        value={post.body}
                     />
                 </article>
             </Container>
         </MainLayout>
     )
+}
+
+export default function PostPage({post}: PostProps) {
+
+    
+    if (!post) {
+        return <NotFound />
+    }
+    
+    
+    return PostPageContent(post);
 }
 
 const CustomImage = ({ node }) => (
