@@ -35,10 +35,7 @@ export default function Home({notice, sermon}: ServerProps) {
     return (
         <MainLayout seo={pageDetails}>
             <Container className={"mt-8 md:mt-16"}>
-                <Notice
-                    imageProps={useNextSanityImage(browserClient, notice.coverImage)}
-                    description={notice.description}
-                    title={notice.title}/>
+                <Notice notice={notice} />
                 <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage)} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>

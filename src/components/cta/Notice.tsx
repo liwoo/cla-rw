@@ -2,21 +2,31 @@ import React, {FC} from "react";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
-import {UseNextSanityImageProps} from "next-sanity-image";
+import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
 import Image from "next/image";
+import {Notices} from "@/sanity/schema";
+import {SanityImageAsset} from "sanity-codegen";
+import browserClient from "@/sanity/browser-client";
+import {Star} from "@/components/icons/Star";
+import {ST} from "next/dist/shared/lib/utils";
+import Link from "next/link";
 
-interface NoticeProps {
-    title: string
-    description?: string
-    imageProps?: UseNextSanityImageProps
+type NoticeWithoutImage = Omit<Notices, "coverImage">;
+type NoticeWithImage = NoticeWithoutImage & {
+    coverImage: {
+        asset: SanityImageAsset
+    }
 }
 
-export const Notice: FC<NoticeProps> = ({title, description, imageProps}) => {
+export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, description, startDate, endDate, coverImage, link}}) => {
+    
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
             <div className="image-blend absolute inset-0"></div>
             <Image
-                {...imageProps}
+                {...useNextSanityImage(browserClient, coverImage)}
+                placeholder={"blur"}
+                blurDataURL={coverImage.asset.metadata.lqip}
                 alt=""
                 className="absolute inset-0 -z-10 h-full w-full object-cover object-top image-filters"
             />
@@ -70,10 +80,11 @@ export const Notice: FC<NoticeProps> = ({title, description, imageProps}) => {
                     </linearGradient>
                 </defs>
             </svg>
-            <div
+            <Link
+                href={link}
                 className="absolute p-4 text-center h-16 bg-secondary transform -skew-x-12 origin-bottom-right right-0 -mr-12 pr-20 scale-y-(1)">
-                <H2>18 May - 20 May</H2>
-            </div>
+                {(startDate && endDate) && <H2>{startDate} - {endDate}</H2> || <H2>Find out More</H2>}
+            </Link>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                     <H1>{title}</H1>
