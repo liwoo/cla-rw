@@ -19,7 +19,7 @@ export default function Post() {
                     <P>by <strong>CLA</strong></P>
                     <time className={"text-gray-600"}>30 March 2023</time>
                 </div>
-                <Image className={"rounded-md mb-8"} src={"https://images.unsplash.com/photo-1509099342178-e323b1717dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80"} alt={"Some Cool Post"} width={1920} height={1080} />
+                <Image className={"rounded-md mb-8 aspect-video object-cover"} src={"https://images.unsplash.com/photo-1518601794912-1af91724e528?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"} alt={"Some Cool Post"} width={1920} height={1080} />
                 <article className={"mx-0 md:mx-16 lg:mx-24 xl:mx-60"}>
                     lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci alias aliquid amet animi
                     asperiores atque autem beatae blanditiis consequatur corporis cumque cupiditate delectus deleniti
