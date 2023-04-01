@@ -37,6 +37,8 @@ interface PostProps {
 }
 
 export default function PostPage({post}: PostProps) {
+    const authorImageProps = useNextSanityImage(browserClient, post.author.image);
+    const mainImageProps = useNextSanityImage(browserClient, post.mainImage);
     if (!post) {
         return <NotFound />
     }
@@ -48,7 +50,7 @@ export default function PostPage({post}: PostProps) {
             <Container>
                 <div className={"flex items-center space-x-2 justify-center my-4"}>
                     <Image 
-                        {...useNextSanityImage(browserClient, post.author.image)} 
+                        {...authorImageProps} 
                         className={"h-12 w-12 rounded-full"} 
                         alt={post.author.name} 
                         width={1000} 
@@ -60,7 +62,7 @@ export default function PostPage({post}: PostProps) {
                     <time className={"text-gray-600"}>{getHumanReadableDate(post._updatedAt)}</time>
                 </div>
                 <Image 
-                    {...useNextSanityImage(browserClient, post.mainImage)}
+                    {...mainImageProps}
                     className={"rounded-md mb-8 aspect-video object-cover"} 
                     alt={"Some Cool Post"} 
                     width={1920} 
