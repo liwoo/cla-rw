@@ -2,7 +2,7 @@ import React from "react";
 import {SEOProps} from "@/components/SEO";
 import {BlogSection} from "@/components/index/BlogSection";
 import {Container} from "@/components/Container";
-import {Notice} from "@/components/cta/Notice";
+import {Notice, NoticeWithImage} from "@/components/cta/Notice";
 import {MediaHeroAction} from "@/components/index/MediaHeroAction";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
@@ -25,7 +25,7 @@ const pageDetails: SEOProps = {
 }
 
 interface ServerProps {
-    notice: Notices,
+    notice: NoticeWithImage,
     sermon: Sermon
 }
 

@@ -12,7 +12,7 @@ import {ST} from "next/dist/shared/lib/utils";
 import Link from "next/link";
 
 type NoticeWithoutImage = Omit<Notices, "coverImage">;
-type NoticeWithImage = NoticeWithoutImage & {
+export type NoticeWithImage = NoticeWithoutImage & {
     coverImage: {
         asset: SanityImageAsset
     }

@@ -1,4 +1,3 @@
-import {useRouter} from "next/dist/client/router";
 import {MainLayout} from "@/components/layouts/MainLayout";
 import {PageTitle} from "@/components/PageTitle";
 import Image from "next/image";
@@ -36,9 +35,7 @@ interface PostProps {
     post: PostWithAuthor
 }
 
-function PostPageContent(post: PostWithoutAuthor & { author: AuthorWithImage; mainImage: { asset: SanityImageAsset } }) {
-    const authorImageProps = useNextSanityImage(browserClient, post.author.image);
-    const mainImageProps =  useNextSanityImage(browserClient, post.mainImage);
+function PostPageContent(post: PostWithAuthor) {
     return (
         <MainLayout seo={{title: post.title, description: post.title}}>
             <Container className={"md:mt-8 lg:mt-10"}>
@@ -47,7 +44,7 @@ function PostPageContent(post: PostWithoutAuthor & { author: AuthorWithImage; ma
             <Container>
                 <div className={"flex items-center space-x-2 justify-center my-4"}>
                     <Image
-                        {...authorImageProps}
+                        {...useNextSanityImage(browserClient, post.author.image)}
                         className={"h-12 w-12 rounded-full"}
                         alt={post.author.name}
                         width={1000}
@@ -59,7 +56,7 @@ function PostPageContent(post: PostWithoutAuthor & { author: AuthorWithImage; ma
                     <time className={"text-gray-600"}>{getHumanReadableDate(post._updatedAt)}</time>
                 </div>
                 <Image
-                    {...mainImageProps}
+                    {...useNextSanityImage(browserClient, post.mainImage)}
                     className={"rounded-md mb-8 aspect-video object-cover"}
                     alt={"Some Cool Post"}
                     width={1920}
