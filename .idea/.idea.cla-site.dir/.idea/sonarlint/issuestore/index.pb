@@ -71,7 +71,5 @@ D
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 M
 .github/workflows/node.js.yml,7/b/7be42621134b859b5222d6c4f6f32fcf62e7e89a
-F
-src/components/SEO.tsx,d/e/de976efb5ea39f8885a552d9068f2a4d22be8758
 O
 src/components/typography/P.tsx,a/5/a51f17f5dd6d9a7216c4aa099378090d06faaef5

@@ -35,9 +35,12 @@ interface PostProps {
     post: PostWithAuthor
 }
 
+//TODO: Get this from env
+const baseUrl = "https://clarwanda.org";
+
 function PostPageContent(post: PostWithAuthor) {
     return (
-        <MainLayout seo={{title: post.title, description: post.title}}>
+        <MainLayout seo={{title: post.title, description: post.title, image: post.mainImage.asset.url, url: `${baseUrl}/posts/${post.slug}`}}>
             <Container className={"md:mt-8 lg:mt-10"}>
                 <PageTitle title={post.title}/>
             </Container>
