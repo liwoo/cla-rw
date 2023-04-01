@@ -3,7 +3,15 @@ import client from "@/sanity/client";
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
 
 export async function getLatestNotice(): Promise<Notices> {
-  const query = `*[_type == "notices"] | order(_updatedAt desc) [0]`;
+  const query = `*[_type == "notices"] | order(_updatedAt desc) [0] {
+    ...,
+    coverImage {
+        asset-> {
+            ...,
+            metadata
+        }
+    }
+  }`;
   return await client.fetch(query);
 }
 

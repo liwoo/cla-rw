@@ -2,14 +2,23 @@ import React, {FC} from "react";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
+import {UseNextSanityImageProps} from "next-sanity-image";
+import Image from "next/image";
 
-export const Notice: FC<{ title: string, description?: string }> = ({title, description}) => {
+interface NoticeProps {
+    title: string
+    description?: string
+    imageProps?: UseNextSanityImageProps
+}
+
+export const Notice: FC<NoticeProps> = ({title, description, imageProps}) => {
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
-            <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+            <div className="image-blend absolute inset-0"></div>
+            <Image
+                {...imageProps}
                 alt=""
-                className="absolute inset-0 -z-10 h-full w-full object-cover"
+                className="absolute inset-0 -z-10 h-full w-full object-cover object-top image-filters"
             />
             <svg
                 xmlns="http://www.w3.org/2000/svg"

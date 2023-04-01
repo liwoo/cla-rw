@@ -32,14 +32,16 @@ interface ServerProps {
 export default function Home({notice, sermon}: ServerProps) {
     const welcomeTitle = "Welcome to Christian Life Assembly";
     const welcomeDescription = "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!";
-    const imageProps = useNextSanityImage(browserClient, sermon.mainImage);
+    const sermonImageProps = useNextSanityImage(browserClient, sermon.mainImage);
+    const noticeImageProps = useNextSanityImage(browserClient, notice.coverImage);
     return (
         <MainLayout seo={pageDetails}>
             <Container className={"mt-8 md:mt-16"}>
                 <Notice
+                    imageProps={noticeImageProps}
                     description={notice.description}
                     title={notice.title}/>
-                <MediaHeroAction sermon={sermon} imageProps={imageProps} />
+                <MediaHeroAction sermon={sermon} imageProps={sermonImageProps} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>
                 </div>
@@ -55,7 +57,6 @@ export async function getStaticProps() {
     // do whatever you want to do to get your props
     const notice = await getLatestNotice();
     const sermon = await getLatestSermon();
-    console.log(notice);
     return {
         props: {
            notice,

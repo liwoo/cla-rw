@@ -5,3 +5,12 @@
 #__next {
     min-height: 100%;
 }
+
+.image-filters {
+    mix-blend-mode: overlay;
+    filter: saturate(20%) brightness(300%);
+}
+
+.image-blend {
+    background-color: rgba(17, 24, 39, 0.2);
+}

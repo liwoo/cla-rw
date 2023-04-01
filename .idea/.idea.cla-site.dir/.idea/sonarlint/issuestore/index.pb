@@ -45,13 +45,9 @@ Q
 !src/components/index/FindCell.tsx,8/6/863f3cbd29c989d2ad94790d2aaa814de48c62b8
 B
 src/pages/soon.tsx,6/7/67fa0beedffb969c84c41d297da8c6d63d6a4867
-G
-src/styles/tailwind.css,5/2/525cdc3b33fc29ce3dc659f9ab85df06ef7b784b
 B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 C
 src/pages/about.tsx,0/0/00f529562c859ca33a4a6ef004ea5b949fd46cc7
-M
-src/components/cta/Notice.tsx,0/6/0660e3da7e8918922bff6eeb9ff556008487aec7

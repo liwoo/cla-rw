@@ -8,3 +8,7 @@ export function truncateString(str: string, num: number = 50): string {
     }
     return str.slice(0, num) + '...'
 }
+
+export function getHumanReadableDate(date: string): string {
+    return new Date(date).toDateString();
+}
