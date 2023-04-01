@@ -7,12 +7,16 @@ import {Container} from "@/components/Container";
 import {getAllPosts, getPostBySlug} from "@/sanity/posts";
 import {Post} from "@/sanity/schema";
 import {getHumanReadableDate} from "@/utils/helpers";
+import {NotFound} from "@/components/NotFound";
 
 interface PostProps {
     post: Post
 }
 
 export default function PostPage({post}: PostProps) {
+    if (!post) {
+        return <NotFound />
+    } 
     return (
         <MainLayout seo={{title: "Post", description: "Post", image: "Post", url: "Post", keywords: ["Post"]}}>
             <Container className={"md:mt-8 lg:mt-10"}>
