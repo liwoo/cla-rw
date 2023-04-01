@@ -38,6 +38,12 @@ export default function PostPage({post}: PostProps) {
 
 export async function getStaticPaths() {
     const posts = await getAllPosts();
+    if (!posts) {
+        return {
+            paths: [],
+            fallback: false
+        }
+    }
     const paths = posts.map((post) => ({
         params: {slug: post.slug.current}
     }));
