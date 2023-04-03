@@ -66,7 +66,7 @@ const posts: Blog[] = [
 
 export const BlogSection = () => {
     return (
-        <div className="bg-white py-12 sm:py-24">
+        <div className="bg-white py-12 sm:py-24 bg-surface">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
                     <PageTitle title="Latest Posts & Devotionals" />

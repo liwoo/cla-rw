@@ -16,7 +16,7 @@ export const MainLayout: FC<{ children: ReactNode, seo: SEOProps }> = ({children
                 keywords={seo.keywords}
             />
             <Header company={company} />
-            <main className="bg-surface pt-24">
+            <main className="bg-surface pt-24 pb-4">
                 {children}
             </main>
             <Footer/>

@@ -45,13 +45,13 @@ function PostPageContent(post: PostWithAuthor) {
                 <PageTitle title={post.title}/>
             </Container>
             <Container>
-                <div className={"flex items-center space-x-2 justify-center mt-4"}>
+                <div className={"flex items-center space-x-2 justify-center my-8"}>
                     <Image
                         {...useNextSanityImage(browserClient, post.author.image)}
                         className={"h-12 w-12 rounded-full"}
                         alt={post.author.name}
-                        width={1000}
-                        height={1000}
+                        width={post.author.image.asset.metadata.dimensions.width}
+                        height={post.author.image.asset.metadata.dimensions.height}
                         placeholder={"blur"}
                         blurDataURL={post.author.image.asset.metadata.lqip}
                     />
@@ -60,10 +60,10 @@ function PostPageContent(post: PostWithAuthor) {
                 </div>
                 <Image
                     {...useNextSanityImage(browserClient, post.mainImage)}
-                    className={"rounded-md mb-8 aspect-video object-cover"}
+                    className={"rounded-md mb-8 aspect-video object-cover w-full lg:w-4/5 mx-auto"}
                     alt={"Some Cool Post"}
-                    width={1920}
-                    height={1080}
+                    width={post.author.image.asset.metadata.dimensions.width}
+                    height={post.author.image.asset.metadata.dimensions.height}
                     placeholder={"blur"}
                     blurDataURL={post.mainImage.asset.metadata.lqip}
                 />

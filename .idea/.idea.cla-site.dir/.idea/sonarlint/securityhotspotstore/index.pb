@@ -37,8 +37,6 @@ B
 src/pages/_app.tsx,2/e/2eefa41a18ed6ea3f58b3748f9e5559a28e77646
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-Q
-!src/components/index/FindCell.tsx,8/6/863f3cbd29c989d2ad94790d2aaa814de48c62b8
 B
 src/pages/soon.tsx,6/7/67fa0beedffb969c84c41d297da8c6d63d6a4867
 B
@@ -59,8 +57,6 @@ B
 .env.local.example,9/5/9558c8cde3b80d95bda0dc569658b6913c24dc24
 G
 src/styles/tailwind.css,5/2/525cdc3b33fc29ce3dc659f9ab85df06ef7b784b
-T
-$src/components/index/BlogSection.tsx,8/6/86a5ff1a1daf6851744984f71589bf4e470df13f
 D
 src/utils/helpers.ts,3/c/3c5060a8f1990258aa405782f1533a5fc60112b7
 :
@@ -81,7 +77,5 @@ X
 (src/components/index/MediaHeroAction.tsx,f/2/f244343ec4cfb3215a247e76d638fcb4b1877a9e
 X
 (src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
-U
-%src/components/layouts/MainLayout.tsx,3/4/34587141738529ad7610f7b637e05c51ce83e8f6
 F
 src/components/SEO.tsx,d/e/de976efb5ea39f8885a552d9068f2a4d22be8758
