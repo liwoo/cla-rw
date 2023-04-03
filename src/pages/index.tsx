@@ -2,14 +2,16 @@ import React from "react";
 import {SEO, SEOProps} from "@/components/SEO";
 import {BlogSection} from "@/components/index/BlogSection";
 import {Container} from "@/components/Container";
-import {Notice} from "@/components/cta/Notice";
+import {Notice, NoticeWithImage} from "@/components/cta/Notice";
 import {MediaHeroAction} from "@/components/index/MediaHeroAction";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
 import {FindCell} from "@/components/index/FindCell";
 import {getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { MainLayout } from "@/components/layouts/MainLayout";
+import browserClient from "@/sanity/browser-client";
+import { Sermon } from "@/sanity/schema";
+import { useNextSanityImage } from "next-sanity-image";
 
 
 

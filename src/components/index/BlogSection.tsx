@@ -19,36 +19,11 @@ export interface Blog {
   }
 }
 
-<<<<<<< HEAD
 const posts: Blog[] = [
-    {
-        id: 1,
-<<<<<<< HEAD
-        title: 'Boost your conversion rate',
-        href: '/posts/devotional-by-pastor-andrew-mukinisha',
-=======
-        title: 'Sunday Celebratrion',
-        href: '#',
->>>>>>> ad5dad8 (added Image and url for splash)
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl:
-            'https://res.cloudinary.com/dpbuspblx/image/upload/v1679958909/cla-cta/Sunday_Celebration_IG_wfnxzj.png',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-        imageWidth:1080,
-        imageHeight:1080
-=======
-const posts = [
   {
     id: 1,
-    title: 'Sunday Celebratrion',
-    href: '#',
+    title: 'Boost your conversion rate',
+    href: '/posts/devotional-by-pastor-andrew-mukinisha',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -59,7 +34,6 @@ const posts = [
       name: 'Michael Foster',
       imageUrl:
         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
->>>>>>> 199ffd7 (added Image and url for splash)
     },
   },
   {
