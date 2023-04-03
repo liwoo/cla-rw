@@ -50,8 +50,6 @@ function PostPageContent(post: PostWithAuthor) {
                         {...useNextSanityImage(browserClient, post.author.image)}
                         className={"h-12 w-12 rounded-full"}
                         alt={post.author.name}
-                        width={post.author.image.asset.metadata.dimensions.width}
-                        height={post.author.image.asset.metadata.dimensions.height}
                         placeholder={"blur"}
                         blurDataURL={post.author.image.asset.metadata.lqip}
                     />
@@ -62,8 +60,6 @@ function PostPageContent(post: PostWithAuthor) {
                     {...useNextSanityImage(browserClient, post.mainImage)}
                     className={"rounded-md mb-8 aspect-video object-cover w-full lg:w-4/5 mx-auto"}
                     alt={"Some Cool Post"}
-                    width={post.author.image.asset.metadata.dimensions.width}
-                    height={post.author.image.asset.metadata.dimensions.height}
                     placeholder={"blur"}
                     blurDataURL={post.mainImage.asset.metadata.lqip}
                 />

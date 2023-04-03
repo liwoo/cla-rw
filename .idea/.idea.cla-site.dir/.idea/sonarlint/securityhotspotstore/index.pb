@@ -5,10 +5,6 @@ C
 src/images/logo.svg,b/4/b4aa7d95f0edc66c215295c4a4c721c068eeedf0
 L
 src/components/CardTitle.tsx,3/8/38f9cfe65d2e5631f92ccab59e841a0093f828e5
-M
-src/components/index/Card.tsx,6/d/6dfc492a7454eb4092e9169cc223946ba6fc5dd9
-S
-#src/components/index/Highlights.tsx,c/c/ccc23d37dfecca690fc0da7301d77c404ce73a13
 P
  src/components/typography/H2.tsx,a/0/a03de5e3a61560b22605598e48d4af5f16748186
 R
@@ -45,8 +41,6 @@ C
 src/pages/about.tsx,0/0/00f529562c859ca33a4a6ef004ea5b949fd46cc7
 I
 src/components/Header.tsx,a/e/aeb164160f025a7bc1eca5644891a8294266ea1a
-L
-src/components/PageTitle.tsx,7/7/776cc3c2b4a1d2e0b912cc88995850ecdc435017
 >
 .eslintrc.json,7/1/71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 >
@@ -73,8 +67,6 @@ I
 src/components/Footer.tsx,6/a/6a1906fbef47b21e13258a3accfe644e256f3344
 L
 src/sanity/home-page-data.ts,1/4/141ea835187692427bcca55fcf8bb36c9e813e67
-X
-(src/components/index/MediaHeroAction.tsx,f/2/f244343ec4cfb3215a247e76d638fcb4b1877a9e
 X
 (src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
 F

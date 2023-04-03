@@ -25,8 +25,6 @@ export const MediaHero: FC<MediaHeroProps> = ({children, title, description, ima
                     <div className="absolute inset-0">
                         <Image
                             {...imageProps}
-                            width={2830}
-                            height={1887}
                             priority={true}
                             placeholder={"blur"}
                             blurDataURL={blurDataURL}
