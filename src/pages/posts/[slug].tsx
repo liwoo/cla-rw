@@ -45,7 +45,7 @@ function PostPageContent(post: PostWithAuthor) {
                 <PageTitle title={post.title}/>
             </Container>
             <Container>
-                <div className={"flex items-center space-x-2 justify-center my-4"}>
+                <div className={"flex items-center space-x-2 justify-center mt-4"}>
                     <Image
                         {...useNextSanityImage(browserClient, post.author.image)}
                         className={"h-12 w-12 rounded-full"}
@@ -79,12 +79,10 @@ function PostPageContent(post: PostWithAuthor) {
 }
 
 export default function PostPage({post}: PostProps) {
-
     
     if (!post) {
         return <NotFound />
     }
-    
     
     return PostPageContent(post);
 }

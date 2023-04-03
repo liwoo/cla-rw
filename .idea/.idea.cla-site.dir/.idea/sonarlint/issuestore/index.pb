@@ -73,3 +73,15 @@ M
 .github/workflows/node.js.yml,7/b/7be42621134b859b5222d6c4f6f32fcf62e7e89a
 O
 src/components/typography/P.tsx,a/5/a51f17f5dd6d9a7216c4aa099378090d06faaef5
+I
+src/components/Footer.tsx,6/a/6a1906fbef47b21e13258a3accfe644e256f3344
+L
+src/sanity/home-page-data.ts,1/4/141ea835187692427bcca55fcf8bb36c9e813e67
+X
+(src/components/index/MediaHeroAction.tsx,f/2/f244343ec4cfb3215a247e76d638fcb4b1877a9e
+X
+(src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
+U
+%src/components/layouts/MainLayout.tsx,3/4/34587141738529ad7610f7b637e05c51ce83e8f6
+F
+src/components/SEO.tsx,d/e/de976efb5ea39f8885a552d9068f2a4d22be8758
