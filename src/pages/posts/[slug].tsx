@@ -59,7 +59,7 @@ function PostPageContent(post: PostWithAuthor) {
                 <Image
                     {...useNextSanityImage(browserClient, post.mainImage)}
                     className={"rounded-md mb-8 aspect-video object-cover w-full lg:w-4/5 mx-auto"}
-                    alt={"Some Cool Post"}
+                    alt={post.title}
                     placeholder={"blur"}
                     blurDataURL={post.mainImage.asset.metadata.lqip}
                 />
@@ -83,17 +83,46 @@ export default function PostPage({post}: PostProps) {
     return PostPageContent(post);
 }
 
-const CustomImage = ({ node }) => (
-    <img src={node.asset.url} alt={node.alt} style={{ borderRadius: '8px' }} />
-);
+type PortableTextImageNode = {
+    _type: "image",
+    asset: SanityImageAsset
+}
+
+const CustomImage = (node: {node: {value: PortableTextImageNode}}) => {
+    console.log(node.node.value);
+    return <Image
+        {...useNextSanityImage(browserClient, node.node.value.asset)}
+        className={"rounded-md my-8 aspect-video object-cover w-full"}
+        alt="image"
+        placeholder={"blur"}
+        blurDataURL={node.node.value.asset.metadata.lqip}
+    />
+};
 
 const components: PortableTextComponents = {
     block: {
         normal: ({children}) => <p className={"my-4 text-lg"}>{children}</p>,
         h1: ({children}) => <H1>{children}</H1>,
         h2: ({children}) => <H2>{children}</H2>,
-        blockquote: ({children}) => <blockquote className="border-l-purple-500">{children}</blockquote>,
+        h3: ({children}) => <h3 className={"text-lg font-semibold"}>{children}</h3>,
+        h4: ({children}) => <h4 className={"text-lg"}>{children}</h4>,
+        li: ({children}) => <li className={"text-lg"}>&#8594; {children}</li>,
+        blockquote: ({children}) => <blockquote className="py-4 mx-12 my-8 text-3xl font-light border-t border-b border-gray-200">{children}</blockquote>,
     },
+    marks: {
+        strong: ({children}) => <strong className={"font-semibold"}>{children}</strong>,
+        em: ({children}) => <em className={"italic"}>{children}</em>,
+        code: ({children}) => <code className={"bg-gray-200 p-1 rounded"}>{children}</code>,
+    },
+    types: {
+        image: (node) => <CustomImage node={(node as unknown) as {value: PortableTextImageNode}} />,
+    },
+    list: {
+        bullet: ({children}) => <ul className={"my-4"}>{children}</ul>,
+    },
+    listItem : {
+        bullet: ({children}) => <li className={"text-lg"}>&#8594; {children}</li>,
+    }
 }
 
 export async function getStaticPaths() {

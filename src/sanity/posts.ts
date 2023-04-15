@@ -26,6 +26,15 @@ export async function getPostBySlug(slug: string): Promise<Post> {
         }
     },
     slug
+  },
+  body[]{
+    ...,
+    _type == "image" => {
+      asset-> {
+        ...,
+        metadata
+      }
+    }
   }
 }`;
     return await client.fetch(query, {slug});
