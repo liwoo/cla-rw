@@ -1,9 +1,9 @@
 import React, {FC} from "react";
+import Image from "next/image";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
-import Image from "next/image";
 import {Notices} from "@/sanity/schema";
 import {SanityImageAsset} from "sanity-codegen";
 import browserClient from "@/sanity/browser-client";
@@ -22,6 +22,7 @@ export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, descript
     
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
+
             <div className="image-blend absolute inset-0"></div>
             <Image
                 {...useNextSanityImage(browserClient, coverImage)}
@@ -95,6 +96,7 @@ export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, descript
                     </div>
                 </div>
             </div>
+
         </div>
-    )
+  )
 }
