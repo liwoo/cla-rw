@@ -11,7 +11,6 @@ import { getHumanReadableDate } from '@/utils/helpers'
 
 
 
-
 export const BlogSection = ({posts}: {posts:Post[]}) => {
   return (
     <div className="bg-white py-12 sm:py-24">
