@@ -5,10 +5,6 @@ C
 src/images/logo.svg,b/4/b4aa7d95f0edc66c215295c4a4c721c068eeedf0
 L
 src/components/CardTitle.tsx,3/8/38f9cfe65d2e5631f92ccab59e841a0093f828e5
-S
-#src/components/index/Highlights.tsx,c/c/ccc23d37dfecca690fc0da7301d77c404ce73a13
-M
-src/components/index/Card.tsx,6/d/6dfc492a7454eb4092e9169cc223946ba6fc5dd9
 P
  src/components/typography/H2.tsx,a/0/a03de5e3a61560b22605598e48d4af5f16748186
 R
@@ -35,8 +31,6 @@ O
 src/components/Testimonials.tsx,2/a/2a6a0aae1db6bff47cf71dbf270f756de0b455c1
 B
 src/pages/_app.tsx,2/e/2eefa41a18ed6ea3f58b3748f9e5559a28e77646
-Q
-!src/components/index/FindCell.tsx,8/6/863f3cbd29c989d2ad94790d2aaa814de48c62b8
 B
 src/pages/soon.tsx,6/7/67fa0beedffb969c84c41d297da8c6d63d6a4867
 B
@@ -45,8 +39,6 @@ B
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 C
 src/pages/about.tsx,0/0/00f529562c859ca33a4a6ef004ea5b949fd46cc7
-L
-src/components/PageTitle.tsx,7/7/776cc3c2b4a1d2e0b912cc88995850ecdc435017
 I
 src/components/Header.tsx,a/e/aeb164160f025a7bc1eca5644891a8294266ea1a
 >
@@ -59,8 +51,6 @@ B
 .env.local.example,9/5/9558c8cde3b80d95bda0dc569658b6913c24dc24
 G
 src/styles/tailwind.css,5/2/525cdc3b33fc29ce3dc659f9ab85df06ef7b784b
-T
-$src/components/index/BlogSection.tsx,8/6/86a5ff1a1daf6851744984f71589bf4e470df13f
 D
 src/utils/helpers.ts,3/c/3c5060a8f1990258aa405782f1533a5fc60112b7
 :
@@ -73,3 +63,11 @@ M
 .github/workflows/node.js.yml,7/b/7be42621134b859b5222d6c4f6f32fcf62e7e89a
 O
 src/components/typography/P.tsx,a/5/a51f17f5dd6d9a7216c4aa099378090d06faaef5
+I
+src/components/Footer.tsx,6/a/6a1906fbef47b21e13258a3accfe644e256f3344
+L
+src/sanity/home-page-data.ts,1/4/141ea835187692427bcca55fcf8bb36c9e813e67
+X
+(src/components/typography/Subheading.tsx,d/9/d946faacffe5461feb312549a714a944f1484688
+F
+src/components/SEO.tsx,d/e/de976efb5ea39f8885a552d9068f2a4d22be8758
