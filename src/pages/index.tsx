@@ -7,10 +7,10 @@ import {MediaHeroAction} from "@/components/index/MediaHeroAction";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
 import {FindCell} from "@/components/index/FindCell";
-import {getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
+import {getCallToActions, getLatestDevotionals, getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import browserClient from "@/sanity/browser-client";
-import { Sermon } from "@/sanity/schema";
+import { CallToAction, Post, Sermon } from "@/sanity/schema";
 import { useNextSanityImage } from "next-sanity-image";
 
 
@@ -39,24 +39,29 @@ const pageDetails: SEOProps = {
 
 interface ServerProps {
     notice: NoticeWithImage,
-    sermon: Sermon
+    sermon: Sermon,
+    devotionals:Post[],
+    callToActions : CallToAction[]
 }
 
-export default function Home({notice, sermon}: ServerProps) {
-    const welcomeTitle = "Welcome to Christian Life Assembly";
-    const welcomeDescription = "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!";
+export default function Home({notice, sermon,devotionals,callToActions}: ServerProps) {
+  
+    const welcomeCta = callToActions.find(highlight => highlight.order ===1);
+    const highlights = callToActions.filter(cta => cta.order >= 2 && cta.order <=6)
+    const cell = callToActions.find(highlight => highlight.order ===7);
+
     return (
         <MainLayout seo={pageDetails}>
             <Container className={"mt-8 md:mt-16"}>
                 <Notice notice={notice} />
                 <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage)} />
                 <div className="my-4 lg:my-20">
-                    <PageTitle title={welcomeTitle} description={welcomeDescription}/>
+                    <PageTitle title={welcomeCta.title} description={welcomeCta.description}/>
                 </div>
-                <Highlights/>
+                <Highlights highlights= {highlights}/>
             </Container>
-            <FindCell/>
-            <BlogSection/>
+            <FindCell cell = {cell}/>
+            <BlogSection posts={devotionals} />
         </MainLayout>
     )
 }
@@ -64,11 +69,17 @@ export default function Home({notice, sermon}: ServerProps) {
 export async function getStaticProps() {
     // do whatever you want to do to get your props
     const notice = await getLatestNotice();
+    const devotionals = await getLatestDevotionals();
     const sermon = await getLatestSermon();
+
+    const callToActions = await getCallToActions();
+    
     return {
         props: {
            notice,
-            sermon
+            sermon,
+            devotionals,
+            callToActions 
         },
     }
 }
