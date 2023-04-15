@@ -11,35 +11,38 @@ export const Highlights: FC<{ highlights: CallToAction[] }> = ({ highlights }) =
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-6 my-16 items-stretch">
             <div className="col-span-1 row-span-1">
-                <Link href={highlights[0].link}>
                     <Card title={highlights[0].title}
                         subtitle={truncateString(highlights[0].description)}
-                        image={highlights[0].coverImage} />
-                </Link>
+                        image={highlights[0].coverImage} 
+                        href={highlights[0].link} />
+            
             </div>
             <div className="col-span-1 row-span-1">
-                <Link href={highlights[1].link}>
+             
                     <Card title={highlights[1].title}
                         subtitle={truncateString(highlights[1].description)}
-                        image={highlights[1].coverImage} />
-                </Link>
+                        image={highlights[1].coverImage} 
+                        href={highlights[1].link}/>
+          
             </div>
             <div className="col-span-1 row-span-1 md:row-span-2 lg:row-span-3 hidden md:block">
                 <div className="h-full overflow-hidden relative rounded-md bg-cover bg-[url('https://cdn.sanity.io/images/xq3nx3je/cla/94ceb3fa819b4f22f41dde71ed9d3455937e9ccc-500x500.png')]" />
             </div>
             <div className="col-span-1 row-span-1">
-                <Link href={highlights[2].link}>
+             
                     <Card title={highlights[2].title}
                         subtitle={truncateString(highlights[2].description)}
-                        image={highlights[2].coverImage} />
-                </Link>
+                        image={highlights[2].coverImage} 
+                        href= {highlights[2].link}
+                        />
+             
             </div>
             <div className="col-span-1 row-span-1">
-                <Link href={highlights[3].link}>
                     <Card title={highlights[3].title}
                         subtitle={truncateString(highlights[3].description)}
-                        image={highlights[3].coverImage} />
-                </Link>
+                        image={highlights[3].coverImage}
+                        href= {highlights[3].link} />
+              
             </div>
             <div
                 className="col-span-1 md:col-span-2 row-span-1 hover:shadow-lg p-4 hover:rounded-md transition-all cursor-pointer">

@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid'
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
 import browserClient from "@/sanity/browser-client";
 import {SanityImageAsset, SanityImageCrop, SanityImageHotspot, SanityReference} from "sanity-codegen";
-import { CallToAction } from '@/sanity/schema';
+import Link from 'next/link';
 
 interface CardProps {
   title: string
@@ -23,7 +23,9 @@ interface CardProps {
 
 export const Card = ({ title, subtitle, image, href,imageWidth,imageHeight }: CardProps) => {
   return (
-    <a className="pointer-cursor relative flex cursor-pointer items-center space-x-3 rounded-lg border border-gray-300 bg-white p-2 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+
+    <Link href={href}> 
+    <div className="pointer-cursor relative flex cursor-pointer items-center space-x-3 rounded-lg border border-gray-300 bg-white p-2 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
       <div className="min-w-1/3 flex-1">
         <Image
           className="rounded-md object-fill"
@@ -43,6 +45,7 @@ export const Card = ({ title, subtitle, image, href,imageWidth,imageHeight }: Ca
           </div>
         </div>
       </div>
-    </a>
+    </div>
+    </Link>
   )
 }

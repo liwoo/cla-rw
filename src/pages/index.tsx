@@ -7,10 +7,10 @@ import {MediaHeroAction} from "@/components/index/MediaHeroAction";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
 import {FindCell} from "@/components/index/FindCell";
-import {getCallToActions, getLatestDevotionals, getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
+import {getCallToActions, getCells, getLatestDevotionals, getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import browserClient from "@/sanity/browser-client";
-import { CallToAction, Post, Sermon } from "@/sanity/schema";
+import { CallToAction, Post, Sermon, ZoneSection } from "@/sanity/schema";
 import { useNextSanityImage } from "next-sanity-image";
 
 
@@ -42,13 +42,15 @@ interface ServerProps {
     sermon: Sermon,
     devotionals:Post[],
     callToActions : CallToAction[]
+    cells: ZoneSection[]
 }
 
-export default function Home({notice, sermon,devotionals,callToActions}: ServerProps) {
+export default function Home({notice, sermon,devotionals,callToActions,cells}: ServerProps) {
   
     const welcomeCta = callToActions.find(highlight => highlight.order ===1);
     const highlights = callToActions.filter(cta => cta.order >= 2 && cta.order <=6)
-    const cell = callToActions.find(highlight => highlight.order ===7);
+    const cellcta = callToActions.find(highlight => highlight.order ===7);
+    
 
     return (
         <MainLayout seo={pageDetails}>
@@ -60,7 +62,7 @@ export default function Home({notice, sermon,devotionals,callToActions}: ServerP
                 </div>
                 <Highlights highlights= {highlights}/>
             </Container>
-            <FindCell cell = {cell}/>
+            <FindCell cell = {cellcta} cells = {cells}/>
             <BlogSection posts={devotionals} />
         </MainLayout>
     )
@@ -71,15 +73,17 @@ export async function getStaticProps() {
     const notice = await getLatestNotice();
     const devotionals = await getLatestDevotionals();
     const sermon = await getLatestSermon();
-
     const callToActions = await getCallToActions();
+    const cells = await getCells();
+
     
     return {
         props: {
            notice,
             sermon,
             devotionals,
-            callToActions 
+            callToActions,
+            cells
         },
     }
 }
