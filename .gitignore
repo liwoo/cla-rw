@@ -31,5 +31,10 @@ yarn-error.log*
 # Idea stuff
 /.idea/
 
+ *.iml
+ *.ipr
+ *.pb
+ modules.xml
+
 # vercel
 .vercel
