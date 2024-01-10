@@ -23,14 +23,18 @@ export const MediaHero: FC<MediaHeroProps> = ({children, title, description, ima
             <div className="mx-auto">
                 <div className="relative shadow-xl sm:overflow-hidden sm:rounded-xl">
                     <div className="absolute inset-0">
-                        <Image
-                            {...imageProps}
-                            priority={true}
-                            placeholder={"blur"}
-                            blurDataURL={blurDataURL}
-                            className="h-full w-full object-cover"
-                            alt="People working on laptops"
-                        />
+                        {
+                            imageProps && (
+                                <Image
+                                    {...imageProps}
+                                    priority={true}
+                                    placeholder={"blur"}
+                                    blurDataURL={blurDataURL}
+                                    className="h-full w-full object-cover"
+                                    alt="People working on laptops"
+                                />
+                            )
+                        }
                         <div
                             className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-200 mix-blend-multiply"/>
                     </div>

@@ -81,7 +81,7 @@ export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, descript
                 </defs>
             </svg>
             <Link
-                href={link}
+                href={link ?? "/"}
                 className="absolute p-4 text-center h-16 bg-secondary transform -skew-x-12 origin-bottom-right right-0 -mr-12 pr-20 scale-y-(1)">
                 {(startDate && endDate) && <H2>{startDate} - {endDate}</H2> || <H2>Find out More</H2>}
             </Link>
