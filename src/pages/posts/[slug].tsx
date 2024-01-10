@@ -15,7 +15,7 @@ import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 
 type PostWithAuthor = PostWithoutAuthor & {
-   author: AuthorWithImage,
+    author: AuthorWithImage,
     mainImage: {
         asset: SanityImageAsset
     }
@@ -40,16 +40,21 @@ const baseUrl = "https://clarwanda.org";
 
 function PostPageContent(post: PostWithAuthor) {
     return (
-        <MainLayout seo={{title: post.title, description: post.title, image: post.mainImage.asset.url, url: `${baseUrl}/posts/${post.slug}`}}>
+        <MainLayout seo={{
+            title: post.title ?? '',
+            description: post.title ?? '',
+            image: post.mainImage.asset.url,
+            url: `${baseUrl}/posts/${post.slug}`
+        }}>
             <Container className={"md:mt-8 lg:mt-10"}>
-                <PageTitle title={post.title}/>
+                <PageTitle title={post.title ?? ''}/>
             </Container>
             <Container>
                 <div className={"flex items-center space-x-2 justify-center my-8"}>
                     <Image
                         {...useNextSanityImage(browserClient, post.author.image)}
                         className={"h-12 w-12 rounded-full"}
-                        alt={post.author.name}
+                        alt={post.author.name ?? ''}
                         placeholder={"blur"}
                         blurDataURL={post.author.image.asset.metadata.lqip}
                     />
@@ -59,27 +64,31 @@ function PostPageContent(post: PostWithAuthor) {
                 <Image
                     {...useNextSanityImage(browserClient, post.mainImage)}
                     className={"rounded-md mb-8 aspect-video object-cover w-full lg:w-4/5 mx-auto"}
-                    alt={post.title}
+                    alt={post.title ?? ''}
                     placeholder={"blur"}
                     blurDataURL={post.mainImage.asset.metadata.lqip}
                 />
                 <article className={"mx-0 md:mx-24 lg:mx-40 xl:mx-60"}>
-                    <PortableText
-                        components={components}
-                        value={post.body}
-                    />
+                    {
+                        post?.body && (
+                            <PortableText
+                                components={components}
+                                value={post.body}
+                            /> 
+                        )
+                    }
                 </article>
             </Container>
         </MainLayout>
     )
 }
 
-export default function PostPage({post}: PostProps) {
-    
+export default function PostPage({post}: Readonly<PostProps>) {
+
     if (!post) {
-        return <NotFound />
+        return <NotFound/>
     }
-    
+
     return PostPageContent(post);
 }
 
@@ -88,7 +97,7 @@ type PortableTextImageNode = {
     asset: SanityImageAsset
 }
 
-const CustomImage = (node: {node: {value: PortableTextImageNode}}) => {
+const CustomImage = (node: { node: { value: PortableTextImageNode } }) => {
     console.log(node.node.value);
     return <Image
         {...useNextSanityImage(browserClient, node.node.value.asset)}
@@ -107,7 +116,8 @@ const components: PortableTextComponents = {
         h3: ({children}) => <h3 className={"text-lg font-semibold"}>{children}</h3>,
         h4: ({children}) => <h4 className={"text-lg"}>{children}</h4>,
         li: ({children}) => <li className={"text-lg"}>&#8594; {children}</li>,
-        blockquote: ({children}) => <blockquote className="py-4 mx-12 my-8 text-3xl font-light border-t border-b border-gray-200">{children}</blockquote>,
+        blockquote: ({children}) => <blockquote
+            className="py-4 mx-12 my-8 text-3xl font-light border-t border-b border-gray-200">{children}</blockquote>,
     },
     marks: {
         strong: ({children}) => <strong className={"font-semibold"}>{children}</strong>,
@@ -115,12 +125,12 @@ const components: PortableTextComponents = {
         code: ({children}) => <code className={"bg-gray-200 p-1 rounded"}>{children}</code>,
     },
     types: {
-        image: (node) => <CustomImage node={(node as unknown) as {value: PortableTextImageNode}} />,
+        image: (node) => <CustomImage node={(node as unknown) as { value: PortableTextImageNode }}/>,
     },
     list: {
         bullet: ({children}) => <ul className={"my-4"}>{children}</ul>,
     },
-    listItem : {
+    listItem: {
         bullet: ({children}) => <li className={"text-lg"}>&#8594; {children}</li>,
     }
 }
@@ -133,8 +143,8 @@ export async function getStaticPaths() {
             fallback: false
         }
     }
-    const paths = posts.map((post) => ({
-        params: {slug: post.slug.current}
+    const paths = posts.map(({slug}) => ({
+        params: {slug: slug?.current ?? ''}
     }));
     return {
         paths,

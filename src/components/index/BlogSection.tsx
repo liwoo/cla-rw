@@ -1,4 +1,3 @@
-import {FC} from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
@@ -66,7 +65,7 @@ const posts: Blog[] = [
 
 export const BlogSection = () => {
     return (
-        <div className="bg-white py-12 sm:py-24 bg-surface">
+        <div className="py-12 sm:py-24 bg-surface">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
                     <PageTitle title="Latest Posts & Devotionals" />
