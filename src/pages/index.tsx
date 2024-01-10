@@ -11,7 +11,7 @@ import {getLatestNotice, getLatestSermon} from "@/sanity/home-page-data";
 import {Sermon} from "@/sanity/schema";
 import {useNextSanityImage} from "next-sanity-image";
 import browserClient from "@/sanity/browser-client";
-import {defaultPageDetails} from "@/utils/default-seo";
+import {defaultImage, defaultPageDetails} from "@/utils/default";
 interface ServerProps {
     notice: NoticeWithImage,
     sermon: Sermon
@@ -24,11 +24,7 @@ export default function Home({notice, sermon}: Readonly<ServerProps>) {
         <MainLayout seo={defaultPageDetails}>
             <Container className={"mt-8"}>
                 <Notice notice={notice} />
-                {
-                    sermon?.mainImage && (
-                        <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage)} />
-                    )
-                }
+                <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage ?? defaultImage)} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>
                 </div>
