@@ -2,13 +2,11 @@ import React, {FC} from "react";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
-import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
+import {useNextSanityImage} from "next-sanity-image";
 import Image from "next/image";
 import {Notices} from "@/sanity/schema";
 import {SanityImageAsset} from "sanity-codegen";
 import browserClient from "@/sanity/browser-client";
-import {Star} from "@/components/icons/Star";
-import {ST} from "next/dist/shared/lib/utils";
 import Link from "next/link";
 
 type NoticeWithoutImage = Omit<Notices, "coverImage">;

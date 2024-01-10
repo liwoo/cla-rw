@@ -13,6 +13,8 @@ export const FindCell = () => {
                 <div className="flex flex-col md:flex-row flex-wrap justify-between my-16">
                     <div className="w-full md:w-1/2 lg:w-2/5">
                         <Image
+                            width={1470}
+                            height={980}
                             src="https://images.unsplash.com/photo-1526746323784-6bc814d79273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                             className="w-full rounded-md" alt="Cell Group"/>
                     </div>

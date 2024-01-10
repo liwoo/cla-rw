@@ -24,7 +24,7 @@ export const Highlights: FC = () => {
             </div>
             <div
                 className="col-span-1 md:col-span-2 row-span-1 hover:shadow-lg p-4 hover:rounded-md transition-all cursor-pointer">
-                <a className="text-lg font-semibold flex items-center text-primary">
+                <a href="https://google.com" className="text-lg font-semibold flex items-center text-primary">
                     Become a Christian
                     <ArrowRightIcon className="h-5 w-5 mx-1"/>
                 </a>

@@ -2,8 +2,8 @@ import {FC} from "react";
 
 export const NotFound: FC = () => {
   return (
-    <div>
-      <h1>404 Not Found</h1>
+    <div className={"text-default container h-lvh flex justify-center items-center"}>
+      <h1 className={"text-align text-xl"}>404 Not Found</h1>
     </div>
   );
 };

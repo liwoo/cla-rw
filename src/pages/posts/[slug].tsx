@@ -98,7 +98,6 @@ type PortableTextImageNode = {
 }
 
 const CustomImage = (node: { node: { value: PortableTextImageNode } }) => {
-    console.log(node.node.value);
     return <Image
         {...useNextSanityImage(browserClient, node.node.value.asset)}
         className={"rounded-md my-8 aspect-video object-cover w-full"}

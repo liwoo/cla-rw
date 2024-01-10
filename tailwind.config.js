@@ -39,6 +39,10 @@ module.exports = {
                 dark: "#080808",
                 tertiary: "#FFFFFF",
                 background: "#F0F0F5",
+                default: "#000000",
+                muted: "#6B7280",
+                error: "#B91C1C",
+                success: "#22C55E",
                 secondary: {
                     DEFAULT: '#1D3557',
                     light: '#60A5FA',
