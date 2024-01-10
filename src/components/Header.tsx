@@ -1,3 +1,5 @@
+'use client';
+
 import {FC, Fragment} from 'react';
 import {Popover, Transition} from '@headlessui/react';
 import logo from '@/images/logo.svg';
