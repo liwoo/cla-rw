@@ -121,3 +121,11 @@ l
 <.idea/.idea.cla-site.dir/.idea/sonarlint/issuestore/index.pb,7/1/71bb8c108625b889479562fd5ffefea60c4e0a66
 v
 F.idea/.idea.cla-site.dir/.idea/sonarlint/securityhotspotstore/index.pb,9/4/9420bc66e5949480d020ceb3dd0655043d719435
+9
+	yarn.lock,5/3/53585a096fe3a3b96321113856ae62602995a33b
+A
+package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
+=
+tsconfig.json,6/1/61ebb9fd6e8cf9082658121d5d81e297791dacd0
+=
+next-env.d.ts,7/9/7948598afd6f2aa542f1b55d7b6f077a70937e77
