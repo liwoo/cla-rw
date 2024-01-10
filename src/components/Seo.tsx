@@ -1,15 +1,8 @@
 import Head from "next/head";
+import {SEOProps} from "@/utils/types";
 
-export interface SEOProps {
-    title: string;
-    description: string;
-    image?: string;
-    url?: string;
-    keywords?: string[];
-}
-
-export function SEO({title, description, image, url, keywords}: SEOProps) {
-    const pageUrl = url || "https://www.centenarybank.co.mw/";
+export function Seo({title, description, image, url, keywords}: Readonly<SEOProps>) {
+    const pageUrl = url ?? "https://www.centenarybank.co.mw/";
     const logoUrl = "https://www.centenarybankmalawi.com/images/centenary-bank-logo.png";
     const pageKeywords: string[] = keywords ?? ["Centenary Bank", "Malawi", "banking", "MyBucks", "commercial bank", "financial services", "online banking", "savings", "loans", "investments", "merger"];
     return (
@@ -81,7 +74,7 @@ export function SEO({title, description, image, url, keywords}: SEOProps) {
             />
             <meta
                 name="twitter:image"
-                content={image || logoUrl}
+                content={image ?? logoUrl}
             />
         </Head>
     )
