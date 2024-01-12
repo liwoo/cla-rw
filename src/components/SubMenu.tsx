@@ -1,21 +1,20 @@
-import { classNames } from '@headlessui/react/dist/utils/class-names'
 import clsx from 'clsx'
 import React from 'react'
 import { Container } from './Container'
 
 interface SubMenuProps {
-  items: {
-    name: string
-  }[]
-  active: string
+  items: {name:string}[]
+  active?: {name:string} | null
   color?: string
   activeBorderColor?: string
+  onItemClick: Function
 }
 const SubMenu = ({
   items,
   active,
   color = 'text-white',
   activeBorderColor = 'border-tertiary',
+  onItemClick,
 }: SubMenuProps) => {
   return (
     <Container className="pb-8">
@@ -24,8 +23,9 @@ const SubMenu = ({
           <MenuItem
             key={item.name}
             item={item}
-            active={item.name == active}
+            active={item.name == active?.name}
             color={color}
+            onClick={onItemClick}
             activeBorderColor={activeBorderColor}
           />
         ))}
@@ -37,12 +37,11 @@ const SubMenu = ({
 export default SubMenu
 
 interface MenuItemProps {
-  item: {
-    name: string
-  }
+  item: {name:string}
   active?: boolean
   color: string
   activeBorderColor: string
+  onClick: Function
 }
 
 const MenuItem = ({
@@ -50,14 +49,22 @@ const MenuItem = ({
   active = false,
   color,
   activeBorderColor,
+  onClick,
 }: MenuItemProps) => {
   return (
-    <div className="mx-2 md:mx-6">
-      <div className={clsx(`font-semibold uppercase text-sm md:text-base whitespace-nowrap`, color)}>{item.name}</div>
+    <div className="mx-2 md:mx-6" onClick={() => onClick(item)}>
       <div
         className={clsx(
-          `mt-2 border`,
-          active ? `${activeBorderColor}` : 'border-transparent'
+          color,
+          `whitespace-nowrap text-sm font-semibold uppercase md:text-base`
+        )}
+      >
+        {item.name}
+      </div>
+      <div
+        className={clsx(
+          active ? activeBorderColor : 'border-transparent',
+          `mt-2 border`
         )}
       ></div>
     </div>

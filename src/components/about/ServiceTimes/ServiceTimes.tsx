@@ -31,23 +31,32 @@ const cards = [
   },
 ]
 
-export const ServiceTimes = () => {
+const ServiceTimes = () => {
   const backgroungImg =
     'https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png'
+  const image =
+    'https://res.cloudinary.com/tiyeni/image/upload/v1679808591/2X0A4983.jpg'
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-600 py-16 sm:py-32 lg:py-16">
         <BackgroundImage src={backgroungImg} alt="Background" />
-        <SubMenu items={cards} active="Adults" />
+        <SubMenu
+          items={cards}
+          active={cards[0] ?? null}
+          onItemClick={() => {}}
+        />
 
         <Container className="mt-56">
-          <ItemDetailsCard item={cards[0]} />
+          <ItemDetailsCard item={cards[0] ?? null} />
         </Container>
       </div>
       <ServiceTimeLocation
         time="18:00AM"
         location="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        imageSrc={image}
       />
     </>
   )
 }
+
+export default ServiceTimes

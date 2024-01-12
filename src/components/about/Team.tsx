@@ -21,9 +21,10 @@ const Team = () => {
       <Container>
         <SubMenu
           items={categories}
-          active="All Staff"
+          active={categories[0]}
           color={'text-black'}
           activeBorderColor={'border-primary'}
+          onItemClick={()=>{}}
         />
         <div className="mt-6 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-6 gap-16">
           {members.map((item) => {

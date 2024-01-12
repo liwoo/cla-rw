@@ -5,19 +5,19 @@ import { Container } from '@/components/Container'
 interface ServiceTimeLocationProps {
   time: string
   location: string
+  imageSrc: string
 }
-const ServiceTimeLocation = ({ time, location }: ServiceTimeLocationProps) => {
-  const image =
-    'https://res.cloudinary.com/tiyeni/image/upload/v1679808591/2X0A4983.jpg'
+const ServiceTimeLocation = ({ time, location,imageSrc }: ServiceTimeLocationProps) => {
+  
   return (
     <div className="relative bg-tertiary">
       <Container className="relative">
-        <div className="flex py-16">
+        <div className="flex py-20">
           <div >
             <div className="mb-4 text-2xl font-semibold uppercase">TIME</div>
             <div className="text-xl md:text-3xl font-semibold uppercase">{time}</div>
           </div>
-          <div className="mx-12 border-l-2 border-black"></div>
+          <div className="mx-12 md:mx-20 border-l-2 border-black"></div>
           <div>
             <div className="mb-4 text-2xl font-semibold uppercase">Venue</div>
             <div className="max-w-sm">{location}</div>
@@ -31,7 +31,7 @@ const ServiceTimeLocation = ({ time, location }: ServiceTimeLocationProps) => {
             blurDataURL={
               'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
             }
-            src={image}
+            src={imageSrc}
             alt="Coming Soon"
             className="absolute top-0 object-cover"
           />
