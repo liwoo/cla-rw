@@ -35,7 +35,7 @@ const Select = ({
       >
         <option className='text-surface-dark'>{placeholder}</option>
         {options.map((option) => (
-          <option value={option.value} selected={value == option.value}>
+          <option key={option.value} value={option.value} selected={value == option.value}>
             {option.label}
           </option>
         ))}
