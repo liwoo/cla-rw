@@ -37,7 +37,7 @@ module.exports = {
                     dark: "#F0F0F5",
                 },
                 dark: "#080808",
-                tertiary: "#FFFFFF",
+                tertiary: '#fecd07',
                 background: "#F0F0F5",
                 default: "#000000",
                 muted: "#6B7280",
