@@ -5,11 +5,11 @@ import { ServiceTimes } from '@/components/about/ServiceTimes/ServiceTimes'
 
 export default function About() {
   return (
-    <>
+    <div>
       <ServiceTimes />
       <History />
       <Beliefs />
       <Team />
-    </>
+    </div>
   )
 }
