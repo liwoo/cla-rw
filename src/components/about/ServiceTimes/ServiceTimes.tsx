@@ -4,10 +4,10 @@ import {
   NewspaperIcon,
   PhoneIcon,
 } from '@heroicons/react/20/solid'
-import BackgroundImage from './BackgroundImage'
+import BackgroundImage from '@/components/about/ServiceTimes/BackgroundImage'
 import SubMenu from '@/components/SubMenu'
-import ItemDetailsCard from './ItemDetailsCard'
-import ServiceTimeLocation from './ServiceTimeLocation'
+import ItemDetailsCard from '@/components/about/ServiceTimes/ItemDetailsCard'
+import ServiceTimeLocation from '@/components/about/ServiceTimes/ServiceTimeLocation'
 import { Container } from '@/components/Container'
 
 const cards = [
