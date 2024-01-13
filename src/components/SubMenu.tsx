@@ -58,7 +58,7 @@ const MenuItem = ({
   onClick,
 }: MenuItemProps) => {
   return (
-    <div className="mx-2 md:mx-6" onClick={() => onClick(item)}>
+    <div className="mr-2 md:mr-6" onClick={() => onClick(item)}>
       <div
         className={clsx(
           color,

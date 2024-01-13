@@ -42,33 +42,33 @@ const VisitPlan = () => {
           consequuntur magni libero! Sit?
         </div>
       </Container>
-      <div className="flex bg-white">
+      <div className="md:flex bg-white">
         <div className="flex-1">
           <Map />
         </div>
         <div className="flex-1">
-          <div className="px-16 py-24">
+          <div className="md:px-16 py-12 md:py-24">
             <SubMenu
               color="text-black"
               activeBorderColor="border-tertiary"
               items={cards}
               active={cards[0] ?? null}
               onItemClick={() => {}}
-              className="justify-between"
+              className="justify-between px-6 md:px-0"
             />
             <div>
-              <div className="flex justify-center p-20 py-16">
+              <div className="flex justify-center p-10 md:p-20 py-8 md:py-16">
                 <div>
-                  <div className="mb-4 text-xl font-semibold uppercase">
+                  <div className="mb-4 text-lg md:text-xl font-semibold uppercase">
                     TIME
                   </div>
                   <div className="text-xl font-semibold uppercase md:text-2xl">
                     18:00AM
                   </div>
                 </div>
-                <div className="mx-12 border-l-2 border-muted md:mx-16"></div>
+                <div className="mx-8 border-l-2 border-muted md:mx-16"></div>
                 <div>
-                  <div className="mb-4 text-xl font-semibold uppercase">
+                  <div className="mb-4 text-lg md:text-xl font-semibold uppercase">
                     Venue
                   </div>
                   <div className="max-w-sm">

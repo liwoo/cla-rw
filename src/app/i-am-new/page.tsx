@@ -1,6 +1,7 @@
 import FAQs from '@/components/i-am-new/FAQs'
 import Hero from '@/components/i-am-new/Hero'
 import New from '@/components/i-am-new/NewHere'
+import StartingPoint from '@/components/i-am-new/StartingPoint'
 import VisitPlan from '@/components/i-am-new/VisitPlan'
 
 const IAmNew = () => {
@@ -13,6 +14,7 @@ const IAmNew = () => {
       <New />
       <FAQs />
       <VisitPlan/>
+      <StartingPoint/>
     </div>
   )
 }

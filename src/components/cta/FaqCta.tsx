@@ -16,12 +16,12 @@ interface Faq {
 const FaqCTA = ({ items }: FaqProps) => {
   return (
     <div className="bg-surface-dark py-16">
-      <Container className="flex items-center">
+      <Container className="md:flex items-center">
         {items.map((item, index) => (
           <>
             <Item {...item}></Item>
             {index != items.length - 1 && (
-              <div className="mx-16 border-l border-muted pt-[10%]" />
+              <div className="hidden md:block mx-16 border-l border-muted pt-[10%]" />
             )}
           </>
         ))}
