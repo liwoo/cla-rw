@@ -11,23 +11,26 @@ import Link from "next/link";
 
 type NoticeWithoutImage = Omit<Notices, "coverImage">;
 export type NoticeWithImage = NoticeWithoutImage & {
-    coverImage: {
+    coverImage?: {
         asset: SanityImageAsset
     }
 }
 
-export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, description, startDate, endDate, coverImage, link}}) => {
+export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, description, startDate, endDate, coverImage=null, link}}) => {
     
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
             <div className="image-blend absolute inset-0"></div>
-            <Image
+            {
+                coverImage && <Image
                 {...useNextSanityImage(browserClient, coverImage)}
                 placeholder={"blur"}
                 blurDataURL={coverImage.asset.metadata.lqip}
                 alt=""
                 className="absolute inset-0 -z-10 h-full w-full object-cover object-top image-filters"
             />
+            }
+            
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1097 845"
@@ -87,8 +90,8 @@ export const Notice: FC<{notice: NoticeWithImage}> = ({notice : {title, descript
                 <div className="mx-auto max-w-2xl lg:mx-0">
                     <H1>{title}</H1>
                     <div className="hidden lg:block">
-                        <Subheading>
-                            {description}
+                        <Subheading >
+                            <div className="line-clamp-2">{description}</div>
                         </Subheading>
                     </div>
                 </div>

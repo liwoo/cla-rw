@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 
 import {Container} from '@/components/Container'
@@ -15,7 +16,7 @@ const testimonials = [
             author: {
                 name: 'Sheryl Berge',
                 role: 'CEO at Lynch LLC',
-                image: avatarImage1,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
         {
@@ -24,7 +25,7 @@ const testimonials = [
             author: {
                 name: 'Amy Hahn',
                 role: 'Director at Velocity Industries',
-                image: avatarImage4,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
     ],
@@ -35,7 +36,7 @@ const testimonials = [
             author: {
                 name: 'Leland Kiehn',
                 role: 'Founder of Kiehn and Sons',
-                image: avatarImage5,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
         {
@@ -44,7 +45,7 @@ const testimonials = [
             author: {
                 name: 'Erin Powlowski',
                 role: 'COO at Armstrong Inc',
-                image: avatarImage2,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
     ],
@@ -55,7 +56,7 @@ const testimonials = [
             author: {
                 name: 'Peter Renolds',
                 role: 'Founder of West Inc',
-                image: avatarImage3,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
         {
@@ -64,7 +65,7 @@ const testimonials = [
             author: {
                 name: 'Amy Hahn',
                 role: 'Director at Velocity Industries',
-                image: avatarImage4,
+                image: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
             },
         },
     ],
