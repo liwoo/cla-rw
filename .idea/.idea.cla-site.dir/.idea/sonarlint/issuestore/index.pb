@@ -149,3 +149,5 @@ b
 2src/components/about/ServiceTimes/ServiceTimes.tsx,d/b/db44a08802c5afb9f0e1dc01badab66359f7c125
 J
 src/components/SubMenu.tsx,b/2/b2c0bff50f7eb6becb0adbab0a7a7c68663982af
+P
+ src/components/about/Beliefs.tsx,3/1/314f0a2deab20cc73560792b0ea8ff68d03b90b8
