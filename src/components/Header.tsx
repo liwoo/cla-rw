@@ -85,9 +85,9 @@ export const Header: FC<{ company: string }> = ({company}) => {
                             )}
                         </Popover>
 
-                        <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                        <Link href="/about" prefetch className="text-base font-medium text-gray-500 hover:text-gray-900">
                             Connect
-                        </a>
+                        </Link>
                         <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
                             Grow
                         </a>

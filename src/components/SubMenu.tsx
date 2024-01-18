@@ -1,9 +1,10 @@
 import clsx from 'clsx'
 import React from 'react'
 import { Container } from './Container'
+import {MenuItem} from "@/components/about/ServiceTimes/ServiceTimes";
 
 interface SubMenuProps {
-  items: {name:string}[]
+  items: MenuItem[]
   active?: {name:string} | null
   color?: string
   activeBorderColor?: string
@@ -25,7 +26,7 @@ const SubMenu = ({
             item={item}
             active={item.name == active?.name}
             color={color}
-            onClick={onItemClick}
+            onClick={() => onItemClick(item.index)}
             activeBorderColor={activeBorderColor}
           />
         ))}
@@ -52,7 +53,7 @@ const MenuItem = ({
   onClick,
 }: MenuItemProps) => {
   return (
-    <div className="mx-2 md:mx-6" onClick={() => onClick(item)}>
+    <div className="mx-2 md:mx-6 cursor-pointer" onClick={() => onClick(item)}>
       <div
         className={clsx(
           color,

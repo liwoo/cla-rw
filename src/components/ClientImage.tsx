@@ -3,6 +3,11 @@
 import Image from "next/image";
 interface ImageProps {
     title?: string
+    width?: number
+    height?: number
+    src?: string
+    alt?: string
+    className?: string
 }
 
 export default function ClientImage({title = "About Page"}: Readonly<ImageProps>) {

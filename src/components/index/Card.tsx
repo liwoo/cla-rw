@@ -2,6 +2,7 @@ import React from "react";
 import {CardTitle} from "@/components/CardTitle";
 import {ArrowRightIcon} from "@heroicons/react/20/solid";
 import Image from "next/image";
+import ClientImage from "@/components/ClientImage";
 
 interface CardProps {
     title: string;
@@ -15,7 +16,7 @@ export const Card = ({title, subtitle, image, href}: CardProps) => {
         <a href="https://google.com"
            className="relative cursor-pointer flex items-center space-x-3 pointer-cursor rounded-lg border border-gray-300 bg-white p-2 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
             <div className="flex-1 min-w-1/3">
-                <Image className="rounded-md"
+                <ClientImage className="rounded-md"
                        width={256}
                        height={256}
                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
