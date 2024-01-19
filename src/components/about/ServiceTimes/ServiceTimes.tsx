@@ -15,6 +15,8 @@ import {useState} from "react";
 export interface MenuItem {
     index: number
     name: string
+    start_time:string
+    venue:string
     description: string
     icon: any
 }
@@ -23,6 +25,8 @@ const cards: MenuItem[] = [
     {
         index: 0,
         name: 'Adults',
+        start_time:"10:20AM",
+        venue:"Chichiri",
         description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.',
         icon: PhoneIcon,
@@ -30,6 +34,8 @@ const cards: MenuItem[] = [
     {
         index: 1,
         name: 'Technical Support',
+        start_time:"10:20AM",
+        venue:"Nyambadwe",
         description:
             'Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.',
         icon: LifebuoyIcon,
@@ -37,6 +43,8 @@ const cards: MenuItem[] = [
     {
         index: 2,
         name: 'Media Inquiries',
+        start_time:"10:20AM",
+        venue:"Manja",
         description:
             'Ratione et porro eligendi est sed ratione rerum itaque. Placeat accusantium impedit eum odit.',
         icon: NewspaperIcon,
@@ -51,21 +59,21 @@ const ServiceTimes = () => {
         'https://res.cloudinary.com/tiyeni/image/upload/v1679808591/2X0A4983.jpg'
     return (
         <>
-            <div className="relative isolate overflow-hidden bg-gray-600 py-16 sm:py-32 lg:py-16">
+            <div className="relative isolate overflow-hidden bg-gray-600 py-16 ">
                 <BackgroundImage src={backgroungImg} alt="Background"/>
+                <Container className="flex flex-col justify-between relative min-h-[450px]">
+                
                 <SubMenu
                     items={cards}
                     active={cards[active] ?? null}
                     onItemClick={(index: number) => setActive(index)}
                 />
-
-                <Container className="mt-56">
-                    <ItemDetailsCard item={cards[0] ?? null}/>
+                <ItemDetailsCard item={cards[active]}/>
                 </Container>
             </div>
             <ServiceTimeLocation
-                time="18:00AM"
-                location="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                time={cards[active]?.start_time}
+                location={cards[active]?.venue}
                 imageSrc={image}
             />
         </>

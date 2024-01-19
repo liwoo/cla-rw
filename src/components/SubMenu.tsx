@@ -57,7 +57,7 @@ const MenuItem = ({
       <div
         className={clsx(
           color,
-          `whitespace-nowrap text-sm font-semibold uppercase md:text-base`
+          `whitespace-nowrap text-sm font-semibold capitalize md:uppercase md:text-base ease-in-out hover:opacity-70 transition-all duration-400 `
         )}
       >
         {item.name}
@@ -71,3 +71,5 @@ const MenuItem = ({
     </div>
   )
 }
+
+
