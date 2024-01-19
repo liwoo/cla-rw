@@ -3,6 +3,7 @@ import {Subheading} from "@/components/typography/Subheading";
 import {Container} from "@/components/Container";
 import {LargeButton} from "@/components/LargeButton";
 import Image from "next/image";
+import ClientImage from "@/components/ClientImage";
 
 export const FindCell = () => {
     const cellBased = "Cell based churches are small groups of people who meet together regularly to worship, pray, and study the Bible.";
@@ -12,7 +13,7 @@ export const FindCell = () => {
                 <PageTitle title="Find Cell"/>
                 <div className="flex flex-col md:flex-row flex-wrap justify-between my-16">
                     <div className="w-full md:w-1/2 lg:w-2/5">
-                        <Image
+                        <ClientImage
                             width={1470}
                             height={980}
                             src="https://images.unsplash.com/photo-1526746323784-6bc814d79273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
