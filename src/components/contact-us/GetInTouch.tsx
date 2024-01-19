@@ -21,6 +21,8 @@ const GetInTouch = () => {
     },
   ]
   const active = contactsMenu[contactsMenu.length - 1]
+
+  console.log(active)
   return (
     <Container>
       <div className="my-8 flex justify-center">
@@ -30,7 +32,7 @@ const GetInTouch = () => {
             {...item}
             className={clsx(
               active.name == item.name ? 'bg-surface-dark' : 'bg-transparent',
-              'mx-2 md:mx-4 bg-gray-200'
+              'mx-2 md:mx-4 hover:bg-gray-100 cursor-pointer'
             )}
           />
         ))}
