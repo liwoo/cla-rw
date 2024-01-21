@@ -1,9 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
-import React from 'react'
 
 const Pagination = () => {
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center justify-between md:justify-end'>
         <div className='p-4 bg-secondary items-center text-center cursor-pointer'>
             <ChevronLeftIcon className='h-8 text-white'/>
         </div>

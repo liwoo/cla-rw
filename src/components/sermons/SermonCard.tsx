@@ -2,8 +2,9 @@
 import PlayButton from '@/components/PlayButton'
 import { BookOpenIcon, CalendarIcon } from '@heroicons/react/20/solid'
 import clsx, { ClassValue } from 'clsx'
-import Image from 'next/image'
 import { HTMLAttributes } from 'react'
+import ClientImage from '@/components/ClientImage'
+
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
   className?: ClassValue
 }
@@ -16,24 +17,19 @@ interface SermonProps extends ModifiedHTMLAttributes<HTMLDivElement> {
 const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
   return (
     <div className={clsx(className)}>
-      <div className="flex items-end justify-between">
+      <div className="block md:flex items-end justify-between">
         <div>
-          <div className="flex">
-            <div className="relative w-32">
-              <Image
+          <div className="block md:flex">
+            <div className="relative w-full md:w-36 pt-[50%] md:pt-0 my-2 md:my-0">
+              <ClientImage
                 fill
                 quality={50}
-                placeholder={'blur'}
-                blurDataURL={
-                  'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
-                }
                 src={img}
                 alt={title}
-                className="absolute inset-0 h-full w-full object-cover object-top"
               />
             </div>
 
-            <div className="mx-8">
+            <div className="mx-0 md:mx-8 py-2">
               <div className="my-2 text-xl font-bold">{title}</div>
               <div className="my-2 flex items-center">
                 <BookOpenIcon className="mr-2 h-8" /> {book ?? '-'}
@@ -45,7 +41,7 @@ const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
           </div>
         </div>
         <div>
-          <div className="flex">
+          <div className="flex justify-center md:justify-end">
             <PlayButton className="mr-4" />
             <PlayButton type="audio" />
           </div>

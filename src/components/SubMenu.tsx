@@ -12,6 +12,7 @@ interface SubMenuProps  extends ModifiedHTMLAttributes<HTMLDivElement> {
   color?: string
   activeBorderColor?: string
   onItemClick: Function
+  
 }
 
 const SubMenu = ({
@@ -23,7 +24,6 @@ const SubMenu = ({
   className="flex items-center justify-center"
 }: SubMenuProps) => {
   return (
-    <Container className="pb-8">
       <div className={clsx(className)}>
         {items.map((item) => (
           <MenuItem
@@ -36,7 +36,6 @@ const SubMenu = ({
           />
         ))}
       </div>
-    </Container>
   )
 }
 
