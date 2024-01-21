@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
+import ClientImage from '@/components/ClientImage'
 
 interface ServiceTimeLocationProps {
   time: string
@@ -24,16 +25,10 @@ const ServiceTimeLocation = ({ time, location,imageSrc }: ServiceTimeLocationPro
           </div>
         </div>
         <div className="hidden md:block absolute bottom-0 right-0 overflow-hidden pt-[30%] w-2/5">
-          <Image
+          <ClientImage
             fill
-            quality={50}
-            placeholder={'blur'}
-            blurDataURL={
-              'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
-            }
             src={imageSrc}
             alt="Coming Soon"
-            className="absolute top-0 object-cover"
           />
         </div>
       </Container>
