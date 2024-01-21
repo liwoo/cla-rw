@@ -46,7 +46,7 @@ interface PathsParams {
 //TODO: Get this from env
 const baseUrl = "https://clarwanda.org";
 
-export async function generateStaticParams() {
+async function generateStaticParams() {
     const posts = await getAllPosts();
     
     if (!posts) {

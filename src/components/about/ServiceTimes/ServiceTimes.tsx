@@ -12,7 +12,7 @@ import ServiceTimeLocation from '@/components/about/ServiceTimes/ServiceTimeLoca
 import {Container} from '@/components/Container'
 import {useState} from "react";
 
-export interface MenuItem {
+export interface Service {
     index: number
     name: string
     start_time:string
@@ -21,7 +21,7 @@ export interface MenuItem {
     icon: any
 }
 
-const cards: MenuItem[] = [
+const cards: Service[] = [
     {
         index: 0,
         name: 'Adults',
@@ -52,7 +52,7 @@ const cards: MenuItem[] = [
 ]
 
 const ServiceTimes = () => {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(cards[0]??null);
     const backgroungImg =
         'https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png'
     const image =
@@ -65,15 +65,15 @@ const ServiceTimes = () => {
                 
                 <SubMenu
                     items={cards}
-                    active={cards[active] ?? null}
-                    onItemClick={(index: number) => setActive(index)}
+                    active={active}
+                    onItemClick={(item) => setActive(item)}
                 />
-                <ItemDetailsCard item={cards[active]}/>
+                <ItemDetailsCard item={active}/>
                 </Container>
             </div>
             <ServiceTimeLocation
-                time={cards[active]?.start_time}
-                location={cards[active]?.venue}
+                time={active?.start_time}
+                location={active?.venue}
                 imageSrc={image}
             />
         </>

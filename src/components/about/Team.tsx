@@ -1,12 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
+import ClientImage from '@/components/ClientImage'
 
 const Team = () => {
   const categories = [{ name: 'All Staff' }, { name: 'Pastoral Staff' }]
+  const [activeCategory,setActiveCategory]=useState(categories[0]??null)
   const members = Array.from(Array(12).keys()).map((i) => {
     return {
       name: 'Staff Name',
@@ -21,10 +23,10 @@ const Team = () => {
       <Container>
         <SubMenu
           items={categories}
-          active={categories[0]}
+          active={activeCategory}
           color={'text-black'}
           activeBorderColor={'border-primary'}
-          onItemClick={()=>{}}
+          onItemClick={(item)=>{setActiveCategory(item)}}
         />
         <div className="mt-6 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-6 gap-16">
           {members.map((item) => {
@@ -47,16 +49,10 @@ const Member = ({ name, office, imgSrc }: MemberProps) => {
   return (
     <div>
       <div className="relative my-4 w-full overflow-hidden rounded-md pt-[100%]">
-        <Image
-          quality={50}
-          placeholder={'blur'}
+        <ClientImage
           fill
-          blurDataURL={
-            'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
-          }
           src={imgSrc}
           alt={name}
-          className="absolute top-0 object-cover"
         />
       </div>
       <div className="font-semibold">{name}</div>

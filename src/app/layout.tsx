@@ -37,7 +37,7 @@ export default function RootLayout({children}: Readonly<RootLayoutProps>) {
         >
         <body className="flex h-full flex-col bg-surface">
         <Header company={company}/>
-        <main className="bg-surface pt-16 md:pt-32 pb-4">
+        <main className="bg-surface pt-16 md:pt-32">
             {children}
         </main>
         <Script/>
