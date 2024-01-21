@@ -13,8 +13,8 @@ interface ContactIconProps extends ModifiedHTMLAttributes<HTMLDivElement> {
 
 const ContactIcon = ({className,...props}:ContactIconProps) => {
   return (
-    <div className={clsx(className,"p-4 md:p-8 rounded-lg text-center inline-block")} {...props}>
-        <props.icon className="h-8 md:h-16 my-2 mx-auto text-secondary"/>
+    <div className={clsx(className,"p-2 md:p-8 rounded-lg text-center inline-block")} {...props}>
+        <props.icon className="h-6 md:h-14 my-2 mx-auto text-secondary"/>
         <div className="text-xs md:text-base whitespace-nowrap">{props.name}</div>
     </div>
   )

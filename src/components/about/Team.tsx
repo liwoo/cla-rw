@@ -6,9 +6,13 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 
 const Team = () => {
-  const categories = [{ name: 'All Staff' }, { name: 'Pastoral Staff' }]
-  const members = Array.from(Array(12).keys()).map((i) => {
+  const categories = [
+    { index: 0, name: 'All Staff' },
+    { index: 1, name: 'Pastoral Staff' },
+  ]
+  const members = Array.from(Array(12).keys()).map((i, index) => {
     return {
+      index,
       name: 'Staff Name',
       office: 'Office',
       imgSrc:
@@ -24,9 +28,9 @@ const Team = () => {
           active={categories[0]}
           color={'text-black'}
           activeBorderColor={'border-primary'}
-          onItemClick={()=>{}}
+          onItemClick={() => {}}
         />
-        <div className="mt-6 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-6 gap-16">
+        <div className="xs:grid-cols-2 3xl:grid-cols-6 mt-6 grid grid-cols-1 gap-16 sm:grid-cols-3 lg:grid-cols-4">
           {members.map((item) => {
             return <Member key={item.name} {...item} />
           })}

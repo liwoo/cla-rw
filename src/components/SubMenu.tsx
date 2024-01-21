@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 import React from 'react'
 import { Container } from './Container'
-import {MenuItem} from "@/components/about/ServiceTimes/ServiceTimes";
+import { MenuItem } from '@/utils/types'
+
 
 interface SubMenuProps {
   items: MenuItem[]

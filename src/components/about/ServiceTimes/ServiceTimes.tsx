@@ -12,7 +12,7 @@ import ServiceTimeLocation from '@/components/about/ServiceTimes/ServiceTimeLoca
 import {Container} from '@/components/Container'
 import {useState} from "react";
 
-export interface MenuItem {
+export interface Service {
     index: number
     name: string
     start_time:string
@@ -21,7 +21,7 @@ export interface MenuItem {
     icon: any
 }
 
-const cards: MenuItem[] = [
+const cards: Service[] = [
     {
         index: 0,
         name: 'Adults',
@@ -62,7 +62,6 @@ const ServiceTimes = () => {
             <div className="relative isolate overflow-hidden bg-gray-600 py-16 ">
                 <BackgroundImage src={backgroungImg} alt="Background"/>
                 <Container className="flex flex-col justify-between relative min-h-[450px]">
-                
                 <SubMenu
                     items={cards}
                     active={cards[active] ?? null}

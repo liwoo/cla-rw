@@ -12,7 +12,7 @@ const GetInTouch = () => {
       icon: MapPinIcon,
     },
     {
-      name: 'Check Contact List',
+      name: 'Contact List',
       icon: PhoneIcon,
     },
     {

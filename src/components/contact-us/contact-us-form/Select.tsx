@@ -24,14 +24,13 @@ const Select = ({
     <div className="relative">
       <label
         htmlFor={htmlFor}
-        className="my-4 block text-sm font-semibold leading-6 text-gray-900"
+        className="my-2 block text-sm font-semibold leading-6 text-gray-900"
       >
         {label} {required && <span className="text-primary">*</span>}
       </label>
       <select
         name={name}
-        placeholder={placeholder}
-        className="shodow-md block w-full rounded-full border-0 px-2 md:px-4 py-2.5 md:py-5 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-800 sm:text-sm sm:leading-6"
+        className="shodow-md block w-full rounded-full border-0 px-2 md:px-3 py-2 md:py-4 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-800 sm:text-sm sm:leading-6"
       >
         <option className='text-surface-dark'>{placeholder}</option>
         {options.map((option) => (
