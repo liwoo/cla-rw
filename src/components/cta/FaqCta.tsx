@@ -37,7 +37,7 @@ const Item = ({ title, description, ctaText, to }: Faq) => {
     <div className="h-full">
       <div className="my-6 text-3xl font-semibold">{title}</div>
       <div className="my-6 line-clamp-4">{description}</div>
-      <Link className="flex items-center font-bold  text-primary" href={to}>
+      <Link className="flex items-center font-bold  text-primary hover:opacity-65 transition-all duration-300" href={to}>
         <div>{ctaText}</div>
         <ArrowRightIcon className="mx-2 h-6 text-primary" />
       </Link>

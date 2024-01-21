@@ -1,9 +1,8 @@
-"use client"
 import { ReactNode } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import { Container } from '@/components/Container'
-import Image from 'next/image'
 import clsx from 'clsx'
+import ClientImage from '@/components/ClientImage'
 
 interface SectionProps {
   title: string
@@ -38,16 +37,9 @@ const Section = ({
             ) : (
               <div className="relative w-full overflow-hidden rounded-md pt-[100%] md:pt-[120%]">
                 {imgSrc && (
-                  <Image
-                    quality={50}
-                    placeholder={'blur'}
+                  <ClientImage
                     fill
-                    blurDataURL={
-                      'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
-                    }
                     src={imgSrc}
-                    alt="Coming Soon"
-                    className="absolute top-0 object-cover"
                   />
                 )}
               </div>

@@ -5,8 +5,8 @@ import Accordion from '../Accordion'
 import { Container } from '../Container'
 
 const StartingPoint = () => {
-  const how = Array.from(Array(4).keys()).map(() => ({
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  const how = Array.from(Array(4).keys()).map((_i,index) => ({
+    title: `Lorem ipsum dolor sit amet consectetur adipisicing elit. ${index}`,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facere eaque esse consequuntur quidem impedit incidunt repellendus sapiente eum veniam tempora officiis aperiam cum optio, sed voluptatum recusandae aut dignissimos.',
   }))

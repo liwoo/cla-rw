@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Section from '@/components/Section'
 
 const NewHere = () => {
