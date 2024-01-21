@@ -1,12 +1,12 @@
 import {ReactNode} from "react";
 import {Metadata} from "next";
 import {Inter} from 'next/font/google'
-import {twMerge} from "tailwind-merge";
 import Script from "next/script";
 
 import '@/styles/tailwind.css';
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
+import clsx from "clsx";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -32,7 +32,7 @@ const company = "CLA Rwanda";
 export default function RootLayout({children}: Readonly<RootLayoutProps>) {
     return (
         <html
-            className={twMerge(inter.className, "h-full scroll-smooth bg-white antialiased [font-feature-settings:'ss01']")}
+            className={clsx(inter.className, "h-full scroll-smooth bg-white antialiased [font-feature-settings:'ss01']")}
             lang="en"
         >
         <body className="flex h-full flex-col bg-surface">
