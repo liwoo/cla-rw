@@ -1,8 +1,7 @@
 import React, {FC, ReactNode} from "react";
 import Image from "next/image";
 import {H2} from "@/components/typography/H2";
-import {Subheading} from "@/components/typography/Subheading";
-import Image from "next/image";
+import {Subheading} from "@/components/typography/Subheading";;
 import {truncateString} from "@/utils/helpers";
 import {SanityAsset} from "@sanity/image-url/lib/types/types";
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
