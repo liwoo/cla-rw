@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {SanityImageAsset, SanityImageCrop, SanityImageHotspot, SanityReference} from "sanity-codegen";
 
 export interface SEOProps {
@@ -13,4 +14,14 @@ export interface SanityImageAssetLocal {
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
+}
+
+export interface ServiceItem{
+    name: string,
+    description:string,
+    icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
+}
+
+export interface MenuItem{
+    name: string
 }
