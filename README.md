@@ -4,6 +4,9 @@
 and [TypeScript](https://www.typescriptlang.org/).  The Content Management System is powered by [Sanity.io](https://www.sanity.io/)
 and you can use [GROQ](https://www.sanity.io/docs/groq) to query the data.
 
+## UX/UI Design
+The Adobe XD design files are available in [this design](https://drive.google.com/file/d/1MzEeYxjpYszEG2tyneYZCnIhtUhPZWZM/view?usp=share_link) file.
+
 ## Static Site Generation
 
 We use [Next.js](https://nextjs.org) to generate static HTML pages at build time.  This means that the site is
@@ -112,17 +115,26 @@ Below is the structure of the `/src` folder:
 │       ├── SomeCustomeIconNotFoundInHeroIcons.tsx
 ├── images/
 │   ├── some-static-image.png
-├── pages/
-│   ├── _app.tsx
-│   ├── _document.jsx
-│   ├── index.tsx
-│   └── blog.tsx
-├── posts/
-│   ├── [slug].tsx
+├── pages
+│   ├── _app.tsx
+│   ├── _document.jsx
+│   ├── about.tsx
+│   ├── index.tsx
+│   ├── posts
+│   │   └── [slug].tsx
+│   └── soon.tsx
 ├── styles/
 │   └── tailwind.css
+├── sanity
+│   ├── browser-client.ts
+│   ├── client.ts
+│   ├── queries
+│   │   ├── home-page.ts
+│   ├── posts.ts
+│   └── schema.ts
 └── utils/
     └── helpers.ts
+    |__ types.ts
 ```
 
 ## License
