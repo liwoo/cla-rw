@@ -1,16 +1,15 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
+import ClientImage from '@/components/ClientImage'
 
 const Team = () => {
-  const categories = [
-    { index: 0, name: 'All Staff' },
-    { index: 1, name: 'Pastoral Staff' },
-  ]
-  const members = Array.from(Array(12).keys()).map((i, index) => {
+  const categories = [{ name: 'All Staff' }, { name: 'Pastoral Staff' }]
+  const [activeCategory, setActiveCategory] = useState(categories[0] ?? null)
+  const members = Array.from(Array(12).keys()).map((i) => {
     return {
       index,
       name: 'Staff Name',
@@ -25,10 +24,12 @@ const Team = () => {
       <Container>
         <SubMenu
           items={categories}
-          active={categories[0]}
+          active={activeCategory}
           color={'text-black'}
           activeBorderColor={'border-primary'}
-          onItemClick={() => {}}
+          onItemClick={(item) => {
+            setActiveCategory(item)
+          }}
         />
         <div className="xs:grid-cols-2 3xl:grid-cols-6 mt-6 grid grid-cols-1 gap-16 sm:grid-cols-3 lg:grid-cols-4">
           {members.map((item) => {
@@ -51,17 +52,7 @@ const Member = ({ name, office, imgSrc }: MemberProps) => {
   return (
     <div>
       <div className="relative my-4 w-full overflow-hidden rounded-md pt-[100%]">
-        <Image
-          quality={50}
-          placeholder={'blur'}
-          fill
-          blurDataURL={
-            'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
-          }
-          src={imgSrc}
-          alt={name}
-          className="absolute top-0 object-cover"
-        />
+        <ClientImage fill src={imgSrc} alt={name} />
       </div>
       <div className="font-semibold">{name}</div>
       <div className="font-extralight">{office}</div>

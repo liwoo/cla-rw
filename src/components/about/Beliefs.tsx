@@ -6,6 +6,7 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { pad } from '@/utils/helpers'
+import { MenuItem } from '@/utils/types'
 
 interface BeliefItem {
   id: string
@@ -22,7 +23,7 @@ const Beliefs = () => {
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta iure beatae debitis, nobis repudiandae doloribus sit voluptatibus facilis voluptatum, eos corrupti quaerat, sunt perspiciatis enim expedita! Iure aspernatur alias maxime?',
   }))
 
-  const [active, setActive] = useState(beliefs[0] ?? null)
+  const [active, setActive] = useState<BeliefItem | null>(beliefs[0] ?? null)
 
   const onOptionClick = (option) => {
     setActive(option)
@@ -32,10 +33,10 @@ const Beliefs = () => {
     <section className="bg-surface-dark py-8">
       <PageTitle title={'Our Beliefs'} />
       <Container>
-        <div className="flex w-full md:hidden my-8">
+        <div className="my-8 flex w-full md:hidden">
           <Select
             options={beliefs}
-            selected={active}
+            selected={active as MenuItem}
             onChange={onOptionClick}
           />
         </div>
@@ -99,7 +100,7 @@ interface SelectProps {
   onChange: Function
 }
 
-export function Select({ options, selected, onChange }: SelectProps) {
+export const Select = ({ options, selected, onChange }: SelectProps) => {
   return (
     <Listbox value={selected} onChange={(item) => onChange(item)}>
       {({ open }) => (

@@ -31,7 +31,7 @@ const SubMenu = ({
             item={item}
             active={item.name == active?.name}
             color={color}
-            onClick={() => onItemClick(item.index)}
+            onClick={() => onItemClick(item)}
             activeBorderColor={activeBorderColor}
           />
         ))}
@@ -43,7 +43,7 @@ const SubMenu = ({
 export default SubMenu
 
 interface MenuItemProps {
-  item: {name:string}
+  item: MenuItem
   active?: boolean
   color: string
   activeBorderColor: string

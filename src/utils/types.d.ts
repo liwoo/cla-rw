@@ -27,7 +27,6 @@ export interface ServiceItem {
   icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
 }
 
-export interface MenuItem {
-  index: number
-  name: string
+export interface MenuItem{
+    name: string
 }
