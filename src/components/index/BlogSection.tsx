@@ -23,7 +23,7 @@ const posts = [
   {
     id: 1,
     title: 'Sunday Celebratrion',
-    href: '#',
+    href: 'posts/sunday-celebration',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -39,7 +39,7 @@ const posts = [
   {
     id: 2,
     title: 'Improve Your Productivity and Work',
-    href: '#',
+    href: 'posts/improve-productivity',
     description:
       'Dolorum voluptatem ab molestias in magni nostrum. Sint deleniti corporis nam et deserunt illo consequatur. Cupiditate expedita fugit illum. Officia veniam atque dolorem a. Quisquam corrupti eveniet nam. Est fugit doloremque repellendus omnis quis id voluptatum.',
     imageUrl:
@@ -55,7 +55,7 @@ const posts = [
   {
     id: 3,
     title: 'Baby Dedication',
-    href: '#',
+    href: 'posts/baby-dedication',
     description:
       'Velit voluptate voluptas qui architecto alias aut. Et suscipit autem. Omnis distinctio sequi a velit maiores. Eum maxime necessitatibus et cumque. Porro maiores rem nesciunt. Nihil quae qui quae ipsa.',
     imageUrl:
