@@ -11,8 +11,8 @@ const History = () => {
     <section className="bg-surface py-8">
       <PageTitle title={'Brief History'} />
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
-          <div className="md:col-span-5 md:p-8 order-last  md:order-first">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-9">
+          <div className="order-last md:order-first md:col-span-5  md:p-8">
             <P>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Veritatis sit dolores odio excepturi culpa harum minus nulla

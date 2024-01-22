@@ -4,7 +4,10 @@ interface ImageProps {
   src: string
 }
 
-export default function BackgroundImage({ alt='coming soon', src }: ImageProps) {
+export default function BackgroundImage({
+  alt = 'coming soon',
+  src,
+}: ImageProps) {
   return (
     <ClientImage
       fill
