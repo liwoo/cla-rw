@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+"use client"
+import  { useState } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
 import { Container } from '@/components/Container'
