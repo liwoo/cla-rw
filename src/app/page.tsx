@@ -27,7 +27,7 @@ export default async function Page() {
         <>
             <Container className={"mt-8"}>
                 <Notice notice={notice as any} />
-                {/* <MediaHeroAction sermon={sermon} imageProps={useNextSanityImage(browserClient, sermon.mainImage ?? defaultImage)} /> */}
+                <MediaHeroAction sermon={sermon} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>
                 </div>
