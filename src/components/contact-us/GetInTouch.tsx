@@ -6,9 +6,13 @@ import ContactUsForm from '@/components/contact-us/contact-us-form/ContactUsForm
 import { Container } from '@/components/Container'
 import LocateUs from '@/components/contact-us/locate-us/LocateUs'
 import ContactList from '@/components/contact-us/contact-list/ContactList'
-import { Content } from 'next/font/google'
 import { useState } from 'react'
 
+interface ContactItem{
+  name:string
+  icon:any
+  content:React.JSX.Element
+}
 const GetInTouch = () => {
   const contactsMenu = [
     {
@@ -28,7 +32,7 @@ const GetInTouch = () => {
     },
   ]
 
-  const [active,setActive]=useState(contactsMenu[contactsMenu.length - 1]??null)
+  const [active,setActive]=useState<ContactItem|null>(contactsMenu[contactsMenu.length - 1]??null)
 
   return (
     <Container>
@@ -38,13 +42,13 @@ const GetInTouch = () => {
             onClick={()=>setActive(item)}
             key={item.name}
             className={clsx(
-              active.name == item.name ? 'bg-surface-dark' : 'bg-transparent',
+              active?.name == item.name ? 'bg-surface-dark' : 'bg-transparent',
               'mx-2 md:mx-4 hover:bg-gray-100 cursor-pointer'
             )} icon={item.icon} name={item.name}          />
         ))}
       </div>
 
-      {active.content}
+      {active?.content}
     </Container>
   )
 }
