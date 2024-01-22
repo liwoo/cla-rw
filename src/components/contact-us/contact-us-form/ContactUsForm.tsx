@@ -8,7 +8,7 @@ const ContactUsForm = () => {
   return (
     <form action="#" method="POST" className="my-8 md:my-16">
       <div className="my-8 rounded-4xl bg-white p-8 shadow-sm md:my-16 md:p-16">
-        <div className="mx-auto 2xl:w-4/6">
+        <div>
           <div className="my-8 text-2xl font-bold">Contact Form</div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
@@ -63,7 +63,7 @@ const ContactUsForm = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto 2xl:w-4/6">
+      <div >
         <div className="my-8 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas rem
           ipsa eos exercitationem numquam quidem quam porro libero, suscipit
