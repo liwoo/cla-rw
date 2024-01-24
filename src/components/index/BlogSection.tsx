@@ -3,14 +3,20 @@ import { PageTitle } from '@/components/PageTitle'
 import { H2 } from '@/components/typography/H2'
 import { Subheading } from '@/components/typography/Subheading'
 import { CalendarIcon } from '@heroicons/react/20/solid'
-import { Post } from '@/sanity/schema'
+import { Post, SanityImageAsset, SanityReference } from '@/sanity/schema'
 import { useNextSanityImage, UseNextSanityImageProps } from 'next-sanity-image'
 import browserClient from '@/sanity/browser-client'
 import Link from 'next/link'
 import { getHumanReadableDate } from '@/utils/helpers'
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(browserClient)
+
+function urlFor(source: SanityReference<SanityImageAsset>) {
+  return builder.image(source)
+}
 
 export const BlogSection = ({ posts }: { posts: Post[] }) => {
-  console.log('post 1 author')
   return (
     <div className="bg-white py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -26,7 +32,8 @@ export const BlogSection = ({ posts }: { posts: Post[] }) => {
               <Image
                 width={500}
                 height={500}
-                {...useNextSanityImage(browserClient, post.mainImage)}
+                src={urlFor(post.mainImage.asset).width(500).height(500).url()}
+                // {...useNextSanityImage(browserClient, post.mainImage)}
                 alt=""
                 className="aspect-video absolute inset-0 -z-10 h-full w-full object-cover"
               />
