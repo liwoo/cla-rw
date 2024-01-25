@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
-import Image from 'next/image'
 import { Container } from '@/components/Container'
 import ClientImage from '@/components/ClientImage'
 
