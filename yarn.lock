@@ -514,16 +514,17 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.7.0.tgz#b5bc1e081428794f6a4d239707b359404be35ce2"
   integrity sha512-Jh4t/593gxs0lJZ/z3NnasKlplXT2f+4y/LZYuaKZW5KAaiVFL/fThhs+17EbUd53jUVJ0QudYCBGbN/psvaqg==
 
-"@sanity/client@^5.4.1":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-5.4.2.tgz#253b11d76a058de1fe6ec4f191d5872c7825fa80"
-  integrity sha512-M/ebzTGwYq+NDGMfBWxKtwtmCRJbBvXxAIQXu/J0vxnr8mXKw8gBQ7GaG0tI4WJ54w5sI6pnrD6mPiKdRHVNYw==
+"@sanity/client@^6":
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-6.11.1.tgz#3c36109434775d1588b171e4840e6750415da6d1"
+  integrity sha512-em4jWdXl/yZQsXRslTqF+0kj5sFM9l9tVz7pE/vPLN0aYlX+jxovzX4PBXLC1/gdJVtpT4GQRHcTBcnNSOtPNA==
   dependencies:
-    "@sanity/eventsource" "5"
-    get-it "^8.1"
-    rxjs "7"
+    "@sanity/eventsource" "^5.0.0"
+    "@vercel/stega" "0.1.0"
+    get-it "^8.4.4"
+    rxjs "^7.0.0"
 
-"@sanity/eventsource@5":
+"@sanity/eventsource@^5.0.0":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-5.0.1.tgz#133bbb3cd4403cfe1bf6e6b62fc8ff5a76cbd5c7"
   integrity sha512-BFdRPTqVI76Nh18teu8850lV8DETdtJilFAlmQq/BdoXo88BSWBSTkIIi+H6AW1O9Nd7uT+9VRBqKuL2HKrYlA==
@@ -672,6 +673,11 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
+
+"@vercel/stega@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/stega/-/stega-0.1.0.tgz#2eadbbc9eb0eaab26d28b0c443a922d78c23b6e3"
+  integrity sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -1774,7 +1780,7 @@ get-intrinsic@^1.0.2, get-intrinsic@^1.1.1, get-intrinsic@^1.1.3, get-intrinsic@
     has-symbols "^1.0.3"
     hasown "^2.0.0"
 
-get-it@^8.1:
+get-it@^8.4.4:
   version "8.4.5"
   resolved "https://registry.yarnpkg.com/get-it/-/get-it-8.4.5.tgz#f60ef6724d80a1c522905e12c6ed9fdd540f03e2"
   integrity sha512-hOoAwSfJXy86QJPEsZFDtBsFBagyTAlYwLJkKZJN5q7ppXRQjq0Wies4d14icDSpVs7QVm4Wtt0XQzjxXlUdgg==
@@ -2529,12 +2535,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-sanity-client@^1.0.6:
+next-sanity-client@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/next-sanity-client/-/next-sanity-client-1.0.7.tgz#e2d5bcabf99e639912fc4b4303499063d84046a0"
   integrity sha512-DssolorU5S6hd4MXr92cVNJns5XAg9QdVzBnjnyJEsoG+V5T6AaFz3naJQN2cACl5X3xAkQblQ8pZKNyo3MQIg==
 
-next-sanity-image@^6.0.0:
+next-sanity-image@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-6.1.1.tgz#d4b7dedae4f89df88bf4012cd15113e78dfc2576"
   integrity sha512-mLRiatJW3TZoD3VlUCci4lOxW9lKOl0bxDsYtk/JRqKZo25QJqPXNV7aoD+lmjEFf6RO2eW7uJ57QeI20mPhOA==
@@ -3096,7 +3102,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@7:
+rxjs@^7.0.0:
   version "7.8.1"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==

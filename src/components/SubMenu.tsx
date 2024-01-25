@@ -1,11 +1,12 @@
 import clsx, { ClassValue } from 'clsx'
 import React, { HTMLAttributes } from 'react'
 import { Container } from '@/components/Container'
-import { MenuItem } from '@/utils/types'
+import {MenuItem} from "@/utils/types";
 
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
   className?: ClassValue;
 };
+
 interface SubMenuProps  extends ModifiedHTMLAttributes<HTMLDivElement> {
   items: MenuItem[]
   active?: {name:string} | null
@@ -31,7 +32,7 @@ const SubMenu = ({
             item={item}
             active={item.name == active?.name}
             color={color}
-            onClick={() => onItemClick(item.index)}
+            onClick={() => onItemClick(item)}
             activeBorderColor={activeBorderColor}
           />
         ))}
@@ -42,7 +43,7 @@ const SubMenu = ({
 export default SubMenu
 
 interface MenuItemProps {
-  item: {name:string}
+  item: MenuItem
   active?: boolean
   color: string
   activeBorderColor: string
