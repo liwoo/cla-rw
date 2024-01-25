@@ -1,9 +1,10 @@
 'use client'
 import PlayButton from '@/components/PlayButton'
-import { BookOpenIcon, CalendarIcon } from '@heroicons/react/20/solid'
+import {  CalendarIcon } from '@heroicons/react/20/solid'
 import clsx, { ClassValue } from 'clsx'
 import { HTMLAttributes } from 'react'
 import ClientImage from '@/components/ClientImage'
+import BookOpenIcon from '@/components/icons/BookOpenIcon'
 
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
   className?: ClassValue
@@ -32,7 +33,8 @@ const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
             <div className="mx-0 md:mx-8 py-2">
               <div className="my-2 text-xl font-bold">{title}</div>
               <div className="my-2 flex items-center">
-                <BookOpenIcon className="mr-2 h-8" /> {book ?? '-'}
+                <div className="mr-2 h-8 w-8"><BookOpenIcon   /></div>
+                 {book ?? '-'}
               </div>
               <div className="my-2 flex items-center">
                 <CalendarIcon className="mr-2 h-8" /> {date ?? '-'}
