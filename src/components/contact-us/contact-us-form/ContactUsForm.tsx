@@ -62,20 +62,22 @@ const ContactUsForm = () => {
             />
           </div>
         </div>
-      </div>
-      <div >
-        <div className="my-8 text-center">
+        <div >
+        <div className="flex my-8 justify-between">
+          <div className="flex items-center">
+          <input type='checkbox' className='mr-4'/>
+          <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas rem
           ipsa eos exercitationem numquam quidem quam porro libero, suscipit
-          eaque repellendus magnam eveniet inventore id reiciendis ducimus
-          aspernatur mollitia ratione.
-        </div>
-        <div className="flex justify-end">
+          </div>
+          </div>
           <LargeButton>
             <div className="font-bold">Submit</div>
           </LargeButton>
         </div>
       </div>
+      </div>
+      
     </form>
   )
 }
