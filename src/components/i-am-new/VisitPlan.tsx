@@ -65,8 +65,8 @@ const VisitPlan = () => {
               activeBorderColor="border-tertiary"
               items={cards}
               active={active ?? null}
-              onItemClick={(index) => {
-                setActive(cards[index])
+              onItemClick={(item:ChurchService) => {
+                setActive(item)
               }}
               className="justify-left flex items-center px-6 md:px-0"
             />
