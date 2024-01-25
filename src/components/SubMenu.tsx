@@ -1,11 +1,12 @@
 import clsx, { ClassValue } from 'clsx'
 import React, { HTMLAttributes } from 'react'
 import { Container } from '@/components/Container'
-import { MenuItem } from '@/utils/types'
+import {MenuItem} from "@/utils/types";
 
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
   className?: ClassValue;
 };
+
 interface SubMenuProps  extends ModifiedHTMLAttributes<HTMLDivElement> {
   items: MenuItem[]
   active?: {name:string} | null

@@ -21,10 +21,10 @@ export interface SanityImageAssetLocal {
   hotspot?: SanityImageHotspot
 }
 
-export interface ServiceItem {
-  name: string
-  description: string
-  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
+export interface ServiceItem{
+    name: string,
+    description:string,
+    icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
 }
 
 export interface MenuItem{
