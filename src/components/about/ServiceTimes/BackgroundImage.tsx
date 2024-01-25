@@ -13,7 +13,6 @@ export default function BackgroundImage({
       fill
       src={src}
       alt={alt}
-      className="absolute inset-0 h-full w-full object-cover object-top"
     />
   )
 }

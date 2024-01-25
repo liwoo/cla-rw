@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { Container } from '@/components/Container'
 import ClientImage from '@/components/ClientImage'
 

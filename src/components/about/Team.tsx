@@ -1,9 +1,10 @@
-'use client'
-import React, { useState } from 'react'
+"use client"
+import  { useState } from 'react'
 import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
 import { Container } from '@/components/Container'
 import ClientImage from '@/components/ClientImage'
+import { MenuItem } from '@/utils/types'
 
 const Team = () => {
   const categories = [{ name: 'All Staff' }, { name: 'Pastoral Staff' }]
@@ -21,7 +22,7 @@ const Team = () => {
       <PageTitle title={'Our Staff'} />
       <Container>
         <SubMenu
-          items={categories}
+          items={categories as MenuItem[]}
           active={activeCategory}
           color={'text-black'}
           activeBorderColor={'border-primary'}
