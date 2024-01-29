@@ -9,6 +9,7 @@ import browserClient from "@/sanity/browser-client";
 import {SanityImageAsset, SanityImageCrop, SanityImageHotspot, SanityReference} from "sanity-codegen";
 import Link from 'next/link';
 import ClientImage from "@/components/ClientImage";
+import {defaultImage} from "@/utils/default";
 
 interface CardProps {
     title: string
@@ -25,6 +26,7 @@ interface CardProps {
 }
 
 export const Card = ({title, subtitle, image, href, imageWidth, imageHeight}: CardProps) => {
+    const imageProps = useNextSanityImage(browserClient, image ?? defaultImage);
     return (
         <Link href={href ?? ""}>
             <div
@@ -34,7 +36,7 @@ export const Card = ({title, subtitle, image, href, imageWidth, imageHeight}: Ca
                         image && (
                             <Image
                                 className="rounded-md object-fill"
-                                {...useNextSanityImage(browserClient, image)}
+                                {...imageProps}
                                 width={500}
                                 height={500}
                                 alt={title}
