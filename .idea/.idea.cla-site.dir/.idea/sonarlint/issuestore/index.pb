@@ -7,8 +7,6 @@ L
 src/components/CardTitle.tsx,3/8/38f9cfe65d2e5631f92ccab59e841a0093f828e5
 R
 "src/components/icons/Copyright.tsx,a/a/aa93078cc32fea0a661f4cc2616480bcb7ddbde4
-G
-src/pages/_document.jsx,7/0/706595127b995066d115a4a615cd58de24096ac1
 S
 #src/components/icons/Calculator.tsx,9/2/9271d9e0410c8d5905d433bf05e98c1812ef3e47
 L
@@ -27,8 +25,6 @@ P
  src/components/SecondaryMenu.tsx,b/c/bcf3c5fa95db4c6b4a487b40228df6b16f6555d3
 O
 src/components/Testimonials.tsx,2/a/2a6a0aae1db6bff47cf71dbf270f756de0b455c1
-B
-src/pages/soon.tsx,6/7/67fa0beedffb969c84c41d297da8c6d63d6a4867
 B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
 I
@@ -83,26 +79,14 @@ M
 .eslintrc.json,7/1/71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 P
  src/components/cta/MediaHero.tsx,2/4/24a3ace29bb90a61950824af4ce6ea5c927ea58c
-S
-#src/components/cta/ServiceTimes.tsx,a/d/ad2babcff26c47295ee6562fdc1c572bcf18916b
 U
 %src/components/layouts/MainLayout.tsx,3/4/34587141738529ad7610f7b637e05c51ce83e8f6
 C
-src/pages/index.tsx,d/2/d2d3bb60cab7e8c869b5fdf0a820b7edf2fc7859
-J
-src/pages/posts/[slug].tsx,0/4/04d25259ed4dec0f3fa2920f7c4beb50276ce5f0
-C
 src/sanity/posts.ts,c/7/c71dd3d27bca3bffff038de04ae8795d65cdd863
-B
-src/pages/_app.tsx,2/e/2eefa41a18ed6ea3f58b3748f9e5559a28e77646
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-G
-src/app/about/about.tsx,4/b/4be7dec4f5a6ec4c095feb0ee767e6ffda30e0d1
 D
 src/utils/types.d.ts,3/f/3fd46d5fd978049de2e5e57ff00f7000618a4901
-H
-src/utils/default-seo.ts,9/b/9b77b2eccd0fc08ec1da1f1191636743e5ffe673
 B
 src/app/layout.tsx,c/f/cfb47de6ae0cae626eed46461300112ef521d977
 E
@@ -123,8 +107,6 @@ v
 F.idea/.idea.cla-site.dir/.idea/sonarlint/securityhotspotstore/index.pb,9/4/9420bc66e5949480d020ceb3dd0655043d719435
 9
 	yarn.lock,5/3/53585a096fe3a3b96321113856ae62602995a33b
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 =
 tsconfig.json,6/1/61ebb9fd6e8cf9082658121d5d81e297791dacd0
 =
@@ -135,14 +117,6 @@ D
 src/utils/default.ts,4/c/4c1f86d983cd2ce127d4e4f17d44526a9b94d983
 B
 .env.local.example,9/5/9558c8cde3b80d95bda0dc569658b6913c24dc24
-A
-src/pages/404.tsx,b/3/b3c2bc325769eaeb64f06db54cb6700e22e4e48c
-<
-src/page.tsx,c/f/cf8ed5ea54450a736470e16cae8728c1c7eddd11
-H
-src/app/posts/[slug].tsx,9/c/9ce7eeb81c734be1c1cc58ee59f267d284f686fc
-O
-src/app/posts/[slug]/[slug].tsx,8/8/88d47c44f0bb5470cdeab7f4983691c0aaa33786
 M
 src/app/posts/[slug]/page.tsx,5/f/5f2255c052efe91f5512677cca253ac6083edb85
 b
@@ -151,3 +125,5 @@ J
 src/components/SubMenu.tsx,b/2/b2c0bff50f7eb6becb0adbab0a7a7c68663982af
 P
  src/components/about/Beliefs.tsx,3/1/314f0a2deab20cc73560792b0ea8ff68d03b90b8
+X
+(src/components/posts/PostPageContent.tsx,9/0/90a7a24907d6f7dc86ab8d501972b589ec2a1f44

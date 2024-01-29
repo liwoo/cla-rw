@@ -27,10 +27,10 @@ export default function ClientImage({
   alt = 'Background',
   className = 'absolute inset-0 h-full w-full object-cover object-top',
 }: ImageProps) {
-  const dimentions = fill ? { fill } : { width, height }
+  const dimensions = fill ? { fill } : { width, height }
   return (
     <Image
-      {...dimentions}
+      {...dimensions}
       src={src}
       alt={alt}
       placeholder={'blur'}

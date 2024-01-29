@@ -2,37 +2,78 @@ import React, {FC} from "react";
 import {Card} from "@/components/index/Card";
 import {P} from "@/components/typography/P";
 import {ArrowRightIcon} from "@heroicons/react/20/solid";
+import {getCallToActions} from "@/sanity/home-page-data";
+import {truncateString} from "@/utils/helpers";
+import Link from "next/link";
 
-export const Highlights: FC = () => {
+export const Highlights: FC = async () => {
+    const highlights = await getCallToActions();
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-6 my-16 items-stretch">
             <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title"
-                      subtitle="Some other boring subtitle over here which is supposed to truncate after 2 lines, maybe"/>
+                {
+                    highlights[0] && (
+                        <Card title={highlights[0]?.title ?? ''}
+                              subtitle={truncateString(highlights[0].description ?? '')}
+                              image={highlights[0].coverImage}
+                              href={highlights[0].link}/>
+                    )
+                }
+
             </div>
             <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
+
+                {
+                    highlights[1] && (
+                        <Card title={highlights[1]?.title ?? ''}
+                              subtitle={truncateString(highlights[1].description ?? '')}
+                              image={highlights[1].coverImage}
+                              href={highlights[1].link}/>
+                    )
+                }
+
             </div>
             <div className="col-span-1 row-span-1 md:row-span-2 lg:row-span-3 hidden md:block">
-                <div className="h-full overflow-hidden relative rounded-md bg-cover bg-[url('https://images.unsplash.com/photo-1658273114791-6942e762fd78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')]" />
+                <div
+                    className="h-full overflow-hidden relative rounded-md bg-cover bg-[url('https://cdn.sanity.io/images/xq3nx3je/cla/94ceb3fa819b4f22f41dde71ed9d3455937e9ccc-500x500.png')]"/>
             </div>
             <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
+
+                {
+                    highlights[2] && (
+                        <Card title={highlights[2]?.title ?? ''}
+                              subtitle={truncateString(highlights[2].description ?? '')}
+                              image={highlights[2].coverImage}
+                              href={highlights[2].link}/>
+                    )
+                }
             </div>
             <div className="col-span-1 row-span-1">
-                <Card title="Some Cool Title" subtitle="Some other boring subtitle over here"/>
+                {
+                    highlights[3] && (
+                        <Card title={highlights[3]?.title ?? ''}
+                              subtitle={truncateString(highlights[3].description ?? '')}
+                              image={highlights[3].coverImage}
+                              href={highlights[3].link}/>
+                    )
+                }
             </div>
             <div
                 className="col-span-1 md:col-span-2 row-span-1 hover:shadow-lg p-4 hover:rounded-md transition-all cursor-pointer">
-                <a href="https://google.com" className="text-lg font-semibold flex items-center text-primary">
-                    Become a Christian
-                    <ArrowRightIcon className="h-5 w-5 mx-1"/>
-                </a>
-                <P>
-                    This can stand, from the other options or services that the church provides. It agrees with the main
-                    goal of a church, to bring more souls to Christ. Provide some description, not more that 3 lines, to
-                    prevent an overlap of this section.
-                </P>
+                {
+                    highlights[4] && (
+                        <Link href={highlights[4].link ?? ''}>
+                            <div className="text-lg font-semibold flex items-center text-primary">
+                                {highlights[4].title}
+                                <ArrowRightIcon className="h-5 w-5 mx-1"/>
+                            </div>
+                            <P>
+                                {truncateString(highlights[4].description ?? '', 1000)}
+                            </P>
+                        </Link>
+                    )
+                }
+
             </div>
         </div>
     )

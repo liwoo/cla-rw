@@ -15,8 +15,11 @@ dependencies:
     specifier: ^2.0.2
     version: 2.0.3(react@18.2.0)
   '@sanity/client':
-    specifier: ^5.4.1
-    version: 5.4.2
+    specifier: ^6
+    version: 6.12.2
+  '@sanity/image-url':
+    specifier: ^1.0.2
+    version: 1.0.2
   '@tailwindcss/forms':
     specifier: ^0.5.3
     version: 0.5.7(tailwindcss@3.4.1)
@@ -33,11 +36,11 @@ dependencies:
     specifier: 14.0.4
     version: 14.0.4(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
   next-sanity-client:
-    specifier: ^1.0.6
+    specifier: ^1.0.7
     version: 1.0.7(next@14.0.4)
   next-sanity-image:
-    specifier: ^6.0.0
-    version: 6.1.1(@sanity/client@5.4.2)(next@14.0.4)(react@18.2.0)
+    specifier: ^6.1.1
+    version: 6.1.1(@sanity/client@6.12.2)(next@14.0.4)(react@18.2.0)
   postcss-focus-visible:
     specifier: ^6.0.4
     version: 6.0.4(postcss@8.4.33)
@@ -1732,12 +1735,13 @@ packages:
     resolution: {integrity: sha512-Jh4t/593gxs0lJZ/z3NnasKlplXT2f+4y/LZYuaKZW5KAaiVFL/fThhs+17EbUd53jUVJ0QudYCBGbN/psvaqg==}
     dev: true
 
-  /@sanity/client@5.4.2:
-    resolution: {integrity: sha512-M/ebzTGwYq+NDGMfBWxKtwtmCRJbBvXxAIQXu/J0vxnr8mXKw8gBQ7GaG0tI4WJ54w5sI6pnrD6mPiKdRHVNYw==}
+  /@sanity/client@6.12.2:
+    resolution: {integrity: sha512-xilnmahweBvu6pDCahqX3h3c7B/aI2IbEFi1cQP/Mc1IkhRFPrghN4ton68R+OkCWbPIysezFNLr/ZlRTPXrMQ==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.1
-      get-it: 8.4.5
+      '@vercel/stega': 0.1.0
+      get-it: 8.4.6
       rxjs: 7.8.1
     transitivePeerDependencies:
       - supports-color
@@ -1906,6 +1910,10 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@vercel/stega@0.1.0:
+    resolution: {integrity: sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==}
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3149,8 +3157,8 @@ packages:
       hasown: 2.0.0
     dev: true
 
-  /get-it@8.4.5:
-    resolution: {integrity: sha512-hOoAwSfJXy86QJPEsZFDtBsFBagyTAlYwLJkKZJN5q7ppXRQjq0Wies4d14icDSpVs7QVm4Wtt0XQzjxXlUdgg==}
+  /get-it@8.4.6:
+    resolution: {integrity: sha512-omefjdbyRb2rRt0tnrZlbeWx9oZJm66o88K8JlYn13xELn+0+d6mJZOQHrJAdC3vxeJ4t/NHa4wh7Wlh+nvEJA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       debug: 4.3.4
@@ -3941,14 +3949,14 @@ packages:
       next: 14.0.4(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /next-sanity-image@6.1.1(@sanity/client@5.4.2)(next@14.0.4)(react@18.2.0):
+  /next-sanity-image@6.1.1(@sanity/client@6.12.2)(next@14.0.4)(react@18.2.0):
     resolution: {integrity: sha512-mLRiatJW3TZoD3VlUCci4lOxW9lKOl0bxDsYtk/JRqKZo25QJqPXNV7aoD+lmjEFf6RO2eW7uJ57QeI20mPhOA==}
     peerDependencies:
       '@sanity/client': ^5.0.0 || ^6.0.0
       next: ^13.0.0 || ^14.0.0
       react: ^18.0.0
     dependencies:
-      '@sanity/client': 5.4.2
+      '@sanity/client': 6.12.2
       '@sanity/image-url': 1.0.2
       next: 14.0.4(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
