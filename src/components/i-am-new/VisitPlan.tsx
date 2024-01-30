@@ -9,9 +9,9 @@ import { PageTitle } from '@/components/PageTitle'
 import SubMenu from '@/components/SubMenu'
 import Map from '@/components/i-am-new/Map'
 import { useState } from 'react'
-import { Service } from '@/components/about/ServiceTimes/ServiceTimes'
+import { ChurchService } from '@/components/about/ServiceTimes/ServiceTimes'
 
-const cards: Service[] = [
+const cards: ChurchService[] = [
   {
     index: 0,
     name: 'Adults',
@@ -41,7 +41,7 @@ const cards: Service[] = [
   },
 ]
 const VisitPlan = () => {
-  const [active, setActive] = useState(cards[0] ?? null)
+  const [active, setActive] = useState<ChurchService | null>(cards[0] ?? null)
 
   return (
     <section className="bg-surface py-8">
@@ -65,16 +65,16 @@ const VisitPlan = () => {
               activeBorderColor="border-tertiary"
               items={cards}
               active={active ?? null}
-              onItemClick={(index) => {
-                setActive(cards[index])
+              onItemClick={(item:ChurchService) => {
+                setActive(item)
               }}
               className="justify-left flex items-center px-6 md:px-0"
             />
             <div>
-              <div className="justify-center md:justify-left  flex p-10 py-8 md:p-20 md:py-16">
+              <div className="md:justify-left flex  justify-center p-10 py-8 md:p-20 md:py-16">
                 <div>
                   <div className="mb-4 text-lg font-semibold uppercase md:text-xl">
-                    TIME
+                    Time
                   </div>
                   <div className="text-xl font-semibold uppercase md:text-2xl">
                     {active?.start_time}
@@ -89,14 +89,14 @@ const VisitPlan = () => {
                 </div>
               </div>
             </div>
-            <div className="px-4 md:text-left text-center">
-              <div className="flex items-center justify-center md:justify-start text-2xl font-bold text-tertiary">
-                {active.name} <active.icon className="mx-2 my-4 h-6" />
+            <div className="px-4 text-center md:text-left">
+              <div className="flex items-center justify-center text-2xl font-bold text-tertiary md:justify-start">
+                {active?.name} {active && <active.icon className="mx-2 my-4 h-6" />}
               </div>
               <div className="mb-2 max-w-sm text-xl font-bold text-black">
                 What Should I Wear?
               </div>
-              <div className="max-w-sm text-black">{active.description}</div>
+              <div className="max-w-sm text-black">{active?.description}</div>
             </div>
           </div>
         </div>
