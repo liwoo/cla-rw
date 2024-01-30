@@ -1,11 +1,20 @@
-import {FC, ReactNode} from "react";
-import clsx from "clsx";
+import {FC, HTMLAttributes, ReactNode} from "react";
+import clsx, { ClassValue } from "clsx";
 
-type ButtonType = "Primary" | "Secondary" | "Tertiary";
+type ButtonType = 'Primary' | 'Secondary' | 'Tertiary'
+type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
+  className?: ClassValue
+}
 
-export const LargeButton: FC<{ buttonType?: ButtonType, children: ReactNode }> = ({
+interface LargeButtonProps extends ModifiedHTMLAttributes<HTMLDivElement> {
+  buttonType?: ButtonType
+  children: ReactNode
+}
+
+export const LargeButton: FC<LargeButtonProps> = ({
                                                                                       children,
-                                                                                      buttonType = "Primary"
+                                                                                      buttonType = "Primary",
+                                                                                      className
                                                                                   }) => {
     const buttonColor = {
         Primary: "bg-primary bg-origin-border text-white",
@@ -14,7 +23,7 @@ export const LargeButton: FC<{ buttonType?: ButtonType, children: ReactNode }> =
     }
     return (
         <button
-            className={clsx(buttonColor[buttonType], "transition-all inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent h-12 px-4 lg:px-8 text-base font-medium shadow-sm hover:bg-primary-dark")}
+            className={clsx(className,buttonColor[buttonType], "transition-all inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent h-12 px-7 lg:px-14 text-base font-medium shadow-sm hover:bg-primary-dark")}
         >
             {children}
         </button>
