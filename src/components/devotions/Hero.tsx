@@ -6,6 +6,8 @@ import Image from 'next/image'
 import PlayButton from '@/components/PlayButton'
 import SortBy from './SortBy'
 import { LargeButton } from '../LargeButton'
+import Facebook from '../icons/Facebook'
+import Twitter from '../icons/Twitter'
 
 const Hero = () => {
   const background =
@@ -40,8 +42,13 @@ const Hero = () => {
         <div className="text-center mb-4 text-2xl font-bold">
             Share devotionals with your online community
         </div>
-        <div className="flex justify-center">
-            logos
+        <div className="flex justify-center text-secondary">
+            <div className="w-12 mr-2">
+              <Facebook/>
+            </div>
+            <div className="w-12 mr-2">
+              <Twitter/>
+            </div>
         </div>
       </div>
     </Container>
