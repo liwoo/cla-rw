@@ -7,15 +7,23 @@ import BookFilterForm from '@/components/sermons/FilterForm/BookFilterForm'
 import Pagination from '@/components/sermons/Pagination'
 import { useState } from 'react'
 import Select from '@/components/Select'
+import { MenuItem } from '@/utils/types'
+
+interface Sermon{
+  title:string,
+  img:string,
+  book:string,
+  date:string
+}
 
 const FindSermons = () => {
-  const recentSermons = Array.from(Array(4).keys()).map((_i, index) => ({
+  const recentSermons:Sermon[] = Array.from(Array(4).keys()).map((_i, index) => ({
     title: 'Sermon Title',
     img: 'https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png',
     book: '2 Timothy 5',
     date: '20, June 2021',
   }))
-  const [filter, setFilter] = useState(sermonFilters[0] ?? null)
+  const [filter, setFilter] = useState<MenuItem | null>(sermonFilters[0] ?? null)
 
   return (
     <section className="bg-surface py-8">
@@ -39,8 +47,8 @@ const FindSermons = () => {
           <SubMenu
             active={filter}
             items={sermonFilters.map((i, index) => ({ ...i, index }))}
-            onItemClick={(index: number) => {
-              setFilter(sermonFilters[index])
+            onItemClick={(filter:MenuItem) => {
+              setFilter(filter)
             }}
             color="text-black"
             activeBorderColor="border-primary"

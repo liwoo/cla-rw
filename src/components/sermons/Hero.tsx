@@ -1,13 +1,14 @@
 
-import { MagnifyingGlassIcon} from '@heroicons/react/20/solid'
+import { MagnifyingGlassIcon, MicrophoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
 import React from 'react'
 import { Container } from '@/components/Container'
-import PlayButton from '@/components/PlayButton'
 import Youtube from '@/components/icons/Youtube'
 import Spotify from '@/components/icons/Spotify'
 import ApplePodcast from '@/components/icons/ApplePodcast'
 import GooglePodcast from '@/components/icons/GooglePodcast'
 import ClientImage from '../ClientImage'
+import { LargeButton } from '../LargeButton'
+import LargeButtonOutline from '../LargeButtonOutline'
 
 const Hero = () => {
   const background =
@@ -31,8 +32,8 @@ const Hero = () => {
               <div className="text-sm">Psalms 119:105</div>
             </div>
             <div className="relative flex justify-center md:justify-start">
-              <PlayButton className="mr-4" />
-              <PlayButton type="audio" className="!text-white border-white" />
+              <LargeButton className="mr-4" ><PlayCircleIcon className="h-10" /></LargeButton>
+              <LargeButtonOutline className="mr-4 border-white" ><MicrophoneIcon className="h-7 text-white" /></LargeButtonOutline>
             </div>
           </div>
         </div>
