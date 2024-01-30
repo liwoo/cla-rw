@@ -1,3 +1,4 @@
+"use client"
 import React, {FC, ReactNode} from "react";
 import {H2} from "@/components/typography/H2";
 import {Subheading} from "@/components/typography/Subheading";
