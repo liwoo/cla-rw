@@ -3,7 +3,6 @@ import { MagnifyingGlassIcon} from '@heroicons/react/20/solid'
 import React from 'react'
 import { Container } from '@/components/Container'
 import Image from 'next/image'
-import PlayButton from '@/components/PlayButton'
 import SortBy from './SortBy'
 import { LargeButton } from '../LargeButton'
 import Facebook from '../icons/Facebook'
@@ -33,9 +32,9 @@ const Hero = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto nostrum eius non iste, consequatur quae, voluptate incidunt perferendis in nobis repellendus assumenda ipsam quia expedita illum. Autem, saepe deserunt.
         </div>
         <div className="flex justify-center">
-            <LargeButton buttonType='Secondary' outlined className="my-6">
+            <LargeButton buttonType='Secondary' className="my-6">
                 <div className='font-semibold'>Continue Reading</div>
-                </LargeButton>
+            </LargeButton>
         </div>
       </div>
       <div className='my-16'>
