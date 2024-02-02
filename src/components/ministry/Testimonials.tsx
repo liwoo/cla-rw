@@ -1,8 +1,6 @@
-'use client'
-import Image from 'next/image'
-import { PageTitle } from '../PageTitle'
-import { Container } from '../Container'
-import ClientImage from '../ClientImage'
+import { PageTitle } from '@/components/PageTitle'
+import { Container } from '@/components/Container'
+import ClientImage from '@/components/ClientImage'
 import { TestimonialItem } from '@/utils/types'
 
 const Testimonials = () => {

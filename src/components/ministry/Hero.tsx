@@ -1,4 +1,4 @@
-import ClientImage from "../ClientImage";
+import ClientImage from "@/components/ClientImage";
 
 const Hero = ({img}:{img:string}) => {
   return (

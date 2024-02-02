@@ -1,5 +1,4 @@
-import React from 'react'
-import ClientImage from '../ClientImage'
+import ClientImage from '@/components/ClientImage'
 
 interface PersonCardProps {
   img: string

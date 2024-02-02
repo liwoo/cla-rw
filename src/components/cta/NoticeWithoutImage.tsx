@@ -1,15 +1,9 @@
-"use client"
 import React, {FC} from "react";
 import {H2} from "@/components/typography/H2";
 import {H1} from "@/components/typography/H1";
 import {Subheading} from "@/components/typography/Subheading";
-import {useNextSanityImage} from "next-sanity-image";
-import Image from "next/image";
 import {Notices} from "@/sanity/schema";
-import {SanityImageAsset} from "sanity-codegen";
-import browserClient from "@/sanity/browser-client";
 import Link from "next/link";
-import { defaultBlur, defaultImage } from "@/utils/default";
 
 type NoticeWithoutImage = Omit<Notices, "coverImage">;
 
