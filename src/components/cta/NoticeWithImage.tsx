@@ -9,25 +9,24 @@ import {Notices} from "@/sanity/schema";
 import {SanityImageAsset} from "sanity-codegen";
 import browserClient from "@/sanity/browser-client";
 import Link from "next/link";
-import { defaultBlur, defaultImage } from "@/utils/default";
 
 type NoticeWithoutImage = Omit<Notices, "coverImage">;
 export type NoticeWithImage = NoticeWithoutImage & {
-    coverImage?: {
+    coverImage: {
         asset: SanityImageAsset
     }
 }
 
-export const NoticeWithImage: FC<{notice: NoticeWithImage}> = ({notice : {title, description, startDate, endDate, coverImage=null, link}}) => {
+export const NoticeWithImage: FC<{notice: NoticeWithImage}> = ({notice : {title, description, startDate, endDate, coverImage, link}}) => {
     
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-8">
             <div className="image-blend absolute inset-0"></div>
             
             <Image
-                {...useNextSanityImage(browserClient, coverImage??defaultImage)}
+                {...useNextSanityImage(browserClient, coverImage)}
                 placeholder={"blur"}
-                blurDataURL={coverImage?.asset.metadata.lqip??defaultBlur}
+                blurDataURL={coverImage?.asset.metadata.lqip}
                 alt=""
                 className="absolute inset-0 -z-10 h-full w-full object-cover object-top image-filters"
             />
