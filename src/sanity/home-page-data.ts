@@ -1,4 +1,4 @@
-import {Notices, Sermon} from "@/sanity/schema";
+import {Notices, Sermon,Post, CallToAction, ZoneSection} from "@/sanity/schema";
 import client from "@/sanity/client";
 import {useNextSanityImage, UseNextSanityImageProps} from "next-sanity-image";
 
@@ -25,5 +25,38 @@ export async function getLatestSermon(): Promise<Sermon> {
         }
     }
   }`;
+  return await client.fetch(query);
+}
+
+export async function getLatestDevotionals(): Promise<Post[]> {
+  const query = `*[_type == "post" && postType == "Devotional"] | order(_createdAt desc)[0...3] {
+    ...,
+    mainImage {
+      asset-> {
+          ...,
+          metadata
+      }
+  }
+  }`;
+  return await client.fetch(query);
+}
+
+export async function getCallToActions(): Promise<CallToAction[]> {
+  const query = `*[_type == "callToAction"] | order(_createdAt desc) {
+    ...,
+    "imageUrl": coverImage.asset->url,
+    coverImage {
+      asset-> {
+          ...,
+          metadata
+      }
+  }
+  }`;
+  return await client.fetch(query);
+}
+
+
+export async function getCells(): Promise<ZoneSection[]> {
+  const query = `*[_type == "zoneSection"] | order(_createdAt desc) `;
   return await client.fetch(query);
 }
