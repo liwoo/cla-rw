@@ -2,16 +2,18 @@
 import Image from 'next/image'
 import { PageTitle } from '../PageTitle'
 import { Container } from '../Container'
+import ClientImage from '../ClientImage'
+import { TestimonialItem } from '@/utils/types'
 
 const Testimonials = () => {
-  const testimonials = Array.from(Array(4).keys()).map(() => ({
+  const testimonials:TestimonialItem[] = Array.from(Array(4).keys()).map(() => ({
     name: 'Name',
     img: 'https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png',
     testimonial:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est itaque odit architecto. Dolorum cum id quod ut mollitia delectus vel, tempore, pariatur, molestias nisi quisquam eius amet! Modi, labore esse.',
   }))
   return (
-    <section className="py-8">
+    <section className="pt-8">
       <PageTitle
         title="Testimonials"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
@@ -19,11 +21,9 @@ const Testimonials = () => {
       <Container>
         <div className="my-16 flex items-center justify-center">
           {testimonials.map((testimonial) => (
-            <div className="relative -ml-8 h-24 w-24 overflow-hidden rounded-full border-4 border-white">
-              <Image
+            <div  key={testimonial.name} className="relative -ml-8 h-24 w-24 overflow-hidden rounded-full border-4 border-white">
+              <ClientImage
                 fill
-                quality={50}
-                placeholder={'blur'}
                 blurDataURL={
                   'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
                 }
@@ -38,10 +38,8 @@ const Testimonials = () => {
       <div className="bg-surface-dark py-16 text-center">
         <Container>
           <div className="relative my-4 mx-auto h-32 w-32 overflow-hidden rounded-full">
-            <Image
+            <ClientImage
               fill
-              quality={50}
-              placeholder={'blur'}
               blurDataURL={
                 'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
               }
