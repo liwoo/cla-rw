@@ -12,3 +12,7 @@ export function truncateString(str: string, num: number = 50): string {
 export function getHumanReadableDate(date: string): string {
     return new Date(date).toDateString();
 }
+
+export function pad(number:string,length=2):string{
+    return number.padStart(length, '0')
+}
