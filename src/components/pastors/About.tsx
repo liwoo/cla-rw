@@ -1,7 +1,6 @@
-import React from 'react'
-import { PageTitle } from '../PageTitle'
-import ClientImage from '../ClientImage'
-import { Container } from '../Container'
+import { PageTitle } from '@/components/PageTitle'
+import ClientImage from '@/components/ClientImage'
+import { Container } from '@/components/Container'
 
 const About = () => {
   const blurImg =
@@ -37,7 +36,6 @@ const About = () => {
           <div className="relative overflow-hidden pt-[120%]">
             <ClientImage
               fill
-              quality={0}
               blurDataURL={blurImg}
               src={background}
               alt={'pastor'}

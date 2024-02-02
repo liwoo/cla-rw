@@ -1,6 +1,5 @@
-import React from 'react'
-import ClientImage from '../ClientImage'
-import { Container } from '../Container'
+import ClientImage from '@/components/ClientImage'
+import { Container } from '@/components/Container'
 
 const Hero = () => {
   const blurImg =

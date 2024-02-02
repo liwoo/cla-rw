@@ -1,5 +1,5 @@
-import { Container } from "../Container"
-import ItemCard from "./ItemCard"
+import { Container } from "@/components/Container"
+import ItemCard from "@/components/pastors/ItemCard"
 
 const Devotions = () => {
     const devotions=Array.from(Array(4).keys()).map(()=>({

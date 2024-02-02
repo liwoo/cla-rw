@@ -1,5 +1,4 @@
-import React from 'react'
-import ClientImage from '../ClientImage'
+import ClientImage from '@/components/ClientImage'
 
 interface ItemCardProps {
   date: string
@@ -13,7 +12,6 @@ const ItemCard = ({ date, title, img }: ItemCardProps) => {
     <div className="relative flex items-end p-4 w-full pt-[60%] rounded-md overflow-hidden">
       <ClientImage
         fill
-        quality={50}
         blurDataURL={blurImg}
         src={img}
         alt={''}
