@@ -7,7 +7,7 @@ import { LargeButton } from '@/components/LargeButton'
 const ContactUsForm = () => {
   return (
     <form action="#" method="POST" className="my-8 md:my-16">
-      <div className="my-8 rounded-4xl bg-white p-8 shadow-sm md:my-16 md:p-16">
+      <div className="my-8 rounded-4xl bg-white p-8 md:my-16 md:p-16">
         <div>
           <div className="my-8 text-2xl font-bold">Contact Form</div>
 
@@ -63,17 +63,20 @@ const ContactUsForm = () => {
           </div>
         </div>
         <div >
-        <div className="flex my-8 justify-between">
+        <div className="block md:flex my-8 justify-between">
           <div className="flex items-center">
           <input type='checkbox' className='mr-4'/>
-          <div>
+          <div className='text-sm'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas rem
-          ipsa eos exercitationem numquam quidem quam porro libero, suscipit
+          
           </div>
           </div>
+          <div className="flex justify-end py-4">
           <LargeButton>
             <div className="font-bold">Submit</div>
           </LargeButton>
+          </div>
+          
         </div>
       </div>
       </div>

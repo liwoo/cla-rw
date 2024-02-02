@@ -1,5 +1,5 @@
-import { Container } from "../Container"
-import ItemCard from "./ItemCard"
+import { Container } from "@/components/Container"
+import ItemCard from "@/components/pastors/ItemCard"
 
 const Sermons = () => {
     const devotions=Array.from(Array(4).keys()).map(()=>({
@@ -12,7 +12,7 @@ const Sermons = () => {
         <div className="text-3xl font-bold">
             Sermons
         </div>
-        <div className="grid grid-cols-4 gap-16 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 mt-8">
             {devotions.map((devotion)=><ItemCard key={devotion.title} {...devotion}></ItemCard>)}
         </div>
     </Container>

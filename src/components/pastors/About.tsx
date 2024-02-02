@@ -12,8 +12,8 @@ const About = () => {
     <section className="bg-surface py-16">
       <PageTitle title="About Pastor"/>
       <Container className="py-8">
-      <div className="grid grid-cols-5 gap-8">
-        <div className="col-span-3">
+      <div className="grid grid-cols-1 sm:grid-cols-5 gap-8">
+        <div className="col-span-1 sm:col-span-3 order-last md:order-first">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facilis
           necessitatibus excepturi expedita id ratione fugit eveniet doloribus
           eius libero, delectus quo dolorem hic iusto aperiam quibusdam
@@ -33,7 +33,7 @@ const About = () => {
           asperiores voluptas tenetur vitae facere. Tempore nostrum optio quod
           assumenda pariatur possimus?
         </div>
-        <div className="col-span-2">
+        <div className="col-span-1 sm:col-span-2">
           <div className="relative overflow-hidden pt-[120%]">
             <ClientImage
               fill

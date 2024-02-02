@@ -1,8 +1,17 @@
+'use client'
 import React from 'react'
+import ContactUsForm from '@/components/contact-us/contact-us-form/ContactUsForm'
+import { Container } from '@/components/Container'
 
 const ContactForm = () => {
   return (
-    <div className='py-16 bg-white'></div>
+    <div className="bg-white">
+      <Container>
+        <div className="mx-auto xl:w-5/6">
+          <ContactUsForm />
+        </div>
+      </Container>
+    </div>
   )
 }
 
