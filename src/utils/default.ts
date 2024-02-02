@@ -55,5 +55,3 @@ export const defaultImage: SanityImageAssetLocal = {
     },
     _type: 'image'
 }
-
-export const defaultBlur="https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
