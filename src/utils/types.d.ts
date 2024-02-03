@@ -30,3 +30,13 @@ export interface ServiceItem{
 export interface MenuItem{
     name: string
 }
+
+export interface EventItem{
+  title:string,
+  type:string,
+  date:string,
+  startTime:string,
+  endTime:string,
+  description:string,
+  coverImg:string
+}
