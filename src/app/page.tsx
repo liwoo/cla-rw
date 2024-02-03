@@ -1,14 +1,11 @@
 import {Container} from "@/components/Container";
-import {Notice} from "@/components/cta/Notice";
+import {NoticeWithImage} from "@/components/cta/NoticeWithImage";
 import {MediaHeroAction} from "@/components/index/MediaHeroAction";
-import browserClient from "@/sanity/browser-client";
-import {defaultImage} from "@/utils/default";
 import {PageTitle} from "@/components/PageTitle";
 import {Highlights} from "@/components/index/Highlights";
 import {FindCell} from "@/components/index/FindCell";
 import {BlogSection} from "@/components/index/BlogSection";
 import { getLatestNotice, getLatestSermon } from "@/sanity/home-page-data";
-import { useNextSanityImage } from "next-sanity-image";
 
 async function getData() {
     const notice = await getLatestNotice();
@@ -26,7 +23,7 @@ export default async function Page() {
     return (
         <>
             <Container className={"mt-8"}>
-                <Notice notice={notice as any} />
+                <NoticeWithImage notice={notice as any} />
                 <MediaHeroAction sermon={sermon} />
                 <div className="my-4 lg:my-20">
                     <PageTitle title={welcomeTitle} description={welcomeDescription}/>
