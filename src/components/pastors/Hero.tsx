@@ -1,5 +1,7 @@
 import ClientImage from '@/components/ClientImage'
 import { Container } from '@/components/Container'
+import Twitter from '@/components/icons/Twitter'
+import Facebook from '@/components/icons/Facebook'
 
 const Hero = () => {
   const blurImg =
@@ -20,7 +22,10 @@ const Hero = () => {
         <div className="text-white">
           <div className="text-xl md:text-3xl font-bold uppercase">Pastor name</div>
           <div className="my-2 md:text-2xl">Office</div>
-          <div>icons</div>
+          <div className='flex'>
+            <div className='w-8 mr-4'><Twitter/></div>
+            <div className='w-8'><Facebook/></div>
+          </div>
         </div>
       </Container>
     </div>
