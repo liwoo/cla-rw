@@ -45,3 +45,13 @@ export interface TestimonialItem {
   img: string
   testimonial: string
 }
+
+export interface EventItem{
+  title:string,
+  type:string,
+  date:string,
+  startTime:string,
+  endTime:string,
+  description:string,
+  coverImg:string
+}

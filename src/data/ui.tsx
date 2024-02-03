@@ -18,3 +18,15 @@ export const sermonFilters = [
     name: 'BY POPULAR',
   },
 ]
+
+export const eventsFilters = [
+  {
+    name: 'All',
+  },
+  {
+    name: 'Upcoming',
+  },
+  {
+    name: 'Past',
+  },
+]
