@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 
 const About = () => {
   return (
-    <div className="bg-surface-dark py-24">
+    <div className="bg-surface-dark py-16 md:py-24">
       <Container>
         <div className="mx-auto max-w-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Error

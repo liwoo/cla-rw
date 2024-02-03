@@ -20,19 +20,19 @@ const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
       <Container className="h-full">
-        <div className="relative flex h-full items-end py-16 text-white">
+        <div className="relative flex h-full items-end py-8 md:py-16 text-white">
           <div>
-            <div className="my-2 text-4xl font-bold">Men's Conference</div>
-            <div className="my-8 flex text-2xl">
-              <div className="mr-8 flex">
+            <div className="my-2 text-xl md:text-4xl font-bold">Men's Conference</div>
+            <div className="my-2 md:my-4 flex items-center md:text-2xl">
+              <div className="mr-8 my-2 flex items-center">
                 <CalendarIcon className="mr-2 w-8" /> 21 May 2021
               </div>
-              <div className="flex">
+              <div className="flex my-2 items-center">
                 <ClockIcon className="mr-2 w-8" />
                 08:00 - 13:30
               </div>
             </div>
-            <div>
+            <div className='hidden md:block'>
               <div className="grid grid-cols-3 gap-8">
                 {topics.map((topic) => (
                   <TopicItem key={topic}>{topic}</TopicItem>
@@ -52,7 +52,7 @@ const TopicItem = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex items-center">
       <CheckIcon className="mr-2 h-6" />
-      <div className="text-xl">{children}</div>
+      <div className="md:text-xl">{children}</div>
     </div>
   )
 }
