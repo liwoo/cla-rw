@@ -22,7 +22,7 @@ const Hero = () => {
       <Container className="h-full">
         <div className="relative flex h-full items-end py-8 md:py-16 text-white">
           <div>
-            <div className="my-2 text-xl md:text-4xl font-bold">Men's Conference</div>
+            <div className="my-2 text-xl md:text-4xl font-bold">Mens Conference</div>
             <div className="my-2 md:my-4 flex items-center md:text-2xl">
               <div className="mr-8 my-2 flex items-center">
                 <CalendarIcon className="mr-2 w-8" /> 21 May 2021

@@ -4,7 +4,7 @@ import { BookOpenIcon, EnvelopeIcon, UserIcon } from '@heroicons/react/20/solid'
 import React, { ReactNode, useState } from 'react'
 import NumberOfPeopleForm from '@/components/events/register/Form/NumberOfPeopleForm'
 import Google from '@/components/icons/Google'
-import SpeakersList from '../Speakers/SpeakersList'
+import SpeakersList from '@/components/events/register/Speakers/SpeakersList'
 import Menu from '@/components/events/register/Menu/Menu'
 import ShareEvent from '@/components/events/register/ShareEvent'
 
