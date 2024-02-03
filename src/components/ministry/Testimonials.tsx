@@ -11,13 +11,13 @@ const Testimonials = () => {
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est itaque odit architecto. Dolorum cum id quod ut mollitia delectus vel, tempore, pariatur, molestias nisi quisquam eius amet! Modi, labore esse.',
   }))
   return (
-    <section className="pt-8">
+    <section className="py-8">
       <PageTitle
         title="Testimonials"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
       />
       <Container>
-        <div className="my-16 flex items-center justify-center">
+        <div className="pt-16 pb-24 flex items-center justify-center">
           {testimonials.map((testimonial) => (
             <div  key={testimonial.name} className="relative -ml-8 h-24 w-24 overflow-hidden rounded-full border-4 border-white">
               <ClientImage
