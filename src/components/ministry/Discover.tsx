@@ -76,16 +76,16 @@ const Quote = () => {
 const AboutList = ({ items }: { items: AboutItem[] }) => {
   return (
     <>
-      {items.map((i) => (
+      {items.map((item) => (
         <div
           className="border-x border-t border-muted p-4 last:border-b"
-          key={i.title}
+          key={item.title}
         >
           <div className="flex">
-            <span className="mr-2 font-bold text-secondary">{i.title}: </span>{' '}
-            <span className="font-semibold"> {i.description}</span>
+            <span className="mr-2 font-bold text-secondary">{item.title}: </span>{' '}
+            <span className="font-semibold"> {item.description}</span>
           </div>
-          <div>{i.more}</div>
+          <div>{item.more}</div>
         </div>
       ))}
     </>

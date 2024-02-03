@@ -73,7 +73,7 @@ export const NoticeWithoutImage: FC<{notice: NoticeWithoutImage}> = ({notice : {
                     <H1>{title}</H1>
                     <div className="hidden lg:block">
                         <Subheading >
-                            <div className="line-clamp-2">{description}</div>
+                            <div className="line-clamp-2 text-white">{description}</div>
                         </Subheading>
                     </div>
                 </div>
