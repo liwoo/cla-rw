@@ -13,7 +13,7 @@ export interface Step {
   title: string
   more: string
   icon: ReactNode
-  form: () => React.JSX.Element
+  form: () => JSX.Element
 }
 const RegistrationForm = () => {
   const steps: Step[] = [
