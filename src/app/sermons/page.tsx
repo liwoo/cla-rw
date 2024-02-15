@@ -9,7 +9,6 @@ const Sermons = () => {
         <PageTitle title={"Sermons"} />
         <Hero/>
         <RecentSermons/>
-        <FindSermons/>
     </div>
   )
 }

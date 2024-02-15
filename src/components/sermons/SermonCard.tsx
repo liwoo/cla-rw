@@ -10,13 +10,14 @@ import ClientImage from '@/components/ClientImage'
 import BookOpenIcon from '@/components/icons/BookOpenIcon'
 import { LargeButton } from '@/components/LargeButton'
 import LargeButtonOutline from '@/components/LargeButtonOutline'
+import { SanityImageAsset } from 'sanity-codegen'
 
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
   className?: ClassValue
 }
 interface SermonProps extends ModifiedHTMLAttributes<HTMLDivElement> {
   title: string
-  img: string
+  img: any
   book?: string
   date?: string
 }
