@@ -29,11 +29,12 @@ export default async function Page() {
         <div className="my-4 lg:my-20">
           <PageTitle title={welcomeTitle} description={welcomeDescription} />
         </div>
-
+        {/* @ts-expect-error Server Component */}
         <Highlights />
       </Container>
-
+      {/* @ts-expect-error Server Component */}
       <FindCell />
+      {/* @ts-expect-error Server Component */}
       <BlogSection />
     </>
   )
