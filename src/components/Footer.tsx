@@ -2,7 +2,7 @@ import { P } from '@/components/typography/P'
 import { Subheading } from '@/components/typography/Subheading'
 import { CopyrightLogo } from '@/components/icons/Copyright'
 import { FC, ReactElement } from 'react'
-import { publicRuntimeConfig } from 'next.config'
+import { footerData } from '@/data/footer'
 
 type IconProps = {
   [key: string]: any
@@ -37,17 +37,17 @@ const quickLinks = [
   { name: 'Frequently Asked Questions', href: '#' },
 ]
 
-const address = [publicRuntimeConfig?.footerChurchAddress]
+const address = [footerData.churchAddress]
 
 const contact = {
-  email: publicRuntimeConfig?.footerChurchEmail,
-  phone: publicRuntimeConfig?.footerChurchNumber,
+  email: footerData.churchEmail,
+  phone: footerData.churchNumber,
 }
 
 const social: SocialLink[] = [
   {
     name: 'Facebook',
-    href: publicRuntimeConfig?.footerChurchFacebook,
+    href: footerData.churchFacebook,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -60,7 +60,7 @@ const social: SocialLink[] = [
   },
   {
     name: 'Instagram',
-    href: publicRuntimeConfig?.footerChurchInstagram,
+    href: footerData.churchInstagram,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -73,7 +73,7 @@ const social: SocialLink[] = [
   },
   {
     name: 'Twitter',
-    href: publicRuntimeConfig?.footerChurchTwitter,
+    href: footerData.churchTwitter,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -82,7 +82,7 @@ const social: SocialLink[] = [
   },
   {
     name: 'YouTube',
-    href: publicRuntimeConfig?.footerChurchYoutube,
+    href: footerData.churchYoutube,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -96,7 +96,7 @@ const social: SocialLink[] = [
 ]
 
 export const Footer = () => {
-  const description = publicRuntimeConfig?.footerChurchDescription
+  const description = footerData.churchDescription
 
   return (
     <footer className="bg-secondary" aria-labelledby="footer-heading">
