@@ -11,7 +11,7 @@ import { useState } from 'react'
 interface ContactItem {
   name: string
   icon: any
-  content: React.JSX.Element
+  content: JSX.Element
 }
 const GetInTouch = () => {
   const contactsMenu = [
