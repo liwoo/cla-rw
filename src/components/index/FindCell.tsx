@@ -2,19 +2,14 @@ import { PageTitle } from "@/components/PageTitle";
 import { Subheading } from "@/components/typography/Subheading";
 import { Container } from "@/components/Container";
 import { LargeButton } from "@/components/LargeButton";
-import Image from "next/image";
 import ClientImage from "@/components/ClientImage";
-import { getCallToActions, getCells } from "@/sanity/home-page-data";
+import { ZoneSection } from "@/sanity/schema";
+import { FC } from "react";
 
-export const FindCell = async () => {
+export const FindCell: FC<{ cells: ZoneSection[] }> = ({ cells }) => {
   //TODO: Is this in the CTAs somewhere
-  const title = "Find Cell";
   const description =
     "We are a cell-based church. We believe that the church is not a building but a community of believers. We have cells in different parts of the city. Find a cell near you.";
-  const image =
-    "https://images.unsplash.com/photo-1526746323784-6bc814d79273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
-  const cells = await getCells();
-  const cta = await getCallToActions();
 
   return (
     <section className="bg-surface-dark py-12">

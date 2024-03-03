@@ -23,6 +23,7 @@ async function getData() {
 export default async function Page() {
   const { notice, sermon } = await getData();
   const callToActions = await getCallToActions();
+  const cells = await getCells();
   const welcomeTitle = "Welcome to Christian Life Assembly";
   const welcomeDescription =
     "CLA is a cell based Church that believes in the Bible and the power to change lives through a living relationship with Jesus Christ. Come join us!";
@@ -36,7 +37,7 @@ export default async function Page() {
         </div>
         <Highlights highlights={callToActions} />
       </Container>
-      <FindCell />
+      <FindCell cells={cells} />
       <BlogSection />
     </>
   );

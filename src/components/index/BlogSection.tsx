@@ -3,7 +3,7 @@ import { PageTitle } from "@/components/PageTitle";
 import { H2 } from "@/components/typography/H2";
 import { Subheading } from "@/components/typography/Subheading";
 import { CalendarIcon } from "@heroicons/react/20/solid";
-import { Post, SanityImageAsset, SanityReference } from "@/sanity/schema";
+import { SanityImageAsset, SanityReference } from "@/sanity/schema";
 import browserClient from "@/sanity/browser-client";
 import Link from "next/link";
 import { getHumanReadableDate } from "@/utils/helpers";
