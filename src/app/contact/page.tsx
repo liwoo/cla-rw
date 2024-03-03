@@ -1,5 +1,5 @@
 import { PageTitle } from "@/components/PageTitle";
-import GetInTouch from "@/components/contact-us/GetInTouch";
+import GetInTouch from "@/components/contact/GetInTouch";
 
 const ContactUs = () => {
   return (

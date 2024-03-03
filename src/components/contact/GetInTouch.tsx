@@ -2,10 +2,10 @@
 import clsx from "clsx";
 import ContactIcon from "@/components/ContactIcon";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/20/solid";
-import ContactUsForm from "@/components/contact-us/contact-us-form/ContactUsForm";
+import ContactUsForm from "@/components/contact/contact-us-form/ContactUsForm";
 import { Container } from "@/components/Container";
-import LocateUs from "@/components/contact-us/locate-us/LocateUs";
-import ContactList from "@/components/contact-us/contact-list/ContactList";
+import LocateUs from "@/components/contact/locate-us/LocateUs";
+import ContactList from "@/components/contact/contact-us-list/ContactList";
 import { useState } from "react";
 
 interface ContactItem {
