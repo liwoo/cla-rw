@@ -7,6 +7,7 @@ import { FindCell } from "@/components/index/FindCell";
 import { BlogSection } from "@/components/index/BlogSection";
 import {
   getCallToActions,
+  getCells,
   getLatestNotice,
   getLatestSermon,
 } from "@/sanity/home-page-data";
