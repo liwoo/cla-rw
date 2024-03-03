@@ -5,9 +5,11 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { getCallToActions } from "@/sanity/home-page-data";
 import { truncateString } from "@/utils/helpers";
 import Link from "next/link";
+import { CallToAction } from "@/sanity/schema";
 
-export const Highlights = async () => {
-  const highlights = await getCallToActions();
+export const Highlights: FC<{ highlights: CallToAction[] }> = ({
+  highlights,
+}) => {
   return (
     <div className="my-16 grid grid-cols-1 grid-rows-3 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
       <div className="col-span-1 row-span-1">
@@ -56,7 +58,7 @@ export const Highlights = async () => {
       <div className="col-span-1 row-span-1 cursor-pointer p-4 transition-all hover:rounded-md hover:shadow-lg md:col-span-2">
         {highlights[4] && (
           <Link href={highlights[4].link ?? ""}>
-            <div className="flex items-center text-lg font-semibold text-primary">
+            <div className="text-primary flex items-center text-lg font-semibold">
               {highlights[4].title}
               <ArrowRightIcon className="mx-1 h-5 w-5" />
             </div>
