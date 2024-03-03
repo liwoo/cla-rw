@@ -3,12 +3,12 @@ import { PageTitle } from "@/components/PageTitle";
 import { H2 } from "@/components/typography/H2";
 import { Subheading } from "@/components/typography/Subheading";
 import { CalendarIcon } from "@heroicons/react/20/solid";
-import { SanityImageAsset, SanityReference } from "@/sanity/schema";
+import { Post, SanityImageAsset, SanityReference } from "@/sanity/schema";
 import browserClient from "@/sanity/browser-client";
 import Link from "next/link";
 import { getHumanReadableDate } from "@/utils/helpers";
 import imageUrlBuilder from "@sanity/image-url";
-import { getLatestDevotionals } from "@/sanity/home-page-data";
+import { FC } from "react";
 
 const builder = imageUrlBuilder(browserClient);
 
@@ -16,8 +16,7 @@ function urlFor(source: SanityReference<SanityImageAsset>) {
   return builder.image(source);
 }
 
-export const BlogSection = async () => {
-  const posts = await getLatestDevotionals();
+export const BlogSection: FC<{ posts: Post[] }> = ({ posts }) => {
   return (
     <div className="bg-white py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
