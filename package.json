@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npx prettier . --write",
+    "lint-check": "npx prettier . --check"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.8",
