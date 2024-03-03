@@ -1,9 +1,9 @@
-import React from 'react'
-import { Speaker } from './SpeakersList'
-import ClientImage from '@/components/ClientImage'
+import React from "react";
+import { Speaker } from "./SpeakersList";
+import ClientImage from "@/components/ClientImage";
 
 interface SpeakerCardProps {
-  speaker: Speaker
+  speaker: Speaker;
 }
 const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
   return (
@@ -16,7 +16,7 @@ const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
         <div className="font-light">{speaker.about}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SpeakerCard
+export default SpeakerCard;

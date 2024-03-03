@@ -1,22 +1,22 @@
 # Christian Life Assembly Church Website
 
 [CLA Rwanda](https://clarwanda.org) Website is built using [Tailwind CSS](https://tailwindcss.com), [Next.js](https://nextjs.org)
-and [TypeScript](https://www.typescriptlang.org/).  The Content Management System is powered by [Sanity.io](https://www.sanity.io/)
+and [TypeScript](https://www.typescriptlang.org/). The Content Management System is powered by [Sanity.io](https://www.sanity.io/)
 and you can use [GROQ](https://www.sanity.io/docs/groq) to query the data.
 
 ## UX/UI Design
+
 The Adobe XD design files are available in [this design](https://drive.google.com/file/d/1MzEeYxjpYszEG2tyneYZCnIhtUhPZWZM/view?usp=share_link) file.
 
 ## Static Site Generation
 
-We use [Next.js](https://nextjs.org) to generate static HTML pages at build time.  This means that the site is
+We use [Next.js](https://nextjs.org) to generate static HTML pages at build time. This means that the site is
 fast and secure, and that search engines can easily index the content. The site is also fully accessible,
 and works well on all devices. The site is hosted on [Netlify](https://www.netlify.com/). The site is
 automatically rebuilt and redeployed when changes are pushed to the `main` branch.
 
 To fetch the data on a page, we use Next.js's [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) function. This function is called at build time
-and the data is passed to the page component as a prop. 
-
+and the data is passed to the page component as a prop.
 
 ### Fetching Static Data for Specific Pages
 
@@ -27,34 +27,35 @@ function BlogPost({ post }) {
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.body }} />
     </div>
-  )
+  );
 }
 
 // params contains the dynamic route parameters automatically passed by Next.js
 export async function getStaticProps({ params }) {
-    //fetch the post using groq and the [Sanity client](https://www.npmjs.com/package/@sanity/client
-  const post = await client.fetch(groq`[slug == $slug][0]`, { slug: params.slug });
-    
-    //this will automatically pass the post data to the page component as a prop
+  //fetch the post using groq and the [Sanity client](https://www.npmjs.com/package/@sanity/client
+  const post = await client.fetch(groq`[slug == $slug][0]`, {
+    slug: params.slug,
+  });
+
+  //this will automatically pass the post data to the page component as a prop
   return {
     props: {
       post,
     },
-  }
+  };
 }
 ```
 
 ### Generating Static Pages
 
 From the example below, we might not want to pre-render all the blogposts at build time.  
-We can use the `fallback` option to generate the pages at request time.  
+We can use the `fallback` option to generate the pages at request time.
 
 Here's how it works:
 
 - Next.js will first generate the static pages for all the paths specified in getStaticPaths.
 - If a user requests a dynamic route that is not generated yet (i.e. the path is not found in the list of paths generated in step 1), Next.js will render a fallback version of the page.
 - While the user is looking at the fallback version of the page, Next.js will generate the static page for that path in the background. Once it's generated, the user's next request for that path will be served the statically generated page.
-
 
 ```js
 // This function is called at build time

@@ -1,18 +1,18 @@
-import { Container } from '@/components/Container'
-import { PageTitle } from '@/components/PageTitle'
-import PersonCard from '@/components/ministry/PersonCard'
+import { Container } from "@/components/Container";
+import { PageTitle } from "@/components/PageTitle";
+import PersonCard from "@/components/ministry/PersonCard";
 
 interface AboutItem {
-  title: string
-  description: string
-  more: string
+  title: string;
+  description: string;
+  more: string;
 }
 const Discover = () => {
   const items: AboutItem[] = Array.from(Array(5).keys()).map(() => ({
-    title: 'Prayer',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    more: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit quidem veritatis earum! A illo temporibus error impedit voluptatem illum ducimus aut officiis obcaecati alias, amet suscipit quod autem incidunt.',
-  }))
+    title: "Prayer",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    more: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit quidem veritatis earum! A illo temporibus error impedit voluptatem illum ducimus aut officiis obcaecati alias, amet suscipit quod autem incidunt.",
+  }));
   return (
     <section className="my-8">
       <PageTitle title="Discover the Church" />
@@ -26,22 +26,22 @@ const Discover = () => {
           <div className="col-span-1 md:col-span-2 ">
             <PersonCard
               img={
-                'https://res.cloudinary.com/c99/image/upload/v1705410832/Placeholders/Screenshot_2024-01-16_at_15.11.21.png'
+                "https://res.cloudinary.com/c99/image/upload/v1705410832/Placeholders/Screenshot_2024-01-16_at_15.11.21.png"
               }
-              name={'Peace Kampingo'}
-              position={'Chair Person'}
+              name={"Peace Kampingo"}
+              position={"Chair Person"}
               about={
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae tenetur beatae veritatis voluptate assumenda minima quis delectus, laborum fugit architecto id aspernatur repellat iusto similique corporis officiis dolorum! Nesciunt?'
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae tenetur beatae veritatis voluptate assumenda minima quis delectus, laborum fugit architecto id aspernatur repellat iusto similique corporis officiis dolorum! Nesciunt?"
               }
             />
           </div>
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Discover
+export default Discover;
 
 const Title = () => {
   return (
@@ -53,8 +53,8 @@ const Title = () => {
         What is intercessory ministry about?
       </div>
     </>
-  )
-}
+  );
+};
 
 const Quote = () => {
   return (
@@ -70,8 +70,8 @@ const Quote = () => {
       </div>
       <div className="-mt-8 text-right text-4xl text-primary ">&rdquo;</div>
     </div>
-  )
-}
+  );
+};
 
 const AboutList = ({ items }: { items: AboutItem[] }) => {
   return (
@@ -82,12 +82,14 @@ const AboutList = ({ items }: { items: AboutItem[] }) => {
           key={item.title}
         >
           <div className="flex">
-            <span className="mr-2 font-bold text-secondary">{item.title}: </span>{' '}
+            <span className="mr-2 font-bold text-secondary">
+              {item.title}:{" "}
+            </span>{" "}
             <span className="font-semibold"> {item.description}</span>
           </div>
           <div>{item.more}</div>
         </div>
       ))}
     </>
-  )
-}
+  );
+};

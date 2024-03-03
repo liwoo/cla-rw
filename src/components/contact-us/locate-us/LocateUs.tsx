@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LocateUs = () => {
-  return (
-    <div>LocateUs</div>
-  )
-}
+  return <div>LocateUs</div>;
+};
 
-export default LocateUs
+export default LocateUs;

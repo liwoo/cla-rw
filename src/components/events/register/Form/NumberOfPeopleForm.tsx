@@ -1,5 +1,5 @@
-import { LargeButton } from '@/components/LargeButton'
-import React from 'react'
+import { LargeButton } from "@/components/LargeButton";
+import React from "react";
 
 const NumberOfPeopleForm = () => {
   return (
@@ -24,10 +24,11 @@ const NumberOfPeopleForm = () => {
           />
         </div>
       </div>
-      <div className="flex justify-end"><LargeButton className="rounded-none">Next</LargeButton></div>
-      
+      <div className="flex justify-end">
+        <LargeButton className="rounded-none">Next</LargeButton>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NumberOfPeopleForm
+export default NumberOfPeopleForm;

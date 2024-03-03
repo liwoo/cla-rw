@@ -1,5 +1,5 @@
-import { Container } from '@/components/Container'
-import React, { ReactNode } from 'react'
+import { Container } from "@/components/Container";
+import React, { ReactNode } from "react";
 
 const About = () => {
   return (
@@ -28,7 +28,7 @@ const About = () => {
         </div>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

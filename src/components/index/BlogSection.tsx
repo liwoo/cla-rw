@@ -1,23 +1,23 @@
-import Image from 'next/image'
-import { PageTitle } from '@/components/PageTitle'
-import { H2 } from '@/components/typography/H2'
-import { Subheading } from '@/components/typography/Subheading'
-import { CalendarIcon } from '@heroicons/react/20/solid'
-import { Post, SanityImageAsset, SanityReference } from '@/sanity/schema'
-import browserClient from '@/sanity/browser-client'
-import Link from 'next/link'
-import { getHumanReadableDate } from '@/utils/helpers'
-import imageUrlBuilder from '@sanity/image-url'
-import { getLatestDevotionals } from '@/sanity/home-page-data'
+import Image from "next/image";
+import { PageTitle } from "@/components/PageTitle";
+import { H2 } from "@/components/typography/H2";
+import { Subheading } from "@/components/typography/Subheading";
+import { CalendarIcon } from "@heroicons/react/20/solid";
+import { Post, SanityImageAsset, SanityReference } from "@/sanity/schema";
+import browserClient from "@/sanity/browser-client";
+import Link from "next/link";
+import { getHumanReadableDate } from "@/utils/helpers";
+import imageUrlBuilder from "@sanity/image-url";
+import { getLatestDevotionals } from "@/sanity/home-page-data";
 
-const builder = imageUrlBuilder(browserClient)
+const builder = imageUrlBuilder(browserClient);
 
 function urlFor(source: SanityReference<SanityImageAsset>) {
-  return builder.image(source)
+  return builder.image(source);
 }
 
 export const BlogSection = async () => {
-  const posts = await getLatestDevotionals()
+  const posts = await getLatestDevotionals();
   return (
     <div className="bg-white py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -39,8 +39,8 @@ export const BlogSection = async () => {
                     .height(500)
                     .url()}
                   // {...useNextSanityImage(browserClient, post.mainImage)}
-                  alt={post.title ?? ''}
-                  placeholder={'blur'}
+                  alt={post.title ?? ""}
+                  placeholder={"blur"}
                   blurDataURL={
                     (post.mainImage.asset as unknown as SanityImageAsset)
                       .metadata.lqip
@@ -59,7 +59,7 @@ export const BlogSection = async () => {
                 </Link>
               </H2>
               <Subheading
-                classOverrides={'flex items-center text-white gap-x-2'}
+                classOverrides={"flex items-center text-white gap-x-2"}
               >
                 <CalendarIcon
                   className="h-5 w-5 flex-shrink-0 text-white"
@@ -74,5 +74,5 @@ export const BlogSection = async () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,15 +1,15 @@
-'use client'
-import React from 'react'
-import { PageTitle } from '@/components/PageTitle'
-import Image from 'next/image'
-import { P } from '@/components/typography/P'
-import { Container } from '@/components/Container'
-import ClientImage from '@/components/ClientImage'
+"use client";
+import React from "react";
+import { PageTitle } from "@/components/PageTitle";
+import Image from "next/image";
+import { P } from "@/components/typography/P";
+import { Container } from "@/components/Container";
+import ClientImage from "@/components/ClientImage";
 
 const History = () => {
   return (
     <section className="bg-surface py-8">
-      <PageTitle title={'Brief History'} />
+      <PageTitle title={"Brief History"} />
       <Container>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-9">
           <div className="order-last md:order-first md:col-span-5  md:p-8">
@@ -48,7 +48,7 @@ const History = () => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default History
+export default History;

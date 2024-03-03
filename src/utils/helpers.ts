@@ -1,18 +1,18 @@
 export function isScalarImage(image: string): boolean {
-    return image.endsWith('.svg') || image.endsWith('.png');
+  return image.endsWith(".svg") || image.endsWith(".png");
 }
 
 export function truncateString(str: string, num: number = 50): string {
-    if (str.length <= num) {
-        return str
-    }
-    return str.slice(0, num) + '...'
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + "...";
 }
 
 export function getHumanReadableDate(date: string): string {
-    return new Date(date).toDateString();
+  return new Date(date).toDateString();
 }
 
-export function pad(number:string,length=2):string{
-    return number.padStart(length, '0')
+export function pad(number: string, length = 2): string {
+  return number.padStart(length, "0");
 }

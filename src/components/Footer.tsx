@@ -1,52 +1,52 @@
-import { P } from '@/components/typography/P'
-import { Subheading } from '@/components/typography/Subheading'
-import { CopyrightLogo } from '@/components/icons/Copyright'
-import { FC, ReactElement } from 'react'
-import { footerData } from '@/data/footer'
+import { P } from "@/components/typography/P";
+import { Subheading } from "@/components/typography/Subheading";
+import { CopyrightLogo } from "@/components/icons/Copyright";
+import { FC } from "react";
+import { footerData } from "@/data/footer";
 
 type IconProps = {
-  [key: string]: any
-}
+  [key: string]: any;
+};
 
 type SocialMedia =
-  | 'Facebook'
-  | 'Instagram'
-  | 'Twitter'
-  | 'GitHub'
-  | 'YouTube'
-  | 'LinkedIn'
-  | 'Pinterest'
-  | 'Reddit'
-  | 'Snapchat'
-  | 'TikTok'
-  | 'Tumblr'
-  | 'Twitch'
-  | 'WhatsApp'
+  | "Facebook"
+  | "Instagram"
+  | "Twitter"
+  | "GitHub"
+  | "YouTube"
+  | "LinkedIn"
+  | "Pinterest"
+  | "Reddit"
+  | "Snapchat"
+  | "TikTok"
+  | "Tumblr"
+  | "Twitch"
+  | "WhatsApp";
 
 type SocialLink = {
-  name: SocialMedia
-  href: string
-  icon: FC<IconProps>
-}
+  name: SocialMedia;
+  href: string;
+  icon: FC<IconProps>;
+};
 
 const quickLinks = [
-  { name: 'Get in Touch', href: '#' },
-  { name: 'Find Ways to Give', href: '#' },
-  { name: 'Connect With a Cell Group', href: '#' },
-  { name: 'Our Beliefs', href: '#' },
-  { name: 'Frequently Asked Questions', href: '#' },
-]
+  { name: "Get in Touch", href: "#" },
+  { name: "Find Ways to Give", href: "#" },
+  { name: "Connect With a Cell Group", href: "#" },
+  { name: "Our Beliefs", href: "#" },
+  { name: "Frequently Asked Questions", href: "#" },
+];
 
-const address = [footerData.churchAddress]
+const address = [footerData.churchAddress];
 
 const contact = {
   email: footerData.churchEmail,
   phone: footerData.churchNumber,
-}
+};
 
 const social: SocialLink[] = [
   {
-    name: 'Facebook',
+    name: "Facebook",
     href: footerData.churchFacebook,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -59,7 +59,7 @@ const social: SocialLink[] = [
     ),
   },
   {
-    name: 'Instagram',
+    name: "Instagram",
     href: footerData.churchInstagram,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -72,7 +72,7 @@ const social: SocialLink[] = [
     ),
   },
   {
-    name: 'Twitter',
+    name: "Twitter",
     href: footerData.churchTwitter,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -81,7 +81,7 @@ const social: SocialLink[] = [
     ),
   },
   {
-    name: 'YouTube',
+    name: "YouTube",
     href: footerData.churchYoutube,
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -93,10 +93,10 @@ const social: SocialLink[] = [
       </svg>
     ),
   },
-]
+];
 
 export const Footer = () => {
-  const description = footerData.churchDescription
+  const description = footerData.churchDescription;
 
   return (
     <footer className="bg-secondary" aria-labelledby="footer-heading">
@@ -106,7 +106,7 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-8 lg:px-8 lg:pt-12">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <P color={'white'}>{description}</P>
+            <P color={"white"}>{description}</P>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -133,17 +133,17 @@ export const Footer = () => {
                 </h3>
                 <Subheading>Address</Subheading>
                 {address.map((item) => (
-                  <P color={'gray-400'} key={item}>
+                  <P color={"gray-400"} key={item}>
                     {item}
                   </P>
                 ))}
                 <Subheading>Conntect</Subheading>
                 <a href={`mailto:${contact.email}`}>
-                  <P color={'gray-400'}>{contact.email}</P>
+                  <P color={"gray-400"}>{contact.email}</P>
                 </a>
                 <Subheading>Phone</Subheading>
                 <a href={`tel:${contact.phone}`}>
-                  <P color={'gray-400'}>{contact.phone}</P>
+                  <P color={"gray-400"}>{contact.phone}</P>
                 </a>
               </div>
             </div>
@@ -161,7 +161,7 @@ export const Footer = () => {
                     >
                       <span className="sr-only">{item.name}</span>
                       <item.icon className="h-6 w-6" aria-hidden="true" />
-                      <span className={'md:hidden'}>{item.name}</span>
+                      <span className={"md:hidden"}>{item.name}</span>
                     </a>
                   ))}
                 </div>
@@ -169,13 +169,13 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={'my-12 flex items-center justify-center'}>
-          <CopyrightLogo className={'mx-4 h-4 w-4 fill-white'} />
+        <div className={"my-12 flex items-center justify-center"}>
+          <CopyrightLogo className={"mx-4 h-4 w-4 fill-white"} />
           <Subheading>
             {new Date().getFullYear()} CLA. All rights reserved.
           </Subheading>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

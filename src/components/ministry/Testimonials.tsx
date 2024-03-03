@@ -1,15 +1,17 @@
-import { PageTitle } from '@/components/PageTitle'
-import { Container } from '@/components/Container'
-import ClientImage from '@/components/ClientImage'
-import { TestimonialItem } from '@/utils/types'
+import { PageTitle } from "@/components/PageTitle";
+import { Container } from "@/components/Container";
+import ClientImage from "@/components/ClientImage";
+import { TestimonialItem } from "@/utils/types";
 
 const Testimonials = () => {
-  const testimonials:TestimonialItem[] = Array.from(Array(4).keys()).map(() => ({
-    name: 'Name',
-    img: 'https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png',
-    testimonial:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est itaque odit architecto. Dolorum cum id quod ut mollitia delectus vel, tempore, pariatur, molestias nisi quisquam eius amet! Modi, labore esse.',
-  }))
+  const testimonials: TestimonialItem[] = Array.from(Array(4).keys()).map(
+    () => ({
+      name: "Name",
+      img: "https://res.cloudinary.com/c99/image/upload/v1705412894/Placeholders/Screenshot_2024-01-16_at_15.47.58.png",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est itaque odit architecto. Dolorum cum id quod ut mollitia delectus vel, tempore, pariatur, molestias nisi quisquam eius amet! Modi, labore esse.",
+    })
+  );
   return (
     <section className="py-8">
       <PageTitle
@@ -19,11 +21,14 @@ const Testimonials = () => {
       <Container>
         <div className="pt-16 pb-24 flex items-center justify-center">
           {testimonials.map((testimonial) => (
-            <div  key={testimonial.name} className="relative -ml-8 h-24 w-24 overflow-hidden rounded-full border-4 border-white">
+            <div
+              key={testimonial.name}
+              className="relative -ml-8 h-24 w-24 overflow-hidden rounded-full border-4 border-white"
+            >
               <ClientImage
                 fill
                 blurDataURL={
-                  'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+                  "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
                 }
                 src={testimonial.img}
                 alt="Coming Soon"
@@ -39,7 +44,7 @@ const Testimonials = () => {
             <ClientImage
               fill
               blurDataURL={
-                'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+                "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
               }
               src={testimonials[0].img}
               alt="Coming Soon"
@@ -68,7 +73,7 @@ const Testimonials = () => {
         </Container>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;
