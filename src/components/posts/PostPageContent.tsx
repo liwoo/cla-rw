@@ -1,6 +1,5 @@
 "use client";
 
-import { MainLayout } from "@/components/layouts/MainLayout";
 import { Container } from "@/components/Container";
 import { PageTitle } from "@/components/PageTitle";
 import { useNextSanityImage } from "next-sanity-image";
@@ -27,7 +26,7 @@ export default function PostPageContent({
         <PageTitle title={post.title ?? ""} />
       </Container>
       <Container>
-        <div className={"flex items-center space-x-2 justify-center my-8"}>
+        <div className={"my-8 flex items-center justify-center space-x-2"}>
           <Image
             {...useNextSanityImage(browserClient, post.author.image)}
             className={"h-12 w-12 rounded-full"}
@@ -45,7 +44,7 @@ export default function PostPageContent({
         <Image
           {...useNextSanityImage(browserClient, post.mainImage)}
           className={
-            "rounded-md mb-8 aspect-video object-cover w-full lg:w-4/5 mx-auto"
+            "mx-auto mb-8 aspect-video w-full rounded-md object-cover lg:w-4/5"
           }
           alt={post.title ?? ""}
           placeholder={"blur"}
@@ -70,7 +69,7 @@ const CustomImage = (node: { node: { value: PortableTextImageNode } }) => {
   return (
     <Image
       {...useNextSanityImage(browserClient, node.node.value.asset)}
-      className={"rounded-md my-8 aspect-video object-cover w-full"}
+      className={"my-8 aspect-video w-full rounded-md object-cover"}
       alt="image"
       placeholder={"blur"}
       blurDataURL={node.node.value.asset.metadata.lqip}
@@ -89,7 +88,7 @@ const components: PortableTextComponents = {
     h4: ({ children }) => <h4 className={"text-lg"}>{children}</h4>,
     li: ({ children }) => <li className={"text-lg"}>&#8594; {children}</li>,
     blockquote: ({ children }) => (
-      <blockquote className="py-4 mx-12 my-8 text-3xl font-light border-t border-b border-gray-200">
+      <blockquote className="mx-12 my-8 border-t border-b border-gray-200 py-4 text-3xl font-light">
         {children}
       </blockquote>
     ),
@@ -100,7 +99,7 @@ const components: PortableTextComponents = {
     ),
     em: ({ children }) => <em className={"italic"}>{children}</em>,
     code: ({ children }) => (
-      <code className={"bg-gray-200 p-1 rounded"}>{children}</code>
+      <code className={"rounded bg-gray-200 p-1"}>{children}</code>
     ),
   },
   types: {
