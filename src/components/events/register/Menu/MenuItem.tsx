@@ -1,19 +1,19 @@
-import clsx from 'clsx'
-import { Step } from '@/components/events/register/Form/RegistrationForm'
+import clsx from "clsx";
+import { Step } from "@/components/events/register/Form/RegistrationForm";
 
 interface StepMenuItemProps {
-  step: Step
-  active: Step
-  size?: 'small' | 'large'
+  step: Step;
+  active: Step;
+  size?: "small" | "large";
 }
-const MenuItem = ({ step, active, size = 'small' }: StepMenuItemProps) => {
-  if (size == 'small') {
-    return <StepMenuMobileItem step={step} active={active} />
+const MenuItem = ({ step, active, size = "small" }: StepMenuItemProps) => {
+  if (size == "small") {
+    return <StepMenuMobileItem step={step} active={active} />;
   }
-  return <StepMenuItem step={step} active={active} />
-}
+  return <StepMenuItem step={step} active={active} />;
+};
 
-export default MenuItem
+export default MenuItem;
 
 const StepMenuItem = ({ step, active }: StepMenuItemProps) => {
   return (
@@ -33,13 +33,13 @@ const StepMenuItem = ({ step, active }: StepMenuItemProps) => {
       </div>
       <div
         className={clsx(
-          active.step >= step.step ? 'bg-secondary' : 'bg-white',
-          'absolute right-0 top-[50%] h-4 w-4 -translate-y-2 translate-x-2 rounded-full border border-secondary'
+          active.step >= step.step ? "bg-secondary" : "bg-white",
+          "absolute right-0 top-[50%] h-4 w-4 -translate-y-2 translate-x-2 rounded-full border border-secondary"
         )}
       ></div>
     </div>
-  )
-}
+  );
+};
 
 const StepMenuMobileItem = ({ step, active }: StepMenuItemProps) => {
   return (
@@ -47,12 +47,12 @@ const StepMenuMobileItem = ({ step, active }: StepMenuItemProps) => {
       {step.step > 1 && <div className="h-[1px] flex-1 bg-secondary"></div>}
       <div
         className={clsx(
-          active.step >= step.step ? 'bg-secondary text-white' : 'bg-white',
-          'flex h-6 w-6 items-center justify-center rounded-full border border-secondary text-sm'
+          active.step >= step.step ? "bg-secondary text-white" : "bg-white",
+          "flex h-6 w-6 items-center justify-center rounded-full border border-secondary text-sm"
         )}
       >
         {step.step}
       </div>
     </>
-  )
-}
+  );
+};

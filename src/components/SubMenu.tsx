@@ -1,53 +1,52 @@
-import clsx, { ClassValue } from 'clsx'
-import React, { HTMLAttributes } from 'react'
-import { Container } from '@/components/Container'
-import {MenuItem} from "@/utils/types";
+import clsx, { ClassValue } from "clsx";
+import React, { HTMLAttributes } from "react";
+import { Container } from "@/components/Container";
+import { MenuItem } from "@/utils/types";
 
-type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
+type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, "className"> & {
   className?: ClassValue;
 };
 
-interface SubMenuProps  extends ModifiedHTMLAttributes<HTMLDivElement> {
-  items: MenuItem[]
-  active?: {name:string} | null
-  color?: string
-  activeBorderColor?: string
-  onItemClick: Function
-  
+interface SubMenuProps extends ModifiedHTMLAttributes<HTMLDivElement> {
+  items: MenuItem[];
+  active?: { name: string } | null;
+  color?: string;
+  activeBorderColor?: string;
+  onItemClick: Function;
 }
 
 const SubMenu = ({
   items,
   active,
-  color = 'text-white',
-  activeBorderColor = 'border-tertiary',
+  color = "text-white",
+  activeBorderColor = "border-tertiary",
   onItemClick,
-  className="flex items-center justify-center"
+  className = "flex items-center justify-center",
 }: SubMenuProps) => {
   return (
-      <div className={clsx(className)}>
-        {items.map((item) => (
-          <MenuItem
-            key={item.name}
-            item={item}
-            active={item.name == active?.name}
-            color={color}
-            onClick={() => onItemClick(item)}
-            activeBorderColor={activeBorderColor}
-          />
-        ))}
-      </div>
-  )
-}
+    <div className={clsx(className)}>
+      {items.map((item) => (
+        <MenuItem
+          key={item.name}
+          item={item}
+          active={item.name == active?.name}
+          color={color}
+          onClick={() => onItemClick(item)}
+          activeBorderColor={activeBorderColor}
+        />
+      ))}
+    </div>
+  );
+};
 
-export default SubMenu
+export default SubMenu;
 
 interface MenuItemProps {
-  item: MenuItem
-  active?: boolean
-  color: string
-  activeBorderColor: string
-  onClick: Function
+  item: MenuItem;
+  active?: boolean;
+  color: string;
+  activeBorderColor: string;
+  onClick: Function;
 }
 
 const MenuItem = ({
@@ -69,12 +68,10 @@ const MenuItem = ({
       </div>
       <div
         className={clsx(
-          active ? activeBorderColor : 'border-transparent',
+          active ? activeBorderColor : "border-transparent",
           `mt-2 border`
         )}
       ></div>
     </div>
-  )
-}
-
-
+  );
+};

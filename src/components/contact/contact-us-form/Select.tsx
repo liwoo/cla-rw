@@ -1,14 +1,14 @@
-import { ChangeEventHandler } from 'react'
+import { ChangeEventHandler } from "react";
 
 interface FormInputProps {
-  htmlFor: string
-  label: string
-  required?: boolean
-  name: string
-  placeholder: string
-  value: string | number
-  onChange: ChangeEventHandler<HTMLInputElement>
-  options: { label: string; value: string | number }[]
+  htmlFor: string;
+  label: string;
+  required?: boolean;
+  name: string;
+  placeholder: string;
+  value: string | number;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  options: { label: string; value: string | number }[];
 }
 const Select = ({
   htmlFor,
@@ -32,15 +32,19 @@ const Select = ({
         name={name}
         className="shodow-md block w-full rounded-full border-0 px-2 md:px-3 py-2 md:py-4 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-800 sm:text-sm sm:leading-6"
       >
-        <option className='text-surface-dark'>{placeholder}</option>
+        <option className="text-surface-dark">{placeholder}</option>
         {options.map((option) => (
-          <option key={option.value} value={option.value} selected={value == option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+            selected={value == option.value}
+          >
             {option.label}
           </option>
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default Select
+export default Select;

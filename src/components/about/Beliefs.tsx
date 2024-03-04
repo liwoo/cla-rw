@@ -1,37 +1,37 @@
-'use client'
-import React, { Fragment, useState } from 'react'
-import { PageTitle } from '@/components/PageTitle'
-import { Container } from '@/components/Container'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import clsx from 'clsx'
-import { pad } from '@/utils/helpers'
-import { MenuItem } from '@/utils/types'
+"use client";
+import React, { Fragment, useState } from "react";
+import { PageTitle } from "@/components/PageTitle";
+import { Container } from "@/components/Container";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
+import { pad } from "@/utils/helpers";
+import { MenuItem } from "@/utils/types";
 
 interface BeliefItem {
-  id: string
-  name: string
-  verse: string
-  description: string
+  id: string;
+  name: string;
+  verse: string;
+  description: string;
 }
 const Beliefs = () => {
   const beliefs = Array.from(Array(10).keys()).map((i) => ({
     id: pad(String(i + 1)),
-    name: 'Name of belief',
-    verse: 'Supporting verse',
+    name: "Name of belief",
+    verse: "Supporting verse",
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta iure beatae debitis, nobis repudiandae doloribus sit voluptatibus facilis voluptatum, eos corrupti quaerat, sunt perspiciatis enim expedita! Iure aspernatur alias maxime?',
-  }))
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta iure beatae debitis, nobis repudiandae doloribus sit voluptatibus facilis voluptatum, eos corrupti quaerat, sunt perspiciatis enim expedita! Iure aspernatur alias maxime?",
+  }));
 
-  const [active, setActive] = useState<BeliefItem | null>(beliefs[0] ?? null)
+  const [active, setActive] = useState<BeliefItem | null>(beliefs[0] ?? null);
 
   const onOptionClick = (option) => {
-    setActive(option)
-  }
+    setActive(option);
+  };
 
   return (
     <section className="bg-surface-dark py-8">
-      <PageTitle title={'Our Beliefs'} />
+      <PageTitle title={"Our Beliefs"} />
       <Container>
         <div className="my-8 flex w-full md:hidden">
           <Select
@@ -64,7 +64,7 @@ const Beliefs = () => {
                       key={item.name}
                       item={item}
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -72,14 +72,14 @@ const Beliefs = () => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Beliefs
+export default Beliefs;
 
 interface BeliefProps {
-  item: BeliefItem
-  onClick: Function
+  item: BeliefItem;
+  onClick: Function;
 }
 
 const Belief = ({ item, onClick }: BeliefProps) => {
@@ -91,13 +91,13 @@ const Belief = ({ item, onClick }: BeliefProps) => {
       <div className="font-semibold">{item.name}</div>
       <div className="quoted text-muted">&ldquo;{item.verse}&rdquo;</div>
     </div>
-  )
-}
+  );
+};
 
 interface SelectProps {
-  options: { name: string }[]
-  selected: { name: string }
-  onChange: Function
+  options: { name: string }[];
+  selected: { name: string };
+  onChange: Function;
 }
 
 export const Select = ({ options, selected, onChange }: SelectProps) => {
@@ -129,8 +129,8 @@ export const Select = ({ options, selected, onChange }: SelectProps) => {
                     key={option.name}
                     className={({ active }) =>
                       clsx(
-                        active ? 'bg-primary text-white' : 'text-gray-900',
-                        'relative cursor-default select-none py-2 pl-8 pr-4'
+                        active ? "bg-primary text-white" : "text-gray-900",
+                        "relative cursor-default select-none py-2 pl-8 pr-4"
                       )
                     }
                     value={option}
@@ -139,8 +139,8 @@ export const Select = ({ options, selected, onChange }: SelectProps) => {
                       <>
                         <span
                           className={clsx(
-                            selected ? 'font-semibold' : 'font-normal',
-                            'block truncate'
+                            selected ? "font-semibold" : "font-normal",
+                            "block truncate"
                           )}
                         >
                           {option.name}
@@ -149,8 +149,8 @@ export const Select = ({ options, selected, onChange }: SelectProps) => {
                         {selected ? (
                           <span
                             className={clsx(
-                              active ? 'text-white' : 'text-primary',
-                              'absolute inset-y-0 left-0 flex items-center pl-1.5'
+                              active ? "text-white" : "text-primary",
+                              "absolute inset-y-0 left-0 flex items-center pl-1.5"
                             )}
                           >
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />
@@ -166,5 +166,5 @@ export const Select = ({ options, selected, onChange }: SelectProps) => {
         </>
       )}
     </Listbox>
-  )
-}
+  );
+};

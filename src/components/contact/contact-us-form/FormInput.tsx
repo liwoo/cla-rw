@@ -1,13 +1,13 @@
-import React, { ChangeEventHandler } from 'react'
+import React, { ChangeEventHandler } from "react";
 
 interface FormInputProps {
-  htmlFor: string
-  label: string
-  required?: boolean
-  name: string
-  placeholder: string
-  value: string
-  onChange: ChangeEventHandler<HTMLInputElement>
+  htmlFor: string;
+  label: string;
+  required?: boolean;
+  name: string;
+  placeholder: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 const FormInput = ({
   htmlFor,
@@ -37,7 +37,7 @@ const FormInput = ({
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FormInput
+export default FormInput;

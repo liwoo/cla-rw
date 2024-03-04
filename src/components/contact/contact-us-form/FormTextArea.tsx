@@ -1,24 +1,24 @@
-import React, { ChangeEventHandler } from 'react'
+import React, { ChangeEventHandler } from "react";
 
 interface FormInputProps {
-    htmlFor: string
-    label: string
-    required?: boolean
-    name: string
-    placeholder: string
-    value: string
-    onChange: ChangeEventHandler<HTMLTextAreaElement>
-  }
-  
+  htmlFor: string;
+  label: string;
+  required?: boolean;
+  name: string;
+  placeholder: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLTextAreaElement>;
+}
+
 const FormTextArea = ({
-    htmlFor,
+  htmlFor,
   label,
   required = false,
   name,
   placeholder,
   value,
   onChange,
-}:FormInputProps) => {
+}: FormInputProps) => {
   return (
     <div>
       <label
@@ -38,7 +38,7 @@ const FormTextArea = ({
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FormTextArea
+export default FormTextArea;

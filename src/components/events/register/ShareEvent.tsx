@@ -1,6 +1,6 @@
-import Facebook from '@/components/icons/Facebook'
-import Twitter from '@/components/icons/Twitter'
-import React from 'react'
+import Facebook from "@/components/icons/Facebook";
+import Twitter from "@/components/icons/Twitter";
+import React from "react";
 
 const ShareEvent = () => {
   return (
@@ -15,7 +15,7 @@ const ShareEvent = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ShareEvent
+export default ShareEvent;

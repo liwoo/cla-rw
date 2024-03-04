@@ -1,51 +1,51 @@
-'use client'
+"use client";
 import {
   LifebuoyIcon,
   NewspaperIcon,
   PhoneIcon,
-} from '@heroicons/react/20/solid'
-import { Container } from '@/components/Container'
-import { PageTitle } from '@/components/PageTitle'
-import SubMenu from '@/components/SubMenu'
-import Map from '@/components/i-am-new/Map'
-import { useState } from 'react'
-import { ChurchService } from '@/components/about/ServiceTimes/ServiceTimes'
+} from "@heroicons/react/20/solid";
+import { Container } from "@/components/Container";
+import { PageTitle } from "@/components/PageTitle";
+import SubMenu from "@/components/SubMenu";
+import Map from "@/components/i-am-new/Map";
+import { useState } from "react";
+import { ChurchService } from "@/components/about/ServiceTimes/ServiceTimes";
 
 const cards: ChurchService[] = [
   {
     index: 0,
-    name: 'Adults',
-    start_time: '18:00AM',
-    venue: 'Location',
+    name: "Adults",
+    start_time: "18:00AM",
+    venue: "Location",
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.',
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.",
     icon: PhoneIcon,
   },
   {
     index: 1,
-    name: 'Technical Support',
-    start_time: '18:00AM',
-    venue: 'Location',
+    name: "Technical Support",
+    start_time: "18:00AM",
+    venue: "Location",
     description:
-      'Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.',
+      "Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.",
     icon: LifebuoyIcon,
   },
   {
     index: 2,
-    name: 'Media Inquiries',
-    start_time: '18:00AM',
-    venue: 'Location',
+    name: "Media Inquiries",
+    start_time: "18:00AM",
+    venue: "Location",
     description:
-      'Ratione et porro eligendi est sed ratione rerum itaque. Placeat accusantium impedit eum odit.',
+      "Ratione et porro eligendi est sed ratione rerum itaque. Placeat accusantium impedit eum odit.",
     icon: NewspaperIcon,
   },
-]
+];
 const VisitPlan = () => {
-  const [active, setActive] = useState<ChurchService | null>(cards[0] ?? null)
+  const [active, setActive] = useState<ChurchService | null>(cards[0] ?? null);
 
   return (
     <section className="bg-surface py-8">
-      <PageTitle title={'First Vist Plan'} />
+      <PageTitle title={"First Vist Plan"} />
       <Container>
         <div className="mx-auto mb-16 text-center md:w-1/2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
@@ -65,8 +65,8 @@ const VisitPlan = () => {
               activeBorderColor="border-tertiary"
               items={cards}
               active={active ?? null}
-              onItemClick={(item:ChurchService) => {
-                setActive(item)
+              onItemClick={(item: ChurchService) => {
+                setActive(item);
               }}
               className="justify-left flex items-center px-6 md:px-0"
             />
@@ -91,7 +91,8 @@ const VisitPlan = () => {
             </div>
             <div className="px-4 text-center md:text-left">
               <div className="flex items-center justify-center text-2xl font-bold text-tertiary md:justify-start">
-                {active?.name} {active && <active.icon className="mx-2 my-4 h-6" />}
+                {active?.name}{" "}
+                {active && <active.icon className="mx-2 my-4 h-6" />}
               </div>
               <div className="mb-2 max-w-sm text-xl font-bold text-black">
                 What Should I Wear?
@@ -102,7 +103,7 @@ const VisitPlan = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default VisitPlan
+export default VisitPlan;

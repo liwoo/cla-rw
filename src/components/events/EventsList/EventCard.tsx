@@ -1,24 +1,32 @@
-import ClientImage from '@/components/ClientImage'
-import { LargeButton } from '@/components/LargeButton'
-import { P } from '@/components/typography/P'
-import { EventItem } from '@/utils/types'
-import { BookOpenIcon } from '@heroicons/react/20/solid'
-import moment from 'moment'
+import ClientImage from "@/components/ClientImage";
+import { LargeButton } from "@/components/LargeButton";
+import { P } from "@/components/typography/P";
+import { EventItem } from "@/utils/types";
+import { BookOpenIcon } from "@heroicons/react/20/solid";
+import moment from "moment";
 
-const EventCard = ({event}:{event:EventItem}) => {
-
+const EventCard = ({ event }: { event: EventItem }) => {
   return (
     <div>
       <div className="flex">
-        <Date date={moment(event.date,"MM-DD-YYYY").format('DD')} month={moment(event.date,"MM-DD-YYYY").format('MMM')} />
-        <About name={event.title} startTime={event.startTime} endTime={event.endTime} type={event.type} description={event.description}/>
+        <Date
+          date={moment(event.date, "MM-DD-YYYY").format("DD")}
+          month={moment(event.date, "MM-DD-YYYY").format("MMM")}
+        />
+        <About
+          name={event.title}
+          startTime={event.startTime}
+          endTime={event.endTime}
+          type={event.type}
+          description={event.description}
+        />
       </div>
       <div className="relative my-8 w-full overflow-hidden rounded-lg pt-[60%]">
         <ClientImage
           fill
           quality={50}
           blurDataURL={
-            'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+            "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
           }
           src={event.coverImg}
           alt={event.title}
@@ -26,7 +34,7 @@ const EventCard = ({event}:{event:EventItem}) => {
         />
         <div className="relative flex items-end p-8">
           <div className="flex items-center text-white">
-            <span className="mr-2 text-lg font-bold">{event.type}</span>{' '}
+            <span className="mr-2 text-lg font-bold">{event.type}</span>{" "}
             <BookOpenIcon className="h-6" />
           </div>
         </div>
@@ -40,14 +48,14 @@ const EventCard = ({event}:{event:EventItem}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EventCard
+export default EventCard;
 
 interface DateProps {
-  date: string
-  month: string
+  date: string;
+  month: string;
 }
 const Date = ({ date, month }: DateProps) => {
   return (
@@ -55,31 +63,29 @@ const Date = ({ date, month }: DateProps) => {
       <div className="mb-4 text-3xl text-secondary">{date}</div>
       <div className="uppercase text-secondary">{month}</div>
     </div>
-  )
-}
+  );
+};
 
 interface AboutProps {
-  name: string
-  startTime: string
-  endTime: string
-  type: string
-  description: string
+  name: string;
+  startTime: string;
+  endTime: string;
+  type: string;
+  description: string;
 }
-const About = ({name,startTime,endTime,type,description}:AboutProps) => {
+const About = ({ name, startTime, endTime, type, description }: AboutProps) => {
   return (
     <div className="w-full px-6">
       <div className="block lg:flex justify-between">
         <div className="text-lg font-bold">{name}</div>
-        <div className="md:text-xl font-semibold">{startTime} - {endTime}</div>
+        <div className="md:text-xl font-semibold">
+          {startTime} - {endTime}
+        </div>
       </div>
-      <div className="my-2 md:text-lg font-semibold text-secondary">
-        {type}
-      </div>
+      <div className="my-2 md:text-lg font-semibold text-secondary">{type}</div>
       <div className="line-clamp-2">
-        <P>
-          {description}
-        </P>
+        <P>{description}</P>
       </div>
     </div>
-  )
-}
+  );
+};

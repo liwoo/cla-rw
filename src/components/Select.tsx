@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
 export interface SelectItem {
-  text: string
-  value: string
+  text: string;
+  value: string;
 }
 interface SelectProps {
-  name: string
-  label?: string
-  options: SelectItem[]
-  onChange: any
+  name: string;
+  label?: string;
+  options: SelectItem[];
+  onChange: any;
 }
 const Select = ({ name, label, options, onChange }: SelectProps) => {
   return (
@@ -30,7 +30,7 @@ const Select = ({ name, label, options, onChange }: SelectProps) => {
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default Select
+export default Select;

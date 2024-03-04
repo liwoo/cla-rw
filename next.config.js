@@ -5,9 +5,9 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['res.cloudinary.com', 'images.unsplash.com', 'cdn.sanity.io'],
+    domains: ["res.cloudinary.com", "images.unsplash.com", "cdn.sanity.io"],
   },
   publicRuntimeConfig: {},
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

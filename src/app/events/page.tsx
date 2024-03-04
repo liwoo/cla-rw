@@ -1,13 +1,13 @@
-import EventsList from '@/components/events/EventsList/EventsList'
-import Hero from '@/components/events/Hero/Hero'
+import EventsList from "@/components/events/EventsList/EventsList";
+import Hero from "@/components/events/Hero/Hero";
 
 const Events = () => {
   return (
     <div>
-        <Hero/>
-        <EventsList/>
+      <Hero />
+      <EventsList />
     </div>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;

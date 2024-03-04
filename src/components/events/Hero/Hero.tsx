@@ -1,7 +1,7 @@
-import ClientImage from '@/components/ClientImage'
-import { Container } from '@/components/Container'
-import { LargeButton } from '@/components/LargeButton'
-import { ArrowRightIcon, FolderOpenIcon } from '@heroicons/react/20/solid'
+import ClientImage from "@/components/ClientImage";
+import { Container } from "@/components/Container";
+import { LargeButton } from "@/components/LargeButton";
+import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
         fill
         quality={50}
         blurDataURL={
-          'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+          "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
         }
         src="https://res.cloudinary.com/c99/image/upload/v1705326472/Placeholders/Screenshot_2024-01-15_at_15.47.02.png"
         alt="Coming Soon"
@@ -36,11 +36,11 @@ const Hero = () => {
           <div className="block items-center justify-evenly lg:justify-between py-6 md:py-0 md:flex">
             <div className="relative p-6 lg:p-0 flex-1">
               <div className="block items-center justify-between md:flex">
-                <DetailItem title={'date'} value={'2 Apr'} />
+                <DetailItem title={"date"} value={"2 Apr"} />
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
-                <DetailItem title={'venue'} value={'Namiwawa'} />
+                <DetailItem title={"venue"} value={"Namiwawa"} />
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
-                <DetailItem title={'time'} value={'12:00'} />
+                <DetailItem title={"time"} value={"12:00"} />
               </div>
               <div className="mt-8 flex items-end justify-start md:justify-end">
                 <LargeButton>Register</LargeButton>
@@ -51,7 +51,7 @@ const Hero = () => {
                 fill
                 quality={50}
                 blurDataURL={
-                  'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+                  "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
                 }
                 src="https://res.cloudinary.com/c99/image/upload/v1705326472/Placeholders/Screenshot_2024-01-15_at_15.47.16.png"
                 alt="Coming Soon"
@@ -79,14 +79,14 @@ const Hero = () => {
         </Container>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 
 interface DetailItemProps {
-  title: string
-  value: string
+  title: string;
+  value: string;
 }
 const DetailItem = ({ title, value }: DetailItemProps) => {
   return (
@@ -94,5 +94,5 @@ const DetailItem = ({ title, value }: DetailItemProps) => {
       <div className="text-2xl font-bold lg:text-3xl">{value}</div>
       <div className="my-2 font-semibold uppercase">{title}</div>
     </div>
-  )
-}
+  );
+};

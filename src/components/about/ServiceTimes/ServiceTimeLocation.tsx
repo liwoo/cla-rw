@@ -1,11 +1,11 @@
-import React from 'react'
-import { Container } from '@/components/Container'
-import ClientImage from '@/components/ClientImage'
+import React from "react";
+import { Container } from "@/components/Container";
+import ClientImage from "@/components/ClientImage";
 
 interface ServiceTimeLocationProps {
-  time: string
-  location: string
-  imageSrc: string
+  time: string;
+  location: string;
+  imageSrc: string;
 }
 const ServiceTimeLocation = ({
   time,
@@ -33,7 +33,7 @@ const ServiceTimeLocation = ({
         </div>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default ServiceTimeLocation
+export default ServiceTimeLocation;

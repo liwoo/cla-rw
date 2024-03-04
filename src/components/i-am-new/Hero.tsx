@@ -1,8 +1,8 @@
-import ClientImage from '@/components/ClientImage'
+import ClientImage from "@/components/ClientImage";
 
 interface HeroProps {
-  alt: string
-  src: string
+  alt: string;
+  src: string;
 }
 const Hero = ({ src, alt }: HeroProps) => {
   return (
@@ -14,7 +14,7 @@ const Hero = ({ src, alt }: HeroProps) => {
         className="absolute inset-0 h-full w-full object-cover object-bottom"
       />
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

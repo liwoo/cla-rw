@@ -1,18 +1,21 @@
-
-import { MagnifyingGlassIcon, MicrophoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
-import React from 'react'
-import { Container } from '@/components/Container'
-import Youtube from '@/components/icons/Youtube'
-import Spotify from '@/components/icons/Spotify'
-import ApplePodcast from '@/components/icons/ApplePodcast'
-import GooglePodcast from '@/components/icons/GooglePodcast'
-import ClientImage from '../ClientImage'
-import { LargeButton } from '../LargeButton'
-import LargeButtonOutline from '../LargeButtonOutline'
+import {
+  MagnifyingGlassIcon,
+  MicrophoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/20/solid";
+import React from "react";
+import { Container } from "@/components/Container";
+import Youtube from "@/components/icons/Youtube";
+import Spotify from "@/components/icons/Spotify";
+import ApplePodcast from "@/components/icons/ApplePodcast";
+import GooglePodcast from "@/components/icons/GooglePodcast";
+import ClientImage from "../ClientImage";
+import { LargeButton } from "../LargeButton";
+import LargeButtonOutline from "../LargeButtonOutline";
 
 const Hero = () => {
   const background =
-    'https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png'
+    "https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png";
   return (
     <Container className="my-8">
       <div className="flex items-center justify-between">
@@ -32,40 +35,46 @@ const Hero = () => {
               <div className="text-sm">Psalms 119:105</div>
             </div>
             <div className="relative flex justify-center md:justify-start">
-              <LargeButton className="mr-4" ><PlayCircleIcon className="h-10" /></LargeButton>
-              <LargeButtonOutline className="mr-4 border-white" ><MicrophoneIcon className="h-7 text-white" /></LargeButtonOutline>
+              <LargeButton className="mr-4">
+                <PlayCircleIcon className="h-10" />
+              </LargeButton>
+              <LargeButtonOutline className="mr-4 border-white">
+                <MicrophoneIcon className="h-7 text-white" />
+              </LargeButtonOutline>
             </div>
           </div>
         </div>
       </div>
       <div>
         <div className="text-center mb-4 text-2xl font-bold">
-            Listen,download & be blessed anywhere you are
+          Listen,download & be blessed anywhere you are
         </div>
         <div className="flex justify-center items-center">
-            <div className="mr-4 w-10 md:w-14"><Youtube/></div>
-            <div className="mr-4 w-8 md:w-12"><Spotify/></div>
-            <div className="mr-4 w-8 md:w-12"><ApplePodcast/></div>
-            <div className="mr-4 w-8 md:w-12"><GooglePodcast/></div>
+          <div className="mr-4 w-10 md:w-14">
+            <Youtube />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <Spotify />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <ApplePodcast />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <GooglePodcast />
+          </div>
         </div>
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 
 interface BackgroundProps {
-  src: string
-  alt: string
+  src: string;
+  alt: string;
 }
 
 const Background = ({ src, alt }: BackgroundProps) => {
-  return (
-    <ClientImage
-      fill
-      src={src}
-      alt={alt}
-    />
-  )
-}
+  return <ClientImage fill src={src} alt={alt} />;
+};

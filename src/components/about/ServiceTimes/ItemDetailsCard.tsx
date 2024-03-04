@@ -1,9 +1,9 @@
 interface ItemDetailsProps {
   item?: {
-    name: string
-    description: string
-    icon: any
-  } | null
+    name: string;
+    description: string;
+    icon: any;
+  } | null;
 }
 
 const ItemDetailsCard = ({ item }: ItemDetailsProps) => {
@@ -18,7 +18,7 @@ const ItemDetailsCard = ({ item }: ItemDetailsProps) => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetailsCard
+export default ItemDetailsCard;

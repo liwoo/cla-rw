@@ -15,7 +15,7 @@ import type {
   SanityImageDimensions,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-} from 'sanity-codegen'
+} from "sanity-codegen";
 
 export type {
   SanityReference,
@@ -34,7 +34,7 @@ export type {
   SanityImageDimensions,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-}
+};
 
 /**
  * Post
@@ -42,49 +42,49 @@ export type {
  *
  */
 export interface Post extends SanityDocument {
-  _type: 'post'
+  _type: "post";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Post Type — `string`
    *
    *
    */
-  postType?: 'Devotional' | 'Blog Post'
+  postType?: "Devotional" | "Blog Post";
 
   /**
    * Slug — `slug`
    *
    *
    */
-  slug?: { _type: 'slug'; current: string }
+  slug?: { _type: "slug"; current: string };
 
   /**
    * Author — `reference`
    *
    *
    */
-  author?: SanityReference<Author>
+  author?: SanityReference<Author>;
 
   /**
    * Audience — `array`
    *
    *
    */
-  audience?: Array<SanityKeyedReference<Audience>>
+  audience?: Array<SanityKeyedReference<Audience>>;
 
   /**
    * Staff Member — `reference`
    *
    *
    */
-  staff?: SanityReference<Staff>
+  staff?: SanityReference<Staff>;
 
   /**
    * Main image — `image`
@@ -92,39 +92,39 @@ export interface Post extends SanityDocument {
    *
    */
   mainImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Categories — `array`
    *
    *
    */
-  categories?: Array<SanityKeyedReference<Category>>
+  categories?: Array<SanityKeyedReference<Category>>;
 
   /**
    * Tags — `array`
    *
    *
    */
-  tags?: Array<SanityKeyedReference<Tag>>
+  tags?: Array<SanityKeyedReference<Tag>>;
 
   /**
    * Published at — `datetime`
    *
    *
    */
-  publishedAt?: string
+  publishedAt?: string;
 
   /**
    * Body — `blockContent`
    *
    *
    */
-  body?: BlockContent
+  body?: BlockContent;
 }
 
 /**
@@ -133,56 +133,56 @@ export interface Post extends SanityDocument {
  *
  */
 export interface Sermon extends SanityDocument {
-  _type: 'sermon'
+  _type: "sermon";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Sermon Type — `string`
    *
    *
    */
-  sermonType?: 'Audio' | 'Video' | 'Audio & Video'
+  sermonType?: "Audio" | "Video" | "Audio & Video";
 
   /**
    * Youtube Link — `string`
    *
    *
    */
-  youtubeLink?: string
+  youtubeLink?: string;
 
   /**
    * Soundcloud Link — `string`
    *
    *
    */
-  soundcloudLink?: string
+  soundcloudLink?: string;
 
   /**
    * Sermon Excerpt — `text`
    *
    *
    */
-  excerpt?: string
+  excerpt?: string;
 
   /**
    * Slug — `slug`
    *
    *
    */
-  slug?: { _type: 'slug'; current: string }
+  slug?: { _type: "slug"; current: string };
 
   /**
    * Main Preacher — `reference`
    *
    *
    */
-  preacher?: SanityReference<Preacher>
+  preacher?: SanityReference<Preacher>;
 
   /**
    * Main image — `image`
@@ -190,46 +190,46 @@ export interface Sermon extends SanityDocument {
    *
    */
   mainImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Sermon Series — `reference`
    *
    *
    */
-  series?: SanityReference<Series>
+  series?: SanityReference<Series>;
 
   /**
    * Sermon Scripture Reference — `reference`
    *
    *
    */
-  scripture?: SanityReference<Scripture>
+  scripture?: SanityReference<Scripture>;
 
   /**
    * Sermon Audeince — `array`
    *
    *
    */
-  audience?: Array<SanityKeyedReference<Audience>>
+  audience?: Array<SanityKeyedReference<Audience>>;
 
   /**
    * Tags — `array`
    *
    *
    */
-  tags?: Array<SanityKeyedReference<Tag>>
+  tags?: Array<SanityKeyedReference<Tag>>;
 
   /**
    * Published at — `datetime`
    *
    *
    */
-  publishedAt?: string
+  publishedAt?: string;
 }
 
 /**
@@ -238,14 +238,14 @@ export interface Sermon extends SanityDocument {
  *
  */
 export interface Staff extends SanityDocument {
-  _type: 'staff'
+  _type: "staff";
 
   /**
    * Staff Full Name — `string`
    *
    *
    */
-  staffName?: string
+  staffName?: string;
 
   /**
    * Department — `string`
@@ -253,25 +253,25 @@ export interface Staff extends SanityDocument {
    *
    */
   department?:
-    | 'Media'
-    | 'Grounds'
-    | 'Hospitality'
-    | 'Kitchen'
-    | 'Administration'
+    | "Media"
+    | "Grounds"
+    | "Hospitality"
+    | "Kitchen"
+    | "Administration";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Email — `string`
    *
    *
    */
-  email?: string
+  email?: string;
 
   /**
    * Profile Image — `image`
@@ -279,11 +279,11 @@ export interface Staff extends SanityDocument {
    *
    */
   profileImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -292,42 +292,42 @@ export interface Staff extends SanityDocument {
  *
  */
 export interface Preacher extends SanityDocument {
-  _type: 'preacher'
+  _type: "preacher";
 
   /**
    * Preacher Full Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Staff Member — `boolean`
    *
    *
    */
-  isStaff?: boolean
+  isStaff?: boolean;
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Email — `string`
    *
    *
    */
-  email?: string
+  email?: string;
 
   /**
    * Biography — `text`
    *
    *
    */
-  bio?: string
+  bio?: string;
 
   /**
    * Profile Image — `image`
@@ -335,11 +335,11 @@ export interface Preacher extends SanityDocument {
    *
    */
   profileImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Cover Image — `image`
@@ -347,11 +347,11 @@ export interface Preacher extends SanityDocument {
    *
    */
   coverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -360,35 +360,37 @@ export interface Preacher extends SanityDocument {
  *
  */
 export interface Audience extends SanityDocument {
-  _type: 'audience'
+  _type: "audience";
 
   /**
    * Audience Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Audience Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Venue — `string`
    *
    *
    */
-  venue?: string
+  venue?: string;
 
   /**
    * Meeting Time — `number`
    *
    *
    */
+
   meetingTime?: number
+
 
   /**
    * Secondary Image — `image`
@@ -396,11 +398,11 @@ export interface Audience extends SanityDocument {
    *
    */
   secondaryImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Cover Image — `image`
@@ -408,11 +410,11 @@ export interface Audience extends SanityDocument {
    *
    */
   coverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Audience Primary Color — `string`
@@ -420,154 +422,154 @@ export interface Audience extends SanityDocument {
    *
    */
   color?:
-    | 'AliceBlue'
-    | 'AntiqueWhite'
-    | 'Aqua'
-    | 'Aquamarine'
-    | 'Azure'
-    | 'Beige'
-    | 'Bisque'
-    | 'Black'
-    | 'BlanchedAlmond'
-    | 'Blue'
-    | 'BlueViolet'
-    | 'Brown'
-    | 'BurlyWood'
-    | 'CadetBlue'
-    | 'Chartreuse'
-    | 'Chocolate'
-    | 'Coral'
-    | 'CornflowerBlue'
-    | 'Cornsilk'
-    | 'Crimson'
-    | 'Cyan'
-    | 'DarkBlue'
-    | 'DarkCyan'
-    | 'DarkGoldenRod'
-    | 'DarkGray'
-    | 'DarkGrey'
-    | 'DarkGreen'
-    | 'DarkKhaki'
-    | 'DarkMagenta'
-    | 'DarkOliveGreen'
-    | 'DarkOrange'
-    | 'DarkOrchid'
-    | 'DarkRed'
-    | 'DarkSalmon'
-    | 'DarkSeaGreen'
-    | 'DarkSlateBlue'
-    | 'DarkSlateGray'
-    | 'DarkSlateGrey'
-    | 'DarkTurquoise'
-    | 'DarkViolet'
-    | 'DeepPink'
-    | 'DeepSkyBlue'
-    | 'DimGray'
-    | 'DimGrey'
-    | 'DodgerBlue'
-    | 'FireBrick'
-    | 'FloralWhite'
-    | 'ForestGreen'
-    | 'Fuchsia'
-    | 'Gainsboro'
-    | 'GhostWhite'
-    | 'Gold'
-    | 'GoldenRod'
-    | 'Gray'
-    | 'Grey'
-    | 'Green'
-    | 'GreenYellow'
-    | 'HoneyDew'
-    | 'HotPink'
-    | 'IndianRed'
-    | 'Indigo'
-    | 'Ivory'
-    | 'Khaki'
-    | 'Lavender'
-    | 'LavenderBlush'
-    | 'LawnGreen'
-    | 'LemonChiffon'
-    | 'LightBlue'
-    | 'LightCoral'
-    | 'LightCyan'
-    | 'LightGoldenRodYellow'
-    | 'LightGray'
-    | 'LightGrey'
-    | 'LightGreen'
-    | 'LightPink'
-    | 'LightSalmon'
-    | 'LightSeaGreen'
-    | 'LightSkyBlue'
-    | 'LightSlateGray'
-    | 'LightSlateGrey'
-    | 'LightSteelBlue'
-    | 'LightYellow'
-    | 'Lime'
-    | 'LimeGreen'
-    | 'Linen'
-    | 'Magenta'
-    | 'Maroon'
-    | 'MediumAquaMarine'
-    | 'MediumBlue'
-    | 'MediumOrchid'
-    | 'MediumPurple'
-    | 'MediumSeaGreen'
-    | 'MediumSlateBlue'
-    | 'MediumSpringGreen'
-    | 'MediumTurquoise'
-    | 'MediumVioletRed'
-    | 'MidnightBlue'
-    | 'MintCream'
-    | 'MistyRose'
-    | 'Moccasin'
-    | 'NavajoWhite'
-    | 'Navy'
-    | 'OldLace'
-    | 'Olive'
-    | 'OliveDrab'
-    | 'Orange'
-    | 'OrangeRed'
-    | 'Orchid'
-    | 'PaleGoldenRod'
-    | 'PaleGreen'
-    | 'PaleTurquoise'
-    | 'PaleVioletRed'
-    | 'PapayaWhip'
-    | 'PeachPuff'
-    | 'Peru'
-    | 'Pink'
-    | 'Plum'
-    | 'PowderBlue'
-    | 'Purple'
-    | 'RebeccaPurple'
-    | 'Red'
-    | 'RosyBrown'
-    | 'RoyalBlue'
-    | 'SaddleBrown'
-    | 'Salmon'
-    | 'SandyBrown'
-    | 'SeaGreen'
-    | 'SeaShell'
-    | 'Sienna'
-    | 'Silver'
-    | 'SkyBlue'
-    | 'SlateBlue'
-    | 'SlateGray'
-    | 'SlateGrey'
-    | 'Snow'
-    | 'SpringGreen'
-    | 'SteelBlue'
-    | 'Tan'
-    | 'Teal'
-    | 'Thistle'
-    | 'Tomato'
-    | 'Turquoise'
-    | 'Violet'
-    | 'Wheat'
-    | 'White'
-    | 'WhiteSmoke'
-    | 'Yellow'
-    | 'YellowGreen'
+    | "AliceBlue"
+    | "AntiqueWhite"
+    | "Aqua"
+    | "Aquamarine"
+    | "Azure"
+    | "Beige"
+    | "Bisque"
+    | "Black"
+    | "BlanchedAlmond"
+    | "Blue"
+    | "BlueViolet"
+    | "Brown"
+    | "BurlyWood"
+    | "CadetBlue"
+    | "Chartreuse"
+    | "Chocolate"
+    | "Coral"
+    | "CornflowerBlue"
+    | "Cornsilk"
+    | "Crimson"
+    | "Cyan"
+    | "DarkBlue"
+    | "DarkCyan"
+    | "DarkGoldenRod"
+    | "DarkGray"
+    | "DarkGrey"
+    | "DarkGreen"
+    | "DarkKhaki"
+    | "DarkMagenta"
+    | "DarkOliveGreen"
+    | "DarkOrange"
+    | "DarkOrchid"
+    | "DarkRed"
+    | "DarkSalmon"
+    | "DarkSeaGreen"
+    | "DarkSlateBlue"
+    | "DarkSlateGray"
+    | "DarkSlateGrey"
+    | "DarkTurquoise"
+    | "DarkViolet"
+    | "DeepPink"
+    | "DeepSkyBlue"
+    | "DimGray"
+    | "DimGrey"
+    | "DodgerBlue"
+    | "FireBrick"
+    | "FloralWhite"
+    | "ForestGreen"
+    | "Fuchsia"
+    | "Gainsboro"
+    | "GhostWhite"
+    | "Gold"
+    | "GoldenRod"
+    | "Gray"
+    | "Grey"
+    | "Green"
+    | "GreenYellow"
+    | "HoneyDew"
+    | "HotPink"
+    | "IndianRed"
+    | "Indigo"
+    | "Ivory"
+    | "Khaki"
+    | "Lavender"
+    | "LavenderBlush"
+    | "LawnGreen"
+    | "LemonChiffon"
+    | "LightBlue"
+    | "LightCoral"
+    | "LightCyan"
+    | "LightGoldenRodYellow"
+    | "LightGray"
+    | "LightGrey"
+    | "LightGreen"
+    | "LightPink"
+    | "LightSalmon"
+    | "LightSeaGreen"
+    | "LightSkyBlue"
+    | "LightSlateGray"
+    | "LightSlateGrey"
+    | "LightSteelBlue"
+    | "LightYellow"
+    | "Lime"
+    | "LimeGreen"
+    | "Linen"
+    | "Magenta"
+    | "Maroon"
+    | "MediumAquaMarine"
+    | "MediumBlue"
+    | "MediumOrchid"
+    | "MediumPurple"
+    | "MediumSeaGreen"
+    | "MediumSlateBlue"
+    | "MediumSpringGreen"
+    | "MediumTurquoise"
+    | "MediumVioletRed"
+    | "MidnightBlue"
+    | "MintCream"
+    | "MistyRose"
+    | "Moccasin"
+    | "NavajoWhite"
+    | "Navy"
+    | "OldLace"
+    | "Olive"
+    | "OliveDrab"
+    | "Orange"
+    | "OrangeRed"
+    | "Orchid"
+    | "PaleGoldenRod"
+    | "PaleGreen"
+    | "PaleTurquoise"
+    | "PaleVioletRed"
+    | "PapayaWhip"
+    | "PeachPuff"
+    | "Peru"
+    | "Pink"
+    | "Plum"
+    | "PowderBlue"
+    | "Purple"
+    | "RebeccaPurple"
+    | "Red"
+    | "RosyBrown"
+    | "RoyalBlue"
+    | "SaddleBrown"
+    | "Salmon"
+    | "SandyBrown"
+    | "SeaGreen"
+    | "SeaShell"
+    | "Sienna"
+    | "Silver"
+    | "SkyBlue"
+    | "SlateBlue"
+    | "SlateGray"
+    | "SlateGrey"
+    | "Snow"
+    | "SpringGreen"
+    | "SteelBlue"
+    | "Tan"
+    | "Teal"
+    | "Thistle"
+    | "Tomato"
+    | "Turquoise"
+    | "Violet"
+    | "Wheat"
+    | "White"
+    | "WhiteSmoke"
+    | "Yellow"
+    | "YellowGreen";
 }
 
 /**
@@ -576,28 +578,28 @@ export interface Audience extends SanityDocument {
  *
  */
 export interface Belief extends SanityDocument {
-  _type: 'belief'
+  _type: "belief";
 
   /**
    * Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Belief Scripture Reference — `reference`
    *
    *
    */
-  scripture?: SanityReference<Scripture>
+  scripture?: SanityReference<Scripture>;
 
   /**
    * Description of Belief — `string`
    *
    *
    */
-  description?: string
+  description?: string;
 }
 
 /**
@@ -606,21 +608,21 @@ export interface Belief extends SanityDocument {
  *
  */
 export interface Author extends SanityDocument {
-  _type: 'author'
+  _type: "author";
 
   /**
    * Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Slug — `slug`
    *
    *
    */
-  slug?: { _type: 'slug'; current: string }
+  slug?: { _type: "slug"; current: string };
 
   /**
    * Image — `image`
@@ -628,18 +630,18 @@ export interface Author extends SanityDocument {
    *
    */
   image?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Bio — `array`
    *
    *
    */
-  bio?: Array<SanityKeyed<SanityBlock>>
+  bio?: Array<SanityKeyed<SanityBlock>>;
 }
 
 /**
@@ -648,21 +650,21 @@ export interface Author extends SanityDocument {
  *
  */
 export interface Series extends SanityDocument {
-  _type: 'series'
+  _type: "series";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Main image — `image`
@@ -670,11 +672,11 @@ export interface Series extends SanityDocument {
    *
    */
   mainImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -683,21 +685,21 @@ export interface Series extends SanityDocument {
  *
  */
 export interface Category extends SanityDocument {
-  _type: 'category'
+  _type: "category";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 }
 
 /**
@@ -706,7 +708,7 @@ export interface Category extends SanityDocument {
  *
  */
 export interface Scripture extends SanityDocument {
-  _type: 'scripture'
+  _type: "scripture";
 
   /**
    * Bible Book — `string`
@@ -714,93 +716,93 @@ export interface Scripture extends SanityDocument {
    *
    */
   bibleBook?:
-    | 'Genesis'
-    | 'Exodus'
-    | 'Leviticus'
-    | 'Numbers'
-    | 'Deuteronomy'
-    | 'Joshua'
-    | 'Judges'
-    | 'Ruth'
-    | '1 Samuel'
-    | '2 Samuel'
-    | '1 Kings'
-    | '2 Kings'
-    | '1 Chronicles'
-    | '2 Chronicles'
-    | 'Ezra'
-    | 'Nehemiah'
-    | 'Esther'
-    | 'Job'
-    | 'Psalm'
-    | 'Proverbs'
-    | 'Ecclesiastes'
-    | 'Song of Solomon'
-    | 'Isaiah'
-    | 'Jeremiah'
-    | 'Lamentations'
-    | 'Ezekiel'
-    | 'Daniel'
-    | 'Hosea'
-    | 'Joel'
-    | 'Amos'
-    | 'Obadiah'
-    | 'Jonah'
-    | 'Micah'
-    | 'Nahum'
-    | 'Habakkuk'
-    | 'Zephaniah'
-    | 'Haggai'
-    | 'Zechariah'
-    | 'Malachi'
-    | 'Matthew'
-    | 'Mark'
-    | 'Luke'
-    | 'John'
-    | 'Acts'
-    | 'Romans'
-    | '1 Corinthians'
-    | '2 Corinthians'
-    | 'Galatians'
-    | 'Ephesians'
-    | 'Philippians'
-    | 'Colossians'
-    | '1 Thessalonians'
-    | '2 Thessalonians'
-    | '1 Timothy'
-    | '2 Timothy'
-    | 'Titus'
-    | 'Philemon'
-    | 'Hebrews'
-    | 'James'
-    | '1 Peter'
-    | '2 Peter'
-    | '1 John'
-    | '2 John'
-    | '3 John'
-    | 'Jude'
-    | 'Revelation'
+    | "Genesis"
+    | "Exodus"
+    | "Leviticus"
+    | "Numbers"
+    | "Deuteronomy"
+    | "Joshua"
+    | "Judges"
+    | "Ruth"
+    | "1 Samuel"
+    | "2 Samuel"
+    | "1 Kings"
+    | "2 Kings"
+    | "1 Chronicles"
+    | "2 Chronicles"
+    | "Ezra"
+    | "Nehemiah"
+    | "Esther"
+    | "Job"
+    | "Psalm"
+    | "Proverbs"
+    | "Ecclesiastes"
+    | "Song of Solomon"
+    | "Isaiah"
+    | "Jeremiah"
+    | "Lamentations"
+    | "Ezekiel"
+    | "Daniel"
+    | "Hosea"
+    | "Joel"
+    | "Amos"
+    | "Obadiah"
+    | "Jonah"
+    | "Micah"
+    | "Nahum"
+    | "Habakkuk"
+    | "Zephaniah"
+    | "Haggai"
+    | "Zechariah"
+    | "Malachi"
+    | "Matthew"
+    | "Mark"
+    | "Luke"
+    | "John"
+    | "Acts"
+    | "Romans"
+    | "1 Corinthians"
+    | "2 Corinthians"
+    | "Galatians"
+    | "Ephesians"
+    | "Philippians"
+    | "Colossians"
+    | "1 Thessalonians"
+    | "2 Thessalonians"
+    | "1 Timothy"
+    | "2 Timothy"
+    | "Titus"
+    | "Philemon"
+    | "Hebrews"
+    | "James"
+    | "1 Peter"
+    | "2 Peter"
+    | "1 John"
+    | "2 John"
+    | "3 John"
+    | "Jude"
+    | "Revelation";
 
   /**
    * Chapter — `number`
    *
    *
    */
-  chapter?: number
+  chapter?: number;
 
   /**
    * Verse Start — `number`
    *
    *
    */
-  verseStart?: number
+  verseStart?: number;
 
   /**
    * Verse End — `number`
    *
    *
    */
-  verseEnd?: number
+  verseEnd?: number;
 }
 
 /**
@@ -809,21 +811,21 @@ export interface Scripture extends SanityDocument {
  *
  */
 export interface SocialMedia extends SanityDocument {
-  _type: 'socialMedia'
+  _type: "socialMedia";
 
   /**
    * Social Media Title — `string`
    *
    *
    */
-  socialMediaTitle?: string
+  socialMediaTitle?: string;
 
   /**
    * Link — `string`
    *
    *
    */
-  link?: string
+  link?: string;
 }
 
 /**
@@ -832,14 +834,14 @@ export interface SocialMedia extends SanityDocument {
  *
  */
 export interface Tag extends SanityDocument {
-  _type: 'tag'
+  _type: "tag";
 
   /**
    * Ttag — `string`
    *
    *
    */
-  tag?: string
+  tag?: string;
 }
 
 /**
@@ -848,35 +850,35 @@ export interface Tag extends SanityDocument {
  *
  */
 export interface CellLeader extends SanityDocument {
-  _type: 'cellLeader'
+  _type: "cellLeader";
 
   /**
    * Cell Leader Full Name  — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Phone Number — `string`
    *
    *
    */
-  phoneNumber?: string
+  phoneNumber?: string;
 
   /**
    * email — `string`
    *
    *
    */
-  email?: string
+  email?: string;
 
   /**
    * cellCode — `reference`
    *
    *
    */
-  cellCode?: SanityReference<CellCodes>
+  cellCode?: SanityReference<CellCodes>;
 
   /**
    * Leader image — `image`
@@ -884,11 +886,11 @@ export interface CellLeader extends SanityDocument {
    *
    */
   leaderImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -897,28 +899,28 @@ export interface CellLeader extends SanityDocument {
  *
  */
 export interface Cell extends SanityDocument {
-  _type: 'cell'
+  _type: "cell";
 
   /**
    * Cell Name  — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Cell Leader — `array`
    *
    *
    */
-  cellLeader?: Array<SanityKeyedReference<CellLeader>>
+  cellLeader?: Array<SanityKeyedReference<CellLeader>>;
 
   /**
    * cellCode — `reference`
    *
    *
    */
-  cellCode?: SanityReference<CellCodes>
+  cellCode?: SanityReference<CellCodes>;
 }
 
 /**
@@ -927,20 +929,21 @@ export interface Cell extends SanityDocument {
  *
  */
 export interface ChurchDetails extends SanityDocument {
-  _type: 'churchDetails'
+  _type: "churchDetails";
 
   /**
    * Brief History — `text`
    *
    *
    */
-  briefHistory?: string
+  briefHistory?: string;
 
   /**
    * New Here — `text`
    *
    *
    */
+
   newHere?: string
 
   /**
@@ -994,6 +997,7 @@ export interface ChurchDetails extends SanityDocument {
     crop?: SanityImageCrop
     hotspot?: SanityImageHotspot
   }
+
 }
 
 /**
@@ -1002,56 +1006,56 @@ export interface ChurchDetails extends SanityDocument {
  *
  */
 export interface Ministries extends SanityDocument {
-  _type: 'ministries'
+  _type: "ministries";
 
   /**
    * Ministry  — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Main Description — `string`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Ministry Verse — `string`
    *
    *
    */
-  minstryVerse?: string
+  minstryVerse?: string;
 
   /**
    * Sermon Scripture Reference — `reference`
    *
    *
    */
-  scripture?: SanityReference<Scripture>
+  scripture?: SanityReference<Scripture>;
 
   /**
    * Tenets — `reference`
    *
    *
    */
-  tenets?: SanityReference<Tenets>
+  tenets?: SanityReference<Tenets>;
 
   /**
    * Testimonials — `reference`
    *
    *
    */
-  testimonials?: SanityReference<Testimonials>
+  testimonials?: SanityReference<Testimonials>;
 
   /**
    * Leaders — `reference`
    *
    *
    */
-  leaders?: SanityReference<Leaders>
+  leaders?: SanityReference<Leaders>;
 
   /**
    * Ministry Image — `image`
@@ -1059,11 +1063,11 @@ export interface Ministries extends SanityDocument {
    *
    */
   ministryImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Ministry Cover Image — `image`
@@ -1071,11 +1075,11 @@ export interface Ministries extends SanityDocument {
    *
    */
   ministryCoverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1084,42 +1088,42 @@ export interface Ministries extends SanityDocument {
  *
  */
 export interface Notices extends SanityDocument {
-  _type: 'notices'
+  _type: "notices";
 
   /**
    * Title  — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `string`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Link — `string`
    *
    *
    */
-  link?: string
+  link?: string;
 
   /**
    * Start Date — `date`
    *
    *
    */
-  startDate?: string
+  startDate?: string;
 
   /**
    * End Date — `date`
    *
    *
    */
-  endDate?: string
+  endDate?: string;
 
   /**
    * Cover Image — `image`
@@ -1127,11 +1131,11 @@ export interface Notices extends SanityDocument {
    *
    */
   coverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1140,21 +1144,21 @@ export interface Notices extends SanityDocument {
  *
  */
 export interface News extends SanityDocument {
-  _type: 'news'
+  _type: "news";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `string`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Main image — `image`
@@ -1162,18 +1166,18 @@ export interface News extends SanityDocument {
    *
    */
   mainImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Published Date — `datetime`
    *
    *
    */
-  date?: string
+  date?: string;
 }
 
 /**
@@ -1182,21 +1186,21 @@ export interface News extends SanityDocument {
  *
  */
 export interface CallToAction extends SanityDocument {
-  _type: 'callToAction'
+  _type: "callToAction";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `string`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Cover Image — `image`
@@ -1204,32 +1208,32 @@ export interface CallToAction extends SanityDocument {
    *
    */
   coverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Order Number — `number`
    *
    *
    */
-  order?: number
+  order?: number;
 
   /**
    * Is Cell Description — `boolean`
    *
    *
    */
-  isCell?: boolean
+  isCell?: boolean;
 
   /**
    * Link — `string`
    *
    *
    */
-  link?: string
+  link?: string;
 }
 
 /**
@@ -1238,14 +1242,14 @@ export interface CallToAction extends SanityDocument {
  *
  */
 export interface CellCodes extends SanityDocument {
-  _type: 'cellCodes'
+  _type: "cellCodes";
 
   /**
    * Cell Code — `string`
    *
    *
    */
-  cellCode?: string
+  cellCode?: string;
 }
 
 /**
@@ -1254,21 +1258,21 @@ export interface CellCodes extends SanityDocument {
  *
  */
 export interface Zone extends SanityDocument {
-  _type: 'zone'
+  _type: "zone";
 
   /**
    * Zone Name — `string`
    *
    *
    */
-  zoneName?: string
+  zoneName?: string;
 
   /**
    * Zone Leader — `array`
    *
    *
    */
-  zoneLeader?: Array<SanityKeyedReference<ZoneLeader>>
+  zoneLeader?: Array<SanityKeyedReference<ZoneLeader>>;
 }
 
 /**
@@ -1277,42 +1281,42 @@ export interface Zone extends SanityDocument {
  *
  */
 export interface ZoneLeader extends SanityDocument {
-  _type: 'zoneLeader'
+  _type: "zoneLeader";
 
   /**
    * Zone Leader Name — `string`
    *
    *
    */
-  zoneLeaderName?: string
+  zoneLeaderName?: string;
 
   /**
    * Phonenumber — `string`
    *
    *
    */
-  phoneNumber?: string
+  phoneNumber?: string;
 
   /**
    * Email — `string`
    *
    *
    */
-  email?: string
+  email?: string;
 
   /**
    * Zone Name — `string`
    *
    *
    */
-  zoneName?: string
+  zoneName?: string;
 
   /**
    * Zone sections — `array`
    *
    *
    */
-  zoneSections?: Array<SanityKeyedReference<ZoneSection>>
+  zoneSections?: Array<SanityKeyedReference<ZoneSection>>;
 }
 
 /**
@@ -1321,21 +1325,21 @@ export interface ZoneLeader extends SanityDocument {
  *
  */
 export interface ZoneSection extends SanityDocument {
-  _type: 'zoneSection'
+  _type: "zoneSection";
 
   /**
    * Zone Section Name — `string`
    *
    *
    */
-  zoneSectionName?: string
+  zoneSectionName?: string;
 
   /**
    * Zone Section Leaders — `array`
    *
    *
    */
-  zoneSectionLeaders?: Array<SanityKeyedReference<ZoneSectionLeader>>
+  zoneSectionLeaders?: Array<SanityKeyedReference<ZoneSectionLeader>>;
 }
 
 /**
@@ -1344,42 +1348,42 @@ export interface ZoneSection extends SanityDocument {
  *
  */
 export interface ZoneSectionLeader extends SanityDocument {
-  _type: 'zoneSectionLeader'
+  _type: "zoneSectionLeader";
 
   /**
    * Zone Section Leader Name — `string`
    *
    *
    */
-  zoneSectionLeaderName?: string
+  zoneSectionLeaderName?: string;
 
   /**
    * Phonenumber — `string`
    *
    *
    */
-  phoneNumber?: string
+  phoneNumber?: string;
 
   /**
    * Email — `string`
    *
    *
    */
-  email?: string
+  email?: string;
 
   /**
    * Zone Section Name — `string`
    *
    *
    */
-  zoneSectionName?: string
+  zoneSectionName?: string;
 
   /**
    * Cell Codes — `array`
    *
    *
    */
-  cellCodes?: Array<SanityKeyedReference<CellCodes>>
+  cellCodes?: Array<SanityKeyedReference<CellCodes>>;
 }
 
 /**
@@ -1388,28 +1392,28 @@ export interface ZoneSectionLeader extends SanityDocument {
  *
  */
 export interface Leaders extends SanityDocument {
-  _type: 'leaders'
+  _type: "leaders";
 
   /**
    * Leaders names — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Leaders Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Leaders Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Leaders Image — `image`
@@ -1417,11 +1421,11 @@ export interface Leaders extends SanityDocument {
    *
    */
   image?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1430,35 +1434,35 @@ export interface Leaders extends SanityDocument {
  *
  */
 export interface Testimonials extends SanityDocument {
-  _type: 'testimonials'
+  _type: "testimonials";
 
   /**
    * Testimonial Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Testimonial Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Testimonial Subtitle — `string`
    *
    *
    */
-  subtitle?: string
+  subtitle?: string;
 
   /**
    * Testimonial — `text`
    *
    *
    */
-  testimonial?: string
+  testimonial?: string;
 
   /**
    * Testimonial Image — `image`
@@ -1466,11 +1470,11 @@ export interface Testimonials extends SanityDocument {
    *
    */
   image?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1479,21 +1483,21 @@ export interface Testimonials extends SanityDocument {
  *
  */
 export interface Tenets extends SanityDocument {
-  _type: 'tenets'
+  _type: "tenets";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 }
 
 /**
@@ -1697,12 +1701,12 @@ export interface Events extends SanityDocument {
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
-      _type: 'image'
-      asset: SanityReference<SanityImageAsset>
-      crop?: SanityImageCrop
-      hotspot?: SanityImageHotspot
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
     }>
->
+>;
 
 export type Documents =
   | Post

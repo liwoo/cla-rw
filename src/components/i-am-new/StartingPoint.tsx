@@ -1,12 +1,12 @@
-import React from 'react'
-import { PageTitle } from '@/components/PageTitle'
-import { PhoneIcon } from '@heroicons/react/20/solid'
-import Accordion from '../Accordion'
-import { Container } from '../Container'
+import React from "react";
+import { PageTitle } from "@/components/PageTitle";
+import { PhoneIcon } from "@heroicons/react/20/solid";
+import Accordion from "../Accordion";
+import { Container } from "../Container";
 
 interface StartingPointItem {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 const StartingPoint = () => {
@@ -14,12 +14,12 @@ const StartingPoint = () => {
     (_i, index) => ({
       title: `Lorem ipsum dolor sit amet consectetur adipisicing elit. ${index}`,
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facere eaque esse consequuntur quidem impedit incidunt repellendus sapiente eum veniam tempora officiis aperiam cum optio, sed voluptatum recusandae aut dignissimos.',
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facere eaque esse consequuntur quidem impedit incidunt repellendus sapiente eum veniam tempora officiis aperiam cum optio, sed voluptatum recusandae aut dignissimos.",
     })
-  )
+  );
   return (
     <section className="bg-surface py-8">
-      <PageTitle title={'Starting Point'} />
+      <PageTitle title={"Starting Point"} />
       <Container className="my-8">
         <div className="md:flex">
           <div className="my-8  flex-1">
@@ -49,7 +49,7 @@ const StartingPoint = () => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default StartingPoint
+export default StartingPoint;
