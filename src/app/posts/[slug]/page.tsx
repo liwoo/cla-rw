@@ -3,6 +3,7 @@ import { Author, Post } from "@/sanity/schema";
 import { NotFound } from "@/components/NotFound";
 import { SanityImageAsset } from "sanity-codegen";
 import PostPageContent from "@/components/posts/PostPageContent";
+import { PathsParams } from "@/utils/types";
 
 export type PostWithAuthor = PostWithoutAuthor & {
   author: AuthorWithImage;
@@ -21,34 +22,8 @@ type AuthorWithImage = AuthorWithoutImage & {
 
 type PostWithoutAuthor = Omit<Post, "author" | "mainImage">;
 
-interface PostProps {
-  paths: PostWithAuthor;
-}
-
-interface PathsParams {
-  params: {
-    slug?: string;
-  };
-}
-
 //TODO: Get this from env
 const baseUrl = "https://clarwanda.org";
-
-async function generateStaticParams() {
-  const posts = await getAllPosts();
-
-  if (!posts) {
-    return {
-      paths: [],
-    };
-  }
-
-  const paths: PathsParams[] = posts?.map(({ slug }) => ({
-    params: { slug: slug?.current ?? "" },
-  }));
-
-  return paths;
-}
 
 export default async function Page({
   params: { slug },

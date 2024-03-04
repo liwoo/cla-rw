@@ -1,8 +1,6 @@
-import BookOpenIcon from "@/components/icons/BookOpenIcon";
 import {
   BookmarkIcon,
   CalendarIcon,
-  ChartPieIcon,
   MegaphoneIcon,
   PhoneIcon,
   QuestionMarkCircleIcon,

@@ -55,3 +55,9 @@ export interface EventItem {
   description: string;
   coverImg: string;
 }
+
+export interface PathsParams {
+  params: {
+    slug?: string;
+  };
+}

@@ -7,6 +7,7 @@ import "@/styles/tailwind.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import clsx from "clsx";
+import { getAllMinistries } from "@/sanity/ministries";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -43,7 +44,10 @@ export const metadata: Metadata = {
 
 const company = "CLA Rwanda";
 
-export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
+export default async function RootLayout({
+  children,
+}: Readonly<RootLayoutProps>) {
+  const ministries = await getAllMinistries();
   return (
     <html
       className={clsx(
@@ -52,8 +56,8 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       )}
       lang="en"
     >
-      <body className="flex h-full flex-col bg-surface">
-        <Header company={company} />
+      <body className="bg-surface flex h-full flex-col">
+        <Header ministries={ministries} company={company} />
         <main className="bg-surface pt-16 md:pt-32">{children}</main>
         <Script />
         <Footer />
