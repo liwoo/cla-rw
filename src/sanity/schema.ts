@@ -388,9 +388,7 @@ export interface Audience extends SanityDocument {
    *
    *
    */
-
-  meetingTime?: number
-
+  meetingTime?: number;
 
   /**
    * Secondary Image — `image`
@@ -943,36 +941,35 @@ export interface ChurchDetails extends SanityDocument {
    *
    *
    */
-
-  newHere?: string
+  newHere?: string;
 
   /**
    * What Should I Wear — `text`
    *
    *
    */
-  whatShouldIWear?: string
+  whatShouldIWear?: string;
 
   /**
    * First Visit Plan — `text`
    *
    *
    */
-  firstVisitPlan?: string
+  firstVisitPlan?: string;
 
   /**
    * Church Difference — `text`
    *
    *
    */
-  churchDifference?: string
+  churchDifference?: string;
 
   /**
    * Lead Pastor — `reference`
    *
    *
    */
-  leadPastor?: SanityReference<Leaders>
+  leadPastor?: SanityReference<Leaders>;
 
   /**
    * New Here Thumb — `image`
@@ -980,11 +977,11 @@ export interface ChurchDetails extends SanityDocument {
    *
    */
   newHereThumb?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * New Here Cover — `image`
@@ -992,12 +989,11 @@ export interface ChurchDetails extends SanityDocument {
    *
    */
   newHereCover?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
-
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1506,21 +1502,21 @@ export interface Tenets extends SanityDocument {
  *
  */
 export interface Venue extends SanityDocument {
-  _type: 'venue'
+  _type: "venue";
 
   /**
-   * venue Name — `string`
+   * Venue Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Venue Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Venue Image — `image`
@@ -1528,11 +1524,11 @@ export interface Venue extends SanityDocument {
    *
    */
   venueImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1541,21 +1537,21 @@ export interface Venue extends SanityDocument {
  *
  */
 export interface Speakers extends SanityDocument {
-  _type: 'speakers'
+  _type: "speakers";
 
   /**
    * Speaker Name — `string`
    *
    *
    */
-  name?: string
+  name?: string;
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Speaker Image — `image`
@@ -1563,11 +1559,11 @@ export interface Speakers extends SanityDocument {
    *
    */
   speakerImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1576,21 +1572,21 @@ export interface Speakers extends SanityDocument {
  *
  */
 export interface EventCategory extends SanityDocument {
-  _type: 'eventCategory'
+  _type: "eventCategory";
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 }
 
 /**
@@ -1599,70 +1595,70 @@ export interface EventCategory extends SanityDocument {
  *
  */
 export interface Events extends SanityDocument {
-  _type: 'events'
+  _type: "events";
 
   /**
    * Event Name  — `string`
    *
    *
    */
-  title?: string
+  title?: string;
 
   /**
    * Event Description — `text`
    *
    *
    */
-  description?: string
+  description?: string;
 
   /**
    * Event Date — `date`
    *
    *
    */
-  eventDate?: string
+  eventDate?: string;
 
   /**
    * Start Time — `number`
    *
    *
    */
-  startTime?: number
+  startTime?: number;
 
   /**
    * End Time — `number`
    *
    *
    */
-  endTime?: number
+  endTime?: number;
 
   /**
    * Venue Reference — `reference`
    *
    *
    */
-  venue?: SanityReference<Venue>
+  venue?: SanityReference<Venue>;
 
   /**
    * Speakers Reference — `array`
    *
    *
    */
-  speakerReference?: Array<SanityKeyed<Speakers>>
+  speakerReference?: Array<SanityKeyedReference<Speakers>>;
 
   /**
    * Sign up form — `string`
    *
    *
    */
-  signUpForm?: string
+  signUpForm?: string;
 
   /**
    * Audience Reference — `reference`
    *
    *
    */
-  audience?: SanityReference<Audience>
+  audience?: SanityReference<Audience>;
 
   /**
    * Events Cover Image — `image`
@@ -1670,32 +1666,32 @@ export interface Events extends SanityDocument {
    *
    */
   eventsCoverImage?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
    * Event Category Reference — `reference`
    *
    *
    */
-  eventCategory?: SanityReference<EventCategory>
+  eventCategory?: SanityReference<EventCategory>;
 
   /**
    * Topics — `array`
    *
    *
    */
-  topics?: Array<SanityKeyed<string>>
+  topics?: Array<SanityKeyed<string>>;
 
   /**
    * Spot Counter — `number`
    *
    *
    */
-  spotCounter?: number
+  spotCounter?: number;
 }
 
 export type BlockContent = Array<
@@ -1739,4 +1735,4 @@ export type Documents =
   | Venue
   | Speakers
   | EventCategory
-  | Events
+  | Events;
