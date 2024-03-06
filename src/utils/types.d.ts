@@ -1,3 +1,4 @@
+import { Leaders, Tenets, Testimonials } from "@/sanity/schema";
 import { ReactNode } from "react";
 import {
   SanityImageAsset,
@@ -61,3 +62,13 @@ export interface PathsParams {
     slug?: string;
   };
 }
+
+export type MinistryItem = Ministries & {
+  imageUrl: string;
+  ministryCoverImage: {
+    asset: SanityReference<SanityImageAssetLocal>;
+  };
+  tenets?: Tenets;
+  leaders?: Leaders;
+  testimonials?: Testimonials[];
+};

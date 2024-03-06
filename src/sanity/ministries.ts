@@ -1,19 +1,22 @@
+import { MinistryItem } from "@/utils/types";
 import client from "./client";
-import { Ministries } from "./schema";
 
-export async function getAllMinistries(): Promise<Ministries[]> {
-  const query = `*[_type == "ministries"] | order(_updatedAt desc) 
-    {
+export async function getAllMinistries(): Promise<MinistryItem[]> {
+  const query = `*[_type == "ministries"] | order(_updatedAt desc) {
       ...,
-      "imageUrl": ministryImage.asset->url,
-      ministryImage {
+      "imageUrl": ministryCoverImage.asset->url,
+      ministryCoverImage {
         asset-> {
             ...,
             metadata
         }
-     },
+    },
     tenets[]->,
-    leaders[]->
+    leaders{
+      ...,
+      "imageUrl":image.asset->url
+    },
+    testimonials[]->
   }`;
   return await client.fetch(query);
 }

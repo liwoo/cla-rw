@@ -3,27 +3,22 @@ import { Container } from "@/components/Container";
 import { NoticeWithoutImage } from "@/components/cta/NoticeWithoutImage";
 import Discover from "@/components/ministry/Discover";
 import Testimonials from "@/components/ministry/Testimonials";
-import { Ministries } from "@/sanity/schema";
 import { getLatestNotice } from "@/sanity/home-page-data";
 import { defaultImage } from "@/utils/default";
+import { MinistryItem } from "@/utils/types";
 
-export const Ministry = async ({ ministry }: { ministry: Ministries }) => {
+export const Ministry = async ({ ministry }: { ministry: MinistryItem }) => {
   const notice = await getLatestNotice();
-  const heroImg = ministry.imageUrl ?? defaultImage.asset.url
-  const details = {
-    title: ministry.name ?? "Not Found",
-    description: ministry.description ?? "Not Found",
-    more: ministry.minstryVerse ?? "Not Found",
-    tenets:ministry.tenets
-  };
-
+  const heroImg = ministry.imageUrl;
+  
+  console.log(ministry);
   return (
     <div>
       <Hero img={heroImg} />
       <Container className="my-16">
         <NoticeWithoutImage notice={notice} />
       </Container>
-      <Discover details={details} />
+      <Discover ministry={ministry} />
       <Testimonials />
     </div>
   );
