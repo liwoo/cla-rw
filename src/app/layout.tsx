@@ -47,7 +47,9 @@ const company = "CLA Rwanda";
 export default async function RootLayout({
   children,
 }: Readonly<RootLayoutProps>) {
+  //Loader - happening on the Server
   const ministries = await getAllMinistries();
+
   return (
     <html
       className={clsx(
@@ -58,7 +60,7 @@ export default async function RootLayout({
     >
       <body className="bg-surface flex h-full flex-col">
         <Header ministries={ministries} company={company} />
-        <main className="bg-surface pt-16 md:pt-32">{children}</main>
+        <main className="bg-surface pt-20 md:pt-36">{children}</main>
         <Script />
         <Footer />
       </body>

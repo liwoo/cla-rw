@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, Fragment, useEffect } from "react";
+import { FC, Fragment, useEffect, useRef, useState } from "react";
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 import logo from "@/images/logo.svg";
 import { menu } from "@/data/menu";
@@ -17,7 +17,7 @@ import Image from "next/image";
 import { LargeButton } from "@/components/LargeButton";
 import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Ministries } from "@/sanity/schema";
 import { slugify } from "@/utils/helpers";
 
@@ -26,6 +26,8 @@ export const Header: FC<{ company: string; ministries: Ministries[] }> = ({
   ministries,
 }) => {
   const pathName = usePathname();
+  const router = useRouter();
+
   const ministryMenu: Menu[] = ministries.map((ministry) => {
     return {
       name: ministry.name ?? "Not Found",
@@ -45,8 +47,14 @@ export const Header: FC<{ company: string; ministries: Ministries[] }> = ({
   };
 
   useEffect(() => {
-    const menuBtn = document.getElementById("menuBtn");
-    menuBtn?.click();
+    //btn with data-headlessui-state=open and type is button
+    const closeBtn = document.querySelector(
+      "button[data-headlessui-state=open][type=button]"
+    ) as HTMLButtonElement;
+    console.log({ closeBtn });
+    if (closeBtn) {
+      closeBtn.click();
+    }
   }, [pathName]);
 
   return (
@@ -240,7 +248,10 @@ export const Header: FC<{ company: string; ministries: Ministries[] }> = ({
                     />
                   </div>
                   <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button
+                      id="closeBtn"
+                      className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    >
                       <span className="sr-only">Close menu</span>
                       <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -259,7 +270,10 @@ export const Header: FC<{ company: string; ministries: Ministries[] }> = ({
                             >
                               {({ open }) => (
                                 <>
-                                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                  <Disclosure.Button
+                                    id="popover"
+                                    className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                  >
                                     {men.name}
                                     <ChevronDownIcon
                                       className={clsx(
