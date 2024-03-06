@@ -384,11 +384,11 @@ export interface Audience extends SanityDocument {
   venue?: string;
 
   /**
-   * Meeting Time — `string`
+   * Meeting Time — `number`
    *
    *
    */
-  meetingTime?: string;
+  meetingTime?: number;
 
   /**
    * Secondary Image — `image`
@@ -942,6 +942,58 @@ export interface ChurchDetails extends SanityDocument {
    *
    */
   newHere?: string;
+
+  /**
+   * What Should I Wear — `text`
+   *
+   *
+   */
+  whatShouldIWear?: string;
+
+  /**
+   * First Visit Plan — `text`
+   *
+   *
+   */
+  firstVisitPlan?: string;
+
+  /**
+   * Church Difference — `text`
+   *
+   *
+   */
+  churchDifference?: string;
+
+  /**
+   * Lead Pastor — `reference`
+   *
+   *
+   */
+  leadPastor?: SanityReference<Leaders>;
+
+  /**
+   * New Here Thumb — `image`
+   *
+   *
+   */
+  newHereThumb?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * New Here Cover — `image`
+   *
+   *
+   */
+  newHereCover?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -1444,6 +1496,204 @@ export interface Tenets extends SanityDocument {
   description?: string;
 }
 
+/**
+ * Venue
+ *
+ *
+ */
+export interface Venue extends SanityDocument {
+  _type: "venue";
+
+  /**
+   * Venue Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Venue Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Venue Image — `image`
+   *
+   *
+   */
+  venueImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Speakers
+ *
+ *
+ */
+export interface Speakers extends SanityDocument {
+  _type: "speakers";
+
+  /**
+   * Speaker Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Speaker Image — `image`
+   *
+   *
+   */
+  speakerImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Event Category
+ *
+ *
+ */
+export interface EventCategory extends SanityDocument {
+  _type: "eventCategory";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+}
+
+/**
+ * Events
+ *
+ *
+ */
+export interface Events extends SanityDocument {
+  _type: "events";
+
+  /**
+   * Event Name  — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Event Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Event Date — `date`
+   *
+   *
+   */
+  eventDate?: string;
+
+  /**
+   * Start Time — `number`
+   *
+   *
+   */
+  startTime?: number;
+
+  /**
+   * End Time — `number`
+   *
+   *
+   */
+  endTime?: number;
+
+  /**
+   * Venue Reference — `reference`
+   *
+   *
+   */
+  venue?: SanityReference<Venue>;
+
+  /**
+   * Speakers Reference — `array`
+   *
+   *
+   */
+  speakerReference?: Array<SanityKeyedReference<Speakers>>;
+
+  /**
+   * Sign up form — `string`
+   *
+   *
+   */
+  signUpForm?: string;
+
+  /**
+   * Audience Reference — `reference`
+   *
+   *
+   */
+  audience?: SanityReference<Audience>;
+
+  /**
+   * Events Cover Image — `image`
+   *
+   *
+   */
+  eventsCoverImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Event Category Reference — `reference`
+   *
+   *
+   */
+  eventCategory?: SanityReference<EventCategory>;
+
+  /**
+   * Topics — `array`
+   *
+   *
+   */
+  topics?: Array<SanityKeyed<string>>;
+
+  /**
+   * Spot Counter — `number`
+   *
+   *
+   */
+  spotCounter?: number;
+}
+
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -1481,4 +1731,8 @@ export type Documents =
   | ZoneSectionLeader
   | Leaders
   | Testimonials
-  | Tenets;
+  | Tenets
+  | Venue
+  | Speakers
+  | EventCategory
+  | Events;
