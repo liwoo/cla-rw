@@ -6,7 +6,7 @@ import { EventItem } from "@/utils/types";
 import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
 
-const Hero = ({ event }: { event: EventItem }) => {
+const Hero = ({ event }: { event?: EventItem }) => {
   return (
     <div className="relative min-h-[500px]">
       <ClientImage

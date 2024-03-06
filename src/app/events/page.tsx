@@ -7,7 +7,7 @@ const Events = async () => {
 
   return (
     <div>
-      <Hero event={allEvents[0] ?? null} />
+      <Hero event={allEvents[0]} />
       <EventsList events={allEvents} />
     </div>
   );
