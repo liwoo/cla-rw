@@ -6,6 +6,7 @@ interface AboutItem {
   title: string;
   description: string;
   more: string;
+  // tenets: string[]
 }
 const Discover = ({
   details: { title, more, description },
