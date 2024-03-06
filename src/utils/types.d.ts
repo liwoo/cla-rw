@@ -16,7 +16,7 @@ export interface SEOProps {
 
 export interface SanityImageAssetLocal {
   _type: "image";
-  asset: SanityReference<SanityImageAsset>;
+  asset: SanityReference<SanityImageAsset> & {url: string;};
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
 }
@@ -46,15 +46,9 @@ export interface TestimonialItem {
   testimonial: string;
 }
 
-export interface EventItem {
-  title: string;
-  type: string;
-  date: string;
-  startTime: string;
-  endTime: string;
-  description: string;
-  coverImg: string;
-}
+export type EventItem = Events & { audience: Audience } & { venue: Venue } & {
+  eventCategory: EventCategory;
+} & { imageUrl: string };
 
 export interface PathsParams {
   params: {

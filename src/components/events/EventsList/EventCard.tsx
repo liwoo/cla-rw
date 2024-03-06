@@ -1,6 +1,7 @@
 import ClientImage from "@/components/ClientImage";
 import { LargeButton } from "@/components/LargeButton";
 import { P } from "@/components/typography/P";
+import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
 import { BookOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
@@ -10,15 +11,15 @@ const EventCard = ({ event }: { event: EventItem }) => {
     <div>
       <div className="flex">
         <Date
-          date={moment(event.date, "MM-DD-YYYY").format("DD")}
-          month={moment(event.date, "MM-DD-YYYY").format("MMM")}
+          date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
+          month={moment(event.eventDate, "YYYY-MM-DD").format("MMM")}
         />
         <About
-          name={event.title}
-          startTime={event.startTime}
-          endTime={event.endTime}
-          type={event.type}
-          description={event.description}
+          name={event.title ?? ""}
+          startTime={`${event.startTime}`}
+          endTime={`${event.endTime}`}
+          type={event.eventCategory.title}
+          description={event.description ?? ""}
         />
       </div>
       <div className="relative my-8 w-full overflow-hidden rounded-lg pt-[60%]">
@@ -28,13 +29,15 @@ const EventCard = ({ event }: { event: EventItem }) => {
           blurDataURL={
             "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
           }
-          src={event.coverImg}
+          src={event.imageUrl ?? defaultImage.asset.url}
           alt={event.title}
           className="absolute !-top-[10%] !h-[110%] w-full object-cover"
         />
         <div className="relative flex items-end p-8">
           <div className="flex items-center text-white">
-            <span className="mr-2 text-lg font-bold">{event.type}</span>{" "}
+            <span className="mr-2 text-lg font-bold">
+              {event.audience.name}
+            </span>{" "}
             <BookOpenIcon className="h-6" />
           </div>
         </div>
@@ -76,13 +79,13 @@ interface AboutProps {
 const About = ({ name, startTime, endTime, type, description }: AboutProps) => {
   return (
     <div className="w-full px-6">
-      <div className="block lg:flex justify-between">
+      <div className="block justify-between lg:flex">
         <div className="text-lg font-bold">{name}</div>
-        <div className="md:text-xl font-semibold">
+        <div className="font-semibold md:text-xl">
           {startTime} - {endTime}
         </div>
       </div>
-      <div className="my-2 md:text-lg font-semibold text-secondary">{type}</div>
+      <div className="my-2 font-semibold text-secondary md:text-lg">{type}</div>
       <div className="line-clamp-2">
         <P>{description}</P>
       </div>
