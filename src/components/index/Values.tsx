@@ -6,8 +6,6 @@ import {
   PhoneIcon,
 } from "@heroicons/react/20/solid";
 
-import { useSpring, animated } from "@react-spring/web";
-
 export default function Values() {
   const cards = [
     {
@@ -30,19 +28,8 @@ export default function Values() {
     },
   ];
 
-  const [props, _] = useSpring(
-    () => ({
-      from: { y: -1.1 },
-      to: { y: 1 },
-    }),
-    []
-  );
-
   return (
-    <animated.div
-      style={props}
-      className="isolate my-20 mx-0 overflow-hidden bg-gray-900 sm:relative md:my-8 lg:sticky lg:top-44 lg:z-20 lg:mx-8 lg:rounded-xl"
-    >
+    <div className="isolate my-20 mx-0 overflow-hidden bg-gray-900 sm:relative md:my-8 lg:sticky lg:top-44 lg:z-20 lg:mx-8 lg:rounded-xl">
       <div className="hidden sm:absolute sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl">
         <div
           className="from-primary to-secondary aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr opacity-20"
@@ -78,6 +65,6 @@ export default function Values() {
           </div>
         ))}
       </div>
-    </animated.div>
+    </div>
   );
 }
