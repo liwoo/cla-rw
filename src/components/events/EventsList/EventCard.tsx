@@ -5,10 +5,11 @@ import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
 import { BookOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
+import Link from "next/link";
 
 const EventCard = ({ event }: { event: EventItem }) => {
   return (
-    <div>
+    <Link href={`/events/${event._id}`}>
       <div className="flex">
         <Date
           date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
@@ -43,14 +44,17 @@ const EventCard = ({ event }: { event: EventItem }) => {
         </div>
       </div>
       <div className="flex items-center justify-end">
-        <div className="mr-4 text-xl font-semibold text-secondary">
-          23 Places Left
+        {
+          event.spotCounter && <div className="mr-4 text-xl font-semibold text-secondary">
+          {event.spotCounter} Places Left
         </div>
-        <div>
+        }
+        
+        <Link href={`/events/${event._id}`}>
           <LargeButton>Register</LargeButton>
-        </div>
+        </Link>
       </div>
-    </div>
+    </Link>
   );
 };
 

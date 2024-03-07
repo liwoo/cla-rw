@@ -46,9 +46,12 @@ export interface TestimonialItem {
   testimonial: string;
 }
 
-export type EventItem = Events & { audience: Audience } & { venue: Venue } & {
+export type EventItem = Events & { 
+  audience: Audience & {imageUrl: string},
+  venue: Venue,
   eventCategory: EventCategory;
-} & { imageUrl: string };
+  imageUrl: string
+}
 
 export interface PathsParams {
   params: {

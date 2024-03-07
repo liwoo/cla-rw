@@ -5,6 +5,7 @@ import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
 import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
+import Link from "next/link";
 
 const Hero = ({ event }: { event?: EventItem }) => {
   return (
@@ -15,8 +16,8 @@ const Hero = ({ event }: { event?: EventItem }) => {
         blurDataURL={
           "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
         }
-        src={event.imageUrl ?? defaultImage.asset.url}
-        alt={event.title}
+        src={event.audience.imageUrl ?? defaultImage.asset.url}
+        alt={event.audience.name}
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
       <Container>
@@ -52,9 +53,9 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
                 <DetailItem title={"time"} value={event.startTime} />
               </div>
-              <div className="mt-8 flex items-end justify-start md:justify-end">
+              <Link href={`events/${event._id}`} className="mt-8 flex items-end justify-start md:justify-end">
                 <LargeButton>Register</LargeButton>
-              </div>
+              </Link>
             </div>
             <div className="relative mx-12 hidden w-[30%] pt-[25%] lg:block">
               <ClientImage
@@ -63,8 +64,8 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 blurDataURL={
                   "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
                 }
-                src="https://res.cloudinary.com/c99/image/upload/v1705326472/Placeholders/Screenshot_2024-01-15_at_15.47.16.png"
-                alt="Coming Soon"
+                src={event.imageUrl ?? defaultImage.asset.url}
+                alt={event.title}
                 className="absolute !-top-[10%] !h-[110%] w-full object-cover"
               />
             </div>
@@ -72,12 +73,12 @@ const Hero = ({ event }: { event?: EventItem }) => {
             <div className="relative w-full py-6 md:w-[35%] lg:w-[25%] lg:py-0">
               <div>
                 <div className="line-clamp-6">{event.description}</div>
-                <div className="my-4 flex items-center">
+                <Link href={`events/${event._id}`} className="my-4 flex items-center">
                   <span className="mr-2 cursor-pointer font-bold">
                     Read More
                   </span>
                   <ArrowRightIcon className="h-6" />
-                </div>
+                </Link>
               </div>
             </div>
           </div>
