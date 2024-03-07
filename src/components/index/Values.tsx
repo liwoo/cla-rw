@@ -39,7 +39,7 @@ export default function Values() {
           }}
         />
       </div>
-      <div className="absolute left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu">
+      <div className="left-1/2 -z-10 hidden -translate-x-1/2 transform-gpu blur-3xl sm:absolute sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu">
         <div
           className="from-primary to-secondary aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr opacity-20"
           style={{
