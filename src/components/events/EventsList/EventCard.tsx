@@ -7,7 +7,7 @@ import moment from "moment";
 
 const EventCard = ({ event }: { event: EventItem }) => {
   return (
-    <div>
+    <div className="group">
       <div className="flex">
         <Date
           date={moment(event.date, "MM-DD-YYYY").format("DD")}
@@ -30,7 +30,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
           }
           src={event.coverImg}
           alt={event.title}
-          className="absolute !-top-[10%] !h-[110%] w-full object-cover"
+          className="zoom-on-hover absolute !-top-[10%] !h-[110%] w-full object-cover"
         />
         <div className="relative flex items-end p-8">
           <div className="flex items-center text-white">
@@ -40,7 +40,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
         </div>
       </div>
       <div className="flex items-center justify-end">
-        <div className="mr-4 text-xl font-semibold text-secondary">
+        <div className="text-secondary mr-4 text-xl font-semibold">
           23 Places Left
         </div>
         <div>
@@ -59,9 +59,13 @@ interface DateProps {
 }
 const Date = ({ date, month }: DateProps) => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-md border border-muted p-4 px-10">
-      <div className="mb-4 text-3xl text-secondary">{date}</div>
-      <div className="uppercase text-secondary">{month}</div>
+    <div className="border-muted group-hover:bg-secondary flex flex-col items-center justify-center rounded-md border p-4 px-10 transition-all duration-300 ease-linear">
+      <div className="text-secondary mb-4 text-3xl group-hover:text-white">
+        {date}
+      </div>
+      <div className="text-secondary uppercase group-hover:text-white">
+        {month}
+      </div>
     </div>
   );
 };
@@ -76,13 +80,13 @@ interface AboutProps {
 const About = ({ name, startTime, endTime, type, description }: AboutProps) => {
   return (
     <div className="w-full px-6">
-      <div className="block lg:flex justify-between">
+      <div className="block justify-between lg:flex">
         <div className="text-lg font-bold">{name}</div>
-        <div className="md:text-xl font-semibold">
+        <div className="font-semibold md:text-xl">
           {startTime} - {endTime}
         </div>
       </div>
-      <div className="my-2 md:text-lg font-semibold text-secondary">{type}</div>
+      <div className="text-secondary my-2 font-semibold md:text-lg">{type}</div>
       <div className="line-clamp-2">
         <P>{description}</P>
       </div>

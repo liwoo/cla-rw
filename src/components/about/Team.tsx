@@ -51,7 +51,7 @@ const Member = ({ name, office, imgSrc }: MemberProps) => {
   return (
     <div>
       <div className="relative my-4 w-full overflow-hidden rounded-md pt-[100%]">
-        <ClientImage fill src={imgSrc} alt={name} />
+        <ClientImage fill src={imgSrc} alt={name} className="zoom-on-hover" />
       </div>
       <div className="font-semibold">{name}</div>
       <div className="font-extralight">{office}</div>

@@ -18,7 +18,7 @@ const Discover = ({
     more: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit quidem veritatis earum! A illo temporibus error impedit voluptatem illum ducimus aut officiis obcaecati alias, amet suscipit quod autem incidunt.",
   }));
   return (
-    <section className="my-8">
+    <section className="my-20">
       <PageTitle title={`Discover ${title}`} />
       <Container>
         <div className="my-8 grid grid-cols-1 gap-16 md:grid-cols-5">

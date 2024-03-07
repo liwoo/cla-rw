@@ -23,14 +23,11 @@ export const Ministry = ({ ministry }: { ministry: Ministries }) => {
   const details = {
     title: ministry.name ?? "Not Found",
     description: ministry.description ?? "Not Found",
-    more: ministry.minstryVerse ?? "Not Found",
+    more: ministry.more ?? "Not Found",
   };
   return (
     <div>
       <Hero img={heroImg} />
-      <Container className="my-16">
-        <NoticeWithoutImage notice={notice as any} />
-      </Container>
       <Discover details={details} />
       <Testimonials />
     </div>

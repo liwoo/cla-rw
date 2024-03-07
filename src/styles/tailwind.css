@@ -14,3 +14,24 @@
 .image-blend {
   background-color: rgba(17, 24, 39, 0.2);
 }
+
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+.zoom-animation {
+  animation: zoom 20s infinite;
+}
+
+.zoom-on-hover {
+  @apply transition-transform duration-500 ease-in-out hover:scale-125;
+}
+
+.subtle-zoom-on-hover {
+  @apply transition-transform duration-500 ease-in-out hover:scale-105;
+}

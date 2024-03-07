@@ -40,6 +40,7 @@ const History = () => {
             <div className="relative w-full overflow-hidden rounded-md pt-[100%] md:pt-[120%]">
               <ClientImage
                 fill
+                className="zoom-on-hover"
                 src="https://res.cloudinary.com/c99/image/upload/v1704981698/Placeholders/Screenshot_2024-01-11_at_15.54.48.png"
                 alt="Coming Soon"
               />

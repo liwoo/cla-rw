@@ -8,5 +8,5 @@ export default function BackgroundImage({
   alt = "coming soon",
   src,
 }: ImageProps) {
-  return <ClientImage fill src={src} alt={alt} />;
+  return <ClientImage className="zoom-animation" fill src={src} alt={alt} />;
 }

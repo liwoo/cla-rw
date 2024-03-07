@@ -52,7 +52,7 @@ const cards: ChurchService[] = [
 ];
 
 const ServiceTimes = () => {
-  const [active, setActive] = useState(cards[0] ?? null);
+  const [active, setActive] = useState<ChurchService>(cards[0] ?? null);
   const backgroungImg =
     "https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png";
   const image =
@@ -65,7 +65,7 @@ const ServiceTimes = () => {
           <SubMenu
             items={cards}
             active={active}
-            onItemClick={(item) => setActive(item)}
+            onItemClick={(item: ChurchService) => setActive(item)}
           />
           <ItemDetailsCard item={active} />
         </Container>

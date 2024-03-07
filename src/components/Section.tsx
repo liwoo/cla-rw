@@ -36,7 +36,9 @@ const Section = ({
               secondaryContent
             ) : (
               <div className="relative w-full overflow-hidden rounded-md pt-[100%] md:pt-[120%]">
-                {imgSrc && <ClientImage fill src={imgSrc} />}
+                {imgSrc && (
+                  <ClientImage fill src={imgSrc} className="zoom-on-hover" />
+                )}
               </div>
             )}
           </div>

@@ -18,10 +18,10 @@ const PersonCard = ({ img, name, position, about }: PersonCardProps) => {
           }
           src={img}
           alt="Coming Soon"
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="zoom-on-hover absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="relative flex h-full w-full items-end">
-          <div className="w-full bg-primary p-8 text-center text-white">
+          <div className="bg-primary w-full p-8 text-center text-white">
             <div className="text-2xl font-bold">{name}</div>
             <div className="text-2xl">{position}</div>
           </div>
