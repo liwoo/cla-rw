@@ -15,7 +15,6 @@ const EventRegistration = async ({
 
   const event = await getEventById(slug);
 
-  console.log(event)
   return (
     <div>
       <Hero event={event} />
