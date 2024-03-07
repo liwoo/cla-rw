@@ -23,7 +23,7 @@ export const Ministry = ({ ministry }: { ministry: Ministries }) => {
   const details = {
     title: ministry.name ?? "Not Found",
     description: ministry.description ?? "Not Found",
-    more: ministry.more ?? "Not Found",
+    more: ministry.description ?? "Not Found",
   };
   return (
     <div>
