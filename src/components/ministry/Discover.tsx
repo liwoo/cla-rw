@@ -18,21 +18,21 @@ const Discover = ({
   
   return (
     <section className="my-8">
-      <PageTitle title={`Discover ${ministry.title}`} />
+      <PageTitle title={`Discover ${ministry.name}`} />
       <Container>
         <div className="my-8 grid grid-cols-1 gap-16 md:grid-cols-5">
           <div className="col-span-1 md:col-span-3">
-            <Title title={ministry.title} />
-            <Quote verse={ministry.more} />
+            <Title title={ministry.name} />
+            <Quote verse={ministry.description} />
             <AboutList items={ministry.tenets} />
           </div>
           <div className="col-span-1 md:col-span-2 ">
             <PersonCard
               img={ministry.leader.imageUrl}
-              name={"Peace Kampingo"}
-              position={"Chair Person"}
+              name={ministry.leader.name}
+              position={ministry.leader.title}
               about={
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae tenetur beatae veritatis voluptate assumenda minima quis delectus, laborum fugit architecto id aspernatur repellat iusto similique corporis officiis dolorum! Nesciunt?"
+                ministry.leader.description
               }
             />
           </div>

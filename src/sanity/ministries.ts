@@ -12,11 +12,14 @@ export async function getAllMinistries(): Promise<MinistryItem[]> {
         }
     },
     tenets[]->,
-    leaders{
+    "leader": leaders->{
       ...,
       "imageUrl":image.asset->url
     },
-    testimonials[]->
+    testimonials[]->{
+      ...,
+      "imageUrl":image.asset->url
+    }
   }`;
   return await client.fetch(query);
 }

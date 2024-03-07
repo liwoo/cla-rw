@@ -19,7 +19,7 @@ export const Ministry = async ({ ministry }: { ministry: MinistryItem }) => {
         <NoticeWithoutImage notice={notice} />
       </Container>
       <Discover ministry={ministry} />
-      <Testimonials />
+      <Testimonials testimonials={ministry.testimonials}/>
     </div>
   );
 };

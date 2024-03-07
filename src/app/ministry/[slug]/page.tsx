@@ -9,6 +9,7 @@ export default async function Page({ params }: Readonly<PathsParams>) {
   const ministry = allMinistries.find(
     (ministry) => slugify(ministry.name ?? "not found") === params.slug
   );
+console.log(ministry)
 
   if (!ministry) return <NotFound />;
   return <Ministry ministry={ministry} />;

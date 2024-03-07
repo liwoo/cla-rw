@@ -63,12 +63,20 @@ export interface PathsParams {
   };
 }
 
+export type LeaderItem= Leaders & {
+  imageUrl: string;
+};
+
+export type TestimonialsItem = Testimonials & {
+  imageUrl: string;
+}
+
 export type MinistryItem = Ministries & {
   imageUrl: string;
   ministryCoverImage: {
     asset: SanityReference<SanityImageAssetLocal>;
   };
-  tenets?: Tenets;
-  leaders?: Leaders;
+  tenets?: Tenets[];
+  leaders?: LeaderItem;
   testimonials?: Testimonials[];
 };
