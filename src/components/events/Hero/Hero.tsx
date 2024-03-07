@@ -51,7 +51,7 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
                 <DetailItem title={"venue"} value={event.venue.name ?? ""} />
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
-                <DetailItem title={"time"} value={event.startTime} />
+                <DetailItem title={"time"} value={moment(event.startTime, "HHmm").format("HH:mm")} />
               </div>
               <Link href={`events/${event._id}`} className="mt-8 flex items-end justify-start md:justify-end">
                 <LargeButton>Register</LargeButton>

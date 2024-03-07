@@ -11,6 +11,7 @@ import Google from "@/components/icons/Google";
 import SpeakersList from "@/components/events/register/Speakers/SpeakersList";
 import Menu from "@/components/events/register/Menu/Menu";
 import ShareEvent from "@/components/events/register/ShareEvent";
+import { EventItem } from "@/utils/types";
 
 export interface Step {
   step: number;
@@ -19,7 +20,7 @@ export interface Step {
   icon: ReactNode;
   form: () => JSX.Element;
 }
-const RegistrationForm = () => {
+const RegistrationForm = ({event}:{event: EventItem}) => {
   const steps: Step[] = [
     {
       step: 1,
@@ -57,7 +58,7 @@ const RegistrationForm = () => {
             <div className="mb-4 text-xl font-semibold">Steps</div>
             <Menu steps={steps} activeStep={activeStep} size="large" />
             <div className="pt-24">
-              <SpeakersList />
+              <SpeakersList speakers={event.speakerReference}/>
               <ShareEvent />
             </div>
           </div>

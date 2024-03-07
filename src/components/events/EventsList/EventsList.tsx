@@ -29,7 +29,7 @@ const EventsList = ({ events }: { events: EventItem[] }) => {
 
       <Container>
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          {events.map((event) => (
+          {filteredEvents.map((event) => (
             <EventCard key={event.title} event={event} />
           ))}
         </div>

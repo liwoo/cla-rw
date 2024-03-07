@@ -86,7 +86,7 @@ const About = ({ name, startTime, endTime, type, description }: AboutProps) => {
       <div className="block justify-between lg:flex">
         <div className="text-lg font-bold">{name}</div>
         <div className="font-semibold md:text-xl">
-          {startTime} - {endTime}
+        {moment(startTime, "HHmm").format("HH:mm")} - {moment(endTime, "HHmm").format("HH:mm")}
         </div>
       </div>
       <div className="my-2 font-semibold text-secondary md:text-lg">{type}</div>

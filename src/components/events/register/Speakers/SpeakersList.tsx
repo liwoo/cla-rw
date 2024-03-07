@@ -1,21 +1,23 @@
 import React from "react";
 import SpeakerCard from "./SpeakerCard";
+import { SpeakerItem } from "@/utils/types";
 
 export interface Speaker {
   name: string;
   img: string;
   about: string;
 }
-const SpeakersList = () => {
-  const speakers = Array.from(Array(3).keys()).map(() => ({
-    name: "Speaker Name",
-    about: "Office",
-    img: "https://res.cloudinary.com/c99/image/upload/v1704981693/Placeholders/Screenshot_2024-01-11_at_15.53.47.png",
+const SpeakersList = ({speakers}:{speakers:SpeakerItem[]}) => {
+  
+  const speakersList:Speaker[] = speakers.map((speaker) => ({
+    name: speaker.name??"",
+    about: speaker.title??"",
+    img: speaker.imageUrl,
   }));
   return (
     <div>
       <div className="my-4 text-xl font-semibold">Speakers List</div>
-      {speakers.map((speaker) => (
+      {speakersList.map((speaker) => (
         <SpeakerCard speaker={speaker} key={speaker.name} />
       ))}
     </div>

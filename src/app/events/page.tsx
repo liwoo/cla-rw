@@ -5,7 +5,6 @@ import { getAllEvents } from "@/sanity/events";
 const Events = async () => {
   const allEvents = await getAllEvents();
 
-  console.log(allEvents)
   return (
     <div>
       <Hero event={allEvents[0]} />

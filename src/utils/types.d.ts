@@ -1,3 +1,4 @@
+import { Speakers } from "@/sanity/schema";
 import { ReactNode } from "react";
 import {
   SanityImageAsset,
@@ -57,4 +58,8 @@ export interface PathsParams {
   params: {
     slug?: string;
   };
+}
+
+export type SpeakerItem = Speakers & {
+  imageUrl: string
 }
