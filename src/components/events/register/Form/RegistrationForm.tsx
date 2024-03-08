@@ -57,10 +57,6 @@ const RegistrationForm = ({event}:{event: EventItem}) => {
           <div className="hidden w-[30%] border-r border-secondary lg:block">
             <div className="mb-4 text-xl font-semibold">Steps</div>
             <Menu steps={steps} activeStep={activeStep} size="large" />
-            <div className="pt-24">
-              <SpeakersList speakers={event.speakerReference}/>
-              <ShareEvent />
-            </div>
           </div>
           <div className="w-full lg:w-[70%] lg:px-16">
             <div>

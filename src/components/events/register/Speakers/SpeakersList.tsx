@@ -15,11 +15,14 @@ const SpeakersList = ({speakers}:{speakers:SpeakerItem[]}) => {
     img: speaker.imageUrl,
   }));
   return (
-    <div>
+    <div className="container mx-auto text-center my-16">
       <div className="my-4 text-xl font-semibold">Speakers List</div>
+      <div className="flex justify-center">
       {speakersList.map((speaker) => (
         <SpeakerCard speaker={speaker} key={speaker.name} />
       ))}
+      </div>
+      
     </div>
   );
 };
