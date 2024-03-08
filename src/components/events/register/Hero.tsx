@@ -1,5 +1,6 @@
 import ClientImage from "@/components/ClientImage";
 import { Container } from "@/components/Container";
+import Overlay from "@/components/Overlay";
 import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
 import { CalendarIcon, CheckIcon, ClockIcon } from "@heroicons/react/20/solid";
@@ -20,6 +21,7 @@ const Hero = ({event}:{event: EventItem}) => {
         alt={event.title}
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
+      <Overlay/>
       <Container className="h-full">
         <div className="relative flex h-full items-end py-8 md:py-16 text-white">
           <div>

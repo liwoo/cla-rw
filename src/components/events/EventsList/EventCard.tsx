@@ -12,6 +12,7 @@ import Link from "next/link";
 const EventCard = ({ event }: { event: EventItem }) => {
   return (
     <Link href={`/events/${slugify(event.title)}`}>
+      <div>
       <div className="flex">
         <Date
           date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
@@ -56,6 +57,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
         <Link href={`/events/${slugify(event.title)}`}>
           <LargeButton>Register</LargeButton>
         </Link>
+      </div>
       </div>
     </Link>
   );
