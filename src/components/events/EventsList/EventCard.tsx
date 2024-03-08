@@ -3,6 +3,7 @@ import { LargeButton } from "@/components/LargeButton";
 import Overlay from "@/components/Overlay";
 import { P } from "@/components/typography/P";
 import { defaultImage } from "@/utils/default";
+import { slugify } from "@/utils/helpers";
 import { EventItem } from "@/utils/types";
 import { BookOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
@@ -10,7 +11,7 @@ import Link from "next/link";
 
 const EventCard = ({ event }: { event: EventItem }) => {
   return (
-    <Link href={`/events/${event._id}`}>
+    <Link href={`/events/${slugify(event.title)}`}>
       <div className="flex">
         <Date
           date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
@@ -52,7 +53,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
         </div>
         }
         
-        <Link href={`/events/${event._id}`}>
+        <Link href={`/events/${slugify(event.title)}`}>
           <LargeButton>Register</LargeButton>
         </Link>
       </div>

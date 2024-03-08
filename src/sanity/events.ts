@@ -10,7 +10,11 @@ export async function getAllEvents(): Promise<EventItem[]> {
           "imageUrl": secondaryImage.asset->url
         },
         venue->,
-        eventCategory->
+        eventCategory->,
+        speakerReference[]-> {
+          ...,
+          "imageUrl": speakerImage.asset->url
+        }
       }`;
     return await client.fetch(query);
   }

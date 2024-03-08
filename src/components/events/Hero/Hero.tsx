@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { LargeButton } from "@/components/LargeButton";
 import Overlay from "@/components/Overlay";
 import { defaultImage } from "@/utils/default";
+import { slugify } from "@/utils/helpers";
 import { EventItem } from "@/utils/types";
 import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
@@ -55,7 +56,7 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
                 <DetailItem title={"time"} value={moment(event.startTime, "HHmm").format("HH:mm")} />
               </div>
-              <Link href={`events/${event._id}`} className="mt-8 flex items-end justify-start md:justify-end">
+              <Link href={`events/${slugify(event.title)}`} className="mt-8 flex items-end justify-start md:justify-end">
                 <LargeButton>Register</LargeButton>
               </Link>
             </div>
@@ -76,7 +77,7 @@ const Hero = ({ event }: { event?: EventItem }) => {
             <div className="relative w-full py-6 md:w-[35%] lg:w-[25%] lg:py-0">
               <div>
                 <div className="line-clamp-6">{event.description}</div>
-                <Link href={`events/${event._id}`} className="my-4 flex items-center">
+                <Link href={`events/${slugify(event.title)}`} className="my-4 flex items-center">
                   <span className="mr-2 cursor-pointer font-bold">
                     Read More
                   </span>
