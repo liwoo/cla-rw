@@ -39,7 +39,7 @@ export const MediaHero: FC<MediaHeroProps> = ({
             )}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-200 mix-blend-multiply" />
           </div>
-          <div className="relative flex flex-col gap-y-24 py-20 px-6 md:py-24 lg:w-1/2 lg:gap-y-32 lg:px-8 xl:py-28">
+          <div className="relative flex flex-col gap-y-24 py-20 px-6 md:py-24 lg:w-1/2 lg:gap-y-48 lg:px-8 xl:py-28">
             <div>
               <H1>{title}</H1>
               <Subheading classOverrides={"hidden lg:block text-white"}>
