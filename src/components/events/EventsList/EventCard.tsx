@@ -55,7 +55,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
         }
         
         <Link href={`/events/${slugify(event.title)}`}>
-          <LargeButton>Register</LargeButton>
+          <LargeButton>{event.signUpForm?"Register":"View More"}</LargeButton>
         </Link>
       </div>
       </div>

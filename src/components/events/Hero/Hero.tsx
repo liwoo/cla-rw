@@ -57,7 +57,7 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 <DetailItem title={"time"} value={moment(event.startTime, "HHmm").format("HH:mm")} />
               </div>
               <Link href={`events/${slugify(event.title)}`} className="mt-8 flex items-end justify-start md:justify-end">
-                <LargeButton>Register</LargeButton>
+                <LargeButton>{event.signUpForm ? "Register" : "View More"}</LargeButton>
               </Link>
             </div>
             <div className="relative mx-12 hidden w-[30%] pt-[25%] lg:block">
