@@ -1,5 +1,6 @@
 import ClientImage from "@/components/ClientImage";
 import { LargeButton } from "@/components/LargeButton";
+import Overlay from "@/components/Overlay";
 import { P } from "@/components/typography/P";
 import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
@@ -34,6 +35,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
           alt={event.title}
           className="absolute !-top-[10%] !h-[110%] w-full object-cover"
         />
+        <Overlay opacity="bg-opacity-30"/>
         <div className="relative flex items-end p-8">
           <div className="flex items-center text-white">
             <span className="mr-2 text-lg font-bold">

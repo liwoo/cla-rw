@@ -1,6 +1,7 @@
 import ClientImage from "@/components/ClientImage";
 import { Container } from "@/components/Container";
 import { LargeButton } from "@/components/LargeButton";
+import Overlay from "@/components/Overlay";
 import { defaultImage } from "@/utils/default";
 import { EventItem } from "@/utils/types";
 import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
@@ -20,6 +21,7 @@ const Hero = ({ event }: { event?: EventItem }) => {
         alt={event.audience.name}
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
+      <Overlay/>
       <Container>
         <div className="relative py-40 text-white">
           <div className="my-2 text-lg font-bold md:text-2xl">
@@ -66,8 +68,9 @@ const Hero = ({ event }: { event?: EventItem }) => {
                 }
                 src={event.imageUrl ?? defaultImage.asset.url}
                 alt={event.title}
-                className="absolute !-top-[10%] !h-[110%] w-full object-cover"
+                className="absolute !-top-[10%] !h-[110%] w-full object-cover overlay"
               />
+              
             </div>
 
             <div className="relative w-full py-6 md:w-[35%] lg:w-[25%] lg:py-0">

@@ -33,9 +33,6 @@ const EventsList = ({ events }: { events: EventItem[] }) => {
             <EventCard key={event.title} event={event} />
           ))}
         </div>
-        <div className="my-16 text-center">
-          <LargeButton>Load More</LargeButton>
-        </div>
       </Container>
     </section>
   );
