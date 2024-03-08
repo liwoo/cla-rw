@@ -27,7 +27,7 @@ export const BlogSection: FC<{ posts: Post[] }> = ({ posts }) => {
           {posts.map((post, index) => (
             <article
               key={index}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-60 sm:pt-48 lg:pt-60"
+              className="subtle-zoom-on-hover relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-60 sm:pt-48 lg:pt-60"
             >
               {post.mainImage && (
                 <Image

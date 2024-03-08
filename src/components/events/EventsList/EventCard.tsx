@@ -12,7 +12,7 @@ import Link from "next/link";
 const EventCard = ({ event }: { event: EventItem }) => {
   return (
     <Link href={`/events/${slugify(event.title)}`}>
-      <div>
+      <div className="group">
       <div className="flex">
         <Date
           date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
@@ -35,7 +35,7 @@ const EventCard = ({ event }: { event: EventItem }) => {
           }
           src={event.imageUrl ?? defaultImage.asset.url}
           alt={event.title}
-          className="absolute !-top-[10%] !h-[110%] w-full object-cover"
+          className="zoom-on-hover absolute !-top-[10%] !h-[110%] w-full object-cover"
         />
         <Overlay opacity="bg-opacity-30"/>
         <div className="relative flex items-end p-8">
@@ -71,9 +71,13 @@ interface DateProps {
 }
 const Date = ({ date, month }: DateProps) => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-md border border-muted p-4 px-10">
-      <div className="mb-4 text-3xl text-secondary">{date}</div>
-      <div className="uppercase text-secondary">{month}</div>
+    <div className="border-muted group-hover:bg-secondary flex flex-col items-center justify-center rounded-md border p-4 px-10 transition-all duration-300 ease-linear">
+      <div className="text-secondary mb-4 text-3xl group-hover:text-white">
+        {date}
+      </div>
+      <div className="text-secondary uppercase group-hover:text-white">
+        {month}
+      </div>
     </div>
   );
 };

@@ -44,7 +44,7 @@ export default function PostPageContent({
         <Image
           {...useNextSanityImage(browserClient, post.mainImage)}
           className={
-            "mx-auto mb-8 aspect-video w-full rounded-md object-cover lg:w-4/5"
+            "subtle-zoom-on-hover mx-auto mb-8 aspect-video w-full rounded-md object-cover lg:w-4/5"
           }
           alt={post.title ?? ""}
           placeholder={"blur"}

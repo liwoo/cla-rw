@@ -12,6 +12,7 @@ import {
   getLatestNotice,
   getLatestSermon,
 } from "@/sanity/home-page-data";
+import Values from "@/components/index/Values";
 
 async function getData() {
   const notice = await getLatestNotice();
@@ -23,7 +24,7 @@ async function getData() {
 }
 
 export default async function Page() {
-  const { notice, sermon } = await getData();
+  const { sermon } = await getData();
   const callToActions = await getCallToActions();
   const cells = await getCells();
   const posts = await getLatestDevotionals();
@@ -33,8 +34,10 @@ export default async function Page() {
   return (
     <>
       <Container className={"mt-8"}>
-        <NoticeWithImage notice={notice as any} />
         <MediaHeroAction sermon={sermon} />
+      </Container>
+      <Values />
+      <Container>
         <div className="my-4 lg:my-20">
           <PageTitle title={welcomeTitle} description={welcomeDescription} />
         </div>

@@ -13,7 +13,7 @@ const Hero = () => {
     "https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png";
   return (
     <Container className="my-8">
-      <div className="flex justify-between border-b border-muted pb-4 items-baseline">
+      <div className="border-muted flex items-baseline justify-between border-b pb-4">
         <div className="rounded-md bg-white py-3 px-6">
           <MagnifyingGlassIcon className="h-6" />
         </div>
@@ -39,14 +39,14 @@ const Hero = () => {
         </div>
       </div>
       <div className="my-16">
-        <div className="text-center mb-4 text-2xl font-bold">
+        <div className="mb-4 text-center text-2xl font-bold">
           Share devotionals with your online community
         </div>
-        <div className="flex justify-center text-secondary">
-          <div className="w-12 mr-2">
+        <div className="text-secondary flex justify-center">
+          <div className="mr-2 w-12">
             <Facebook />
           </div>
-          <div className="w-12 mr-2">
+          <div className="mr-2 w-12">
             <Twitter />
           </div>
         </div>
@@ -73,7 +73,7 @@ const Background = ({ src, alt }: BackgroundProps) => {
       }
       src={src}
       alt={alt}
-      className="absolute inset-0 h-full w-full object-cover object-top"
+      className="zoom-animation absolute inset-0 h-full w-full object-cover object-top"
     />
   );
 };

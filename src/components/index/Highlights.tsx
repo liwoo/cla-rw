@@ -33,7 +33,7 @@ export const Highlights: FC<{ highlights: CallToAction[] }> = ({
         )}
       </div>
       <div className="col-span-1 row-span-1 hidden md:row-span-2 md:block lg:row-span-3">
-        <div className="relative h-full overflow-hidden rounded-md bg-[url('https://cdn.sanity.io/images/xq3nx3je/cla/94ceb3fa819b4f22f41dde71ed9d3455937e9ccc-500x500.png')] bg-cover" />
+        <div className="subtle-zoom-on-hover relative z-10 h-full overflow-hidden rounded-md bg-[url('https://cdn.sanity.io/images/xq3nx3je/cla/94ceb3fa819b4f22f41dde71ed9d3455937e9ccc-500x500.png')] bg-cover" />
       </div>
       <div className="col-span-1 row-span-1">
         {highlights[2] && (

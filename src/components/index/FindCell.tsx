@@ -21,7 +21,7 @@ export const FindCell: FC<{ cells: ZoneSection[] }> = ({ cells }) => {
               width={1470}
               height={980}
               src="https://images.unsplash.com/photo-1526746323784-6bc814d79273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              className="w-full rounded-md"
+              className="subtle-zoom-on-hover w-full rounded-md"
               alt="Cell Group"
             />
           </div>
