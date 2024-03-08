@@ -55,28 +55,37 @@ export const Header: FC<{
     const closeBtn = document.querySelector(
       "button[data-headlessui-state=open][type=button]"
     ) as HTMLButtonElement;
-    console.log({ closeBtn });
     if (closeBtn) {
       closeBtn.click();
     }
   }, [pathName]);
 
-  const [isClosed, setIsClosed] = useState<boolean>(notice === undefined);
-  const bannerCookie = getBannerCookie(notice?._id ?? bannerId);
+  const [isClosed, setIsClosed] = useState<boolean>(true);
   const dismissBanner = () => {
     setIsClosed(true);
     setBannerCookie(notice?._id ?? bannerId);
   };
-  const isBannerClosed = isClosed || bannerCookie !== undefined;
+
+  useEffect(() => {
+    const bannerCookie = getBannerCookie(notice?._id ?? bannerId);
+    if (bannerCookie) {
+      setIsClosed(true);
+    } else {
+      setIsClosed(false);
+    }
+  }, [notice?._id]);
 
   return (
-    <header id="header" className={clsx(isBannerClosed ? "mb-24" : "mb-36")}>
+    <header
+      id="header"
+      className={clsx(isClosed ? "mb-16 lg:mb-24" : "mb-24 lg:mb-36")}
+    >
       <div className="bg-background fixed z-20 w-full">
-        {notice && (
+        {notice && isClosed === false && (
           <Banner
             notice={notice}
             onDismissBanner={dismissBanner}
-            isClosed={isBannerClosed}
+            isClosed={isClosed}
           />
         )}
         <Popover className="relative">
