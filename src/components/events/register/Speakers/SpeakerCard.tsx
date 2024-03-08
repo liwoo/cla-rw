@@ -8,7 +8,7 @@ interface SpeakerCardProps {
 const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
   return (
     <div className="flex flex-col items-center my-4 mx-4">
-      <div className="relative h-16 w-16 rounded-full overflow-hidden mr-4">
+      <div className="relative h-20 w-20 rounded-full overflow-hidden mx-4">
         <ClientImage fill src={speaker.img} />
       </div>
       <div className="my-4">
