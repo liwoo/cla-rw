@@ -13,7 +13,7 @@ export default function BottomBanner() {
 
   return (
     <div className="w-full bg-[#bc2322]">
-      <Container className="group flex flex-col items-center justify-between lg:flex-row">
+      <Container className="group flex  flex-col items-center justify-between overflow-x-hidden lg:flex-row">
         <svg
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ export default function BottomBanner() {
         <animated.div
           style={springProps}
           ref={ref}
-          className="mb-8 flex w-full text-white lg:mb-0"
+          className="mb-8 flex w-full overflow-x-hidden text-white lg:mb-0"
         >
           <h5 className="border-tertiary border-r px-3 md:px-6">Embrace It</h5>
           <h5 className="border-tertiary border-r px-3 md:px-6">Enkindle It</h5>
