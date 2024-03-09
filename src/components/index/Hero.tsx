@@ -1,16 +1,17 @@
 "use client";
 
 import { Container } from "@/components/Container";
-import {
-  RocketLaunchIcon,
-  HeartIcon,
-  UserGroupIcon,
-} from "@heroicons/react/20/solid";
 import { MediaHeroAction } from "@/components/index/MediaHeroAction";
 import { Sermon } from "@/sanity/schema";
+import {
+  HeartIcon,
+  RocketLaunchIcon,
+  UserGroupIcon,
+} from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { ForwardRefExoticComponent, useEffect, useState } from "react";
-import clsx from "clsx";
+import { animated } from "@react-spring/web";
+import useInViewSpring from "@/utils/hooks";
 
 function Value(value: {
   onMobile?: boolean;
@@ -88,16 +89,26 @@ export default function HomeHero({ sermon }: { sermon: Sermon }) {
       icon: RocketLaunchIcon,
     },
   ];
+
+  const [springProps, ref] = useInViewSpring(
+    { transform: "translateY(100px)", opacity: 0 },
+    { transform: "translateY(0)", opacity: 1 }
+  );
+
   return (
     <Container className={"mt-8 flex max-w-[98rem] flex-col lg:flex-row"}>
       <div className="bg-tertiary hidden w-full rounded-xl p-4 md:mt-8 lg:m-8 lg:block lg:w-1/4">
         <dl className="lg:gap-y-auto flex h-full flex-col gap-y-2 lg:justify-center lg:pt-2 xl:justify-between">
-          {values.map((value) => (
-            <Value key={value.title} {...value} />
-          ))}
+          {values.map((value) => {
+            return (
+              <animated.div key={value.title} style={springProps} ref={ref}>
+                <Value {...value} />
+              </animated.div>
+            );
+          })}
         </dl>
       </div>
-      <div className="mt-8 w-full lg:hidden">
+      <div className="mt-2 w-full lg:hidden">
         <CarouselValues values={values} />
       </div>
       <div className="w-full lg:w-3/4">

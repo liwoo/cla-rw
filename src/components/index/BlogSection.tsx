@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { PageTitle } from "@/components/PageTitle";
 import { H2 } from "@/components/typography/H2";
@@ -9,6 +11,8 @@ import Link from "next/link";
 import { getHumanReadableDate } from "@/utils/helpers";
 import imageUrlBuilder from "@sanity/image-url";
 import { FC } from "react";
+import useInViewSpring from "@/utils/hooks";
+import { animated } from "@react-spring/web";
 
 const builder = imageUrlBuilder(browserClient);
 
@@ -17,8 +21,17 @@ function urlFor(source: SanityReference<SanityImageAsset>) {
 }
 
 export const BlogSection: FC<{ posts: Post[] }> = ({ posts }) => {
+  const [springProps, ref] = useInViewSpring(
+    { transform: "translateY(50px)", opacity: 0 },
+    { transform: "translateY(0)", opacity: 1 }
+  );
+
   return (
-    <div className="bg-white py-12 sm:py-24">
+    <animated.div
+      ref={ref}
+      style={springProps}
+      className="bg-white py-12 sm:py-24"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <PageTitle title="Latest Posts & Devotionals" />
@@ -72,6 +85,6 @@ export const BlogSection: FC<{ posts: Post[] }> = ({ posts }) => {
           ))}
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 };
