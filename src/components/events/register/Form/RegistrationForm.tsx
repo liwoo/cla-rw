@@ -20,7 +20,7 @@ export interface Step {
   icon: ReactNode;
   form: () => JSX.Element;
 }
-const RegistrationForm = ({event}:{event: EventItem}) => {
+const RegistrationForm = ({ event }: { event: EventItem }) => {
   const steps: Step[] = [
     {
       step: 1,
@@ -49,32 +49,43 @@ const RegistrationForm = ({event}:{event: EventItem}) => {
 
   return (
     <div className="py-8">
-      <Container>
-        <div className="block lg:flex">
-          <div className="mb-4 flex items-center justify-between lg:hidden">
-            <Menu steps={steps} activeStep={activeStep} />
-          </div>
-          <div className="hidden w-[30%] border-r border-secondary lg:block">
-            <div className="mb-4 text-xl font-semibold">Steps</div>
-            <Menu steps={steps} activeStep={activeStep} size="large" />
-          </div>
-          <div className="w-full lg:w-[70%] lg:px-16">
-            <div>
-              <div className="text-xl font-semibold md:text-2xl">
-                Register For This Event
-              </div>
-              <GoogleSignin />
-              <Divider />
-              <div className="my-2 text-gray-700">
-                Step {activeStep.step}/{steps.length}
-              </div>
-            </div>
-            <div className="py-4">
-              <activeStep.form />
-            </div>
-          </div>
+      {
+        !event.signUpForm && <div className="my-16 container mx-auto">
+          <SpeakersList speakers={event.speakerReference} horizontal />
+          <ShareEvent center />
         </div>
-      </Container>
+      }
+      {
+        event.signUpForm &&
+        <Container>
+          <div className="block lg:flex">
+            <div className="mb-4 flex items-center justify-between lg:hidden">
+              <Menu steps={steps} activeStep={activeStep} />
+            </div>
+            <div className="hidden w-[30%] border-r border-secondary lg:block">
+              <SpeakersList speakers={event.speakerReference} />
+              <ShareEvent />
+            </div>
+            <div className="w-full lg:w-[70%] lg:px-16">
+              {/* TODO: form here */}
+              <div>
+                <div className="text-xl font-semibold md:text-2xl">
+                  Register For This Event
+                </div>
+                <GoogleSignin />
+                <Divider />
+                <div className="my-2 text-gray-700">
+                  Step {activeStep.step}/{steps.length}
+                </div>
+              </div>
+              <div className="py-4">
+                <activeStep.form />
+              </div>
+            </div>
+          </div>
+        </Container>
+      }
+
     </div>
   );
 };

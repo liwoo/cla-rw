@@ -2,8 +2,6 @@ import NotFound from "@/app/not-found";
 import About from "@/components/events/register/About";
 import RegistrationForm from "@/components/events/register/Form/RegistrationForm";
 import Hero from "@/components/events/register/Hero";
-import ShareEvent from "@/components/events/register/ShareEvent";
-import SpeakersList from "@/components/events/register/Speakers/SpeakersList";
 import { getAllEvents } from "@/sanity/events";
 import { slugify } from "@/utils/helpers";
 import { EventItem, PathsParams } from "@/utils/types";
@@ -26,9 +24,7 @@ const EventRegistration = async ({
     <div>
       <Hero event={event} />
       <About about={event.description} />
-      <SpeakersList speakers={event.speakerReference} />
-      <ShareEvent />
-      {event.signUpForm &&   <RegistrationForm event={event} />}
+      <RegistrationForm event={event} />
     </div>
   );
 };

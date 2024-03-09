@@ -13,51 +13,51 @@ const EventCard = ({ event }: { event: EventItem }) => {
   return (
     <Link href={`/events/${slugify(event.title)}`}>
       <div className="group">
-      <div className="flex">
-        <Date
-          date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
-          month={moment(event.eventDate, "YYYY-MM-DD").format("MMM")}
-        />
-        <About
-          name={event.title ?? ""}
-          startTime={`${event.startTime}`}
-          endTime={`${event.endTime}`}
-          type={event.eventCategory.title}
-          description={event.description ?? ""}
-        />
-      </div>
-      <div className="relative my-8 w-full overflow-hidden rounded-lg pt-[60%]">
-        <ClientImage
-          fill
-          quality={50}
-          blurDataURL={
-            "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
-          }
-          src={event.imageUrl ?? defaultImage.asset.url}
-          alt={event.title}
-          className="zoom-on-hover absolute !-top-[10%] !h-[110%] w-full object-cover"
-        />
-        <Overlay opacity="bg-opacity-30"/>
-        <div className="relative flex items-end p-8">
-          <div className="flex items-center text-white">
-            <span className="mr-2 text-lg font-bold">
-              {event.audience.name}
-            </span>{" "}
-            <BookOpenIcon className="h-6" />
+        <div className="flex">
+          <Date
+            date={moment(event.eventDate, "YYYY-MM-DD").format("DD")}
+            month={moment(event.eventDate, "YYYY-MM-DD").format("MMM")}
+          />
+          <About
+            name={event.title ?? ""}
+            startTime={`${event.startTime}`}
+            endTime={`${event.endTime}`}
+            type={event.eventCategory.title}
+            description={event.description ?? ""}
+          />
+        </div>
+        <div className="relative my-8 w-full overflow-hidden rounded-lg pt-[60%]">
+          <ClientImage
+            fill
+            quality={50}
+            blurDataURL={
+              "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
+            }
+            src={event.imageUrl ?? defaultImage.asset.url}
+            alt={event.title}
+            className="zoom-on-hover absolute !-top-[10%] !h-[110%] w-full object-cover"
+          />
+          <Overlay opacity="bg-opacity-30" />
+          <div className="relative flex items-end p-8">
+            <div className="flex items-center text-white">
+              <span className="mr-2 text-lg font-bold">
+                {event.audience.name}
+              </span>{" "}
+              <BookOpenIcon className="h-6" />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex items-center justify-end">
-        {
-          event.spotCounter && <div className="mr-4 text-xl font-semibold text-secondary">
-          {event.spotCounter} Places Left
+        <div className="flex items-center justify-end">
+          {
+            event.spotCounter && <div className="mr-4 text-xl font-semibold text-secondary">
+              {event.spotCounter} Places Left
+            </div>
+          }
+
+          <Link href={`/events/${slugify(event.title)}`}>
+            <LargeButton>{event.signUpForm ? "Register" : "View More"}</LargeButton>
+          </Link>
         </div>
-        }
-        
-        <Link href={`/events/${slugify(event.title)}`}>
-          <LargeButton>{event.signUpForm?"Register":"View More"}</LargeButton>
-        </Link>
-      </div>
       </div>
     </Link>
   );
@@ -95,7 +95,7 @@ const About = ({ name, startTime, endTime, type, description }: AboutProps) => {
       <div className="block justify-between lg:flex">
         <div className="text-lg font-bold">{name}</div>
         <div className="font-semibold md:text-xl">
-        {moment(startTime, "HHmm").format("HH:mm")} - {moment(endTime, "HHmm").format("HH:mm")}
+          {moment(startTime, "HHmm").format("HH:mm")} - {moment(endTime, "HHmm").format("HH:mm")}
         </div>
       </div>
       <div className="my-2 font-semibold text-secondary md:text-lg">{type}</div>

@@ -1,13 +1,14 @@
 import React from "react";
 import SpeakerCard from "./SpeakerCard";
 import { SpeakerItem } from "@/utils/types";
+import clsx from "clsx";
 
 export interface Speaker {
   name: string;
   img: string;
   about: string;
 }
-const SpeakersList = ({ speakers }: { speakers: SpeakerItem[] }) => {
+const SpeakersList = ({ speakers, horizontal = false }: { speakers: SpeakerItem[], horizontal?: boolean }) => {
 
   const speakersList: Speaker[] = speakers.map((speaker) => ({
     name: speaker.name ?? "",
@@ -15,11 +16,11 @@ const SpeakersList = ({ speakers }: { speakers: SpeakerItem[] }) => {
     img: speaker.imageUrl,
   }));
   return (
-    <div className="container mx-auto text-center my-16">
-      <div className="my-4 text-xl font-semibold">Speakers List</div>
-      <div className="flex justify-center flex-wrap">
+    <div>
+      <div className={clsx(horizontal && "text-center","my-4 mb-8 text-xl font-semibold")}>Speakers List</div>
+      <div className={clsx(horizontal ? "flex justify-center flex-wrap" : "flex flex-col")}>
         {speakersList.map((speaker) => (
-          <SpeakerCard speaker={speaker} key={speaker.name} />
+          <SpeakerCard speaker={speaker} key={speaker.name} horizontal={!horizontal}/>
         ))}
       </div>
     </div>
