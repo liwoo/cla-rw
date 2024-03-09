@@ -34,11 +34,11 @@ export default function BottomBanner() {
         <animated.div
           style={springProps}
           ref={ref}
-          className="mb-8 flex text-white lg:mb-0"
+          className="mb-8 flex w-full text-white lg:mb-0"
         >
-          <h5 className="border-tertiary border-r px-6">Embrace It</h5>
-          <h5 className="border-tertiary border-r px-6">Enkindle It</h5>
-          <h5 className="px-6">Expose It</h5>
+          <h5 className="border-tertiary border-r px-3 md:px-6">Embrace It</h5>
+          <h5 className="border-tertiary border-r px-3 md:px-6">Enkindle It</h5>
+          <h5 className="px-3 md:px-6">Expose It</h5>
         </animated.div>
       </Container>
     </div>
