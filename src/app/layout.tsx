@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import clsx from "clsx";
 import { getAllMinistries } from "@/sanity/ministries";
 import { getLatestNotice } from "@/sanity/home-page-data";
+import BottomBanner from "@/components/index/BottomBanner";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -62,6 +63,7 @@ export default async function RootLayout({
       <body className="bg-surface flex h-full flex-col">
         <Header ministries={ministries} company={company} notice={notice} />
         <main className="bg-surface">{children}</main>
+        <BottomBanner />
         <Script />
         <Footer />
       </body>
