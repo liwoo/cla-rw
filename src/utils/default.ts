@@ -107,6 +107,7 @@ const sanityImageAsset: SanityImageAsset = {
 export const defaultImage: SanityImageAssetLocal = {
   asset: {
     _ref: sanityImageAsset.assetId,
+    url: sanityImageAsset.url,
     _type: "reference",
   },
   _type: "image",
