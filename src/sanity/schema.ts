@@ -1717,6 +1717,76 @@ export interface Faqs extends SanityDocument {
   answer?: string;
 }
 
+/**
+ * Services
+ *
+ *
+ */
+export interface Services extends SanityDocument {
+  _type: "services";
+
+  /**
+   * Service Name  — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Service Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Service Venue — `string`
+   *
+   *
+   */
+  venue?: string;
+
+  /**
+   * Start Time — `number`
+   *
+   *
+   */
+  startTime?: number;
+
+  /**
+   * End Time — `number`
+   *
+   *
+   */
+  endTime?: number;
+
+  /**
+   * Service Day — `string`
+   *
+   *
+   */
+  day?: string;
+
+  /**
+   * Audience Reference — `array`
+   *
+   *
+   */
+  audience?: Array<SanityKeyedReference<Audience>>;
+
+  /**
+   * Service Cover Image — `image`
+   *
+   *
+   */
+  serviceCoverImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -1759,4 +1829,5 @@ export type Documents =
   | Speakers
   | EventCategory
   | Events
-  | Faqs;
+  | Faqs
+  | Services;
