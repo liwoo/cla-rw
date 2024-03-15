@@ -20,14 +20,14 @@ const Discover = ({
   return (
     <section className="my-20">
       <PageTitle title={`Discover ${title}`} />
-      <Container>
+      <Container className="relative">
         <div className="my-8 grid grid-cols-1 gap-16 md:grid-cols-5">
           <div className="col-span-1 md:col-span-3">
             <Title title={title} />
             <Quote verse={more} />
             <AboutList items={items} />
           </div>
-          <div className="col-span-1 md:col-span-2 ">
+          <div className="sticky col-span-1 md:col-span-2">
             <PersonCard
               img={
                 "https://res.cloudinary.com/c99/image/upload/v1705410832/Placeholders/Screenshot_2024-01-16_at_15.11.21.png"

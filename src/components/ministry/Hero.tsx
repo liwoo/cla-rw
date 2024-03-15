@@ -2,7 +2,7 @@ import ClientImage from "@/components/ClientImage";
 
 const Hero = ({ img }: { img: string }) => {
   return (
-    <div className="relative min-h-[300px] w-full md:min-h-[600px]">
+    <div className="relative min-h-[300px] w-full overflow-hidden md:min-h-[600px]">
       <ClientImage
         fill
         quality={50}
