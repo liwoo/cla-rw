@@ -8,6 +8,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import clsx from "clsx";
 import { getAllMinistries } from "@/sanity/ministries";
+import { getLatestNotice } from "@/sanity/home-page-data";
+import BottomBanner from "@/components/index/BottomBanner";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -47,8 +49,8 @@ const company = "CLA Rwanda";
 export default async function RootLayout({
   children,
 }: Readonly<RootLayoutProps>) {
-  //Loader - happening on the Server
   const ministries = await getAllMinistries();
+  const notice = await getLatestNotice();
 
   return (
     <html
@@ -59,8 +61,9 @@ export default async function RootLayout({
       lang="en"
     >
       <body className="bg-surface flex h-full flex-col">
-        <Header ministries={ministries} company={company} />
-        <main className="bg-surface pt-20 md:pt-36">{children}</main>
+        <Header ministries={ministries} company={company} notice={notice} />
+        <main className="bg-surface">{children}</main>
+        <BottomBanner />
         <Script />
         <Footer />
       </body>

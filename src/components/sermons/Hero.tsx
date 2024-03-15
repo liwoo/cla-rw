@@ -46,10 +46,10 @@ const Hero = () => {
         </div>
       </div>
       <div>
-        <div className="text-center mb-4 text-2xl font-bold">
+        <div className="mb-4 text-center text-2xl font-bold">
           Listen,download & be blessed anywhere you are
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <div className="mr-4 w-10 md:w-14">
             <Youtube />
           </div>
@@ -76,5 +76,5 @@ interface BackgroundProps {
 }
 
 const Background = ({ src, alt }: BackgroundProps) => {
-  return <ClientImage fill src={src} alt={alt} />;
+  return <ClientImage className="zoom-animation" fill src={src} alt={alt} />;
 };

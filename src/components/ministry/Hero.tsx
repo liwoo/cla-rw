@@ -2,7 +2,7 @@ import ClientImage from "@/components/ClientImage";
 
 const Hero = ({ img }: { img: string }) => {
   return (
-    <div className="relative w-full min-h-[300px] md:min-h-[600px]">
+    <div className="relative min-h-[300px] w-full md:min-h-[600px]">
       <ClientImage
         fill
         quality={50}
@@ -11,7 +11,7 @@ const Hero = ({ img }: { img: string }) => {
         }
         src={img}
         alt="Coming Soon"
-        className="absolute inset-0 h-full w-full object-cover object-top"
+        className="zoom-animation absolute inset-0 h-full w-full object-cover object-top"
       />
     </div>
   );

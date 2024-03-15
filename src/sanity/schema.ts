@@ -1033,18 +1033,18 @@ export interface Ministries extends SanityDocument {
   scripture?: SanityReference<Scripture>;
 
   /**
-   * Tenets — `reference`
+   * Tenets — `array`
    *
    *
    */
-  tenets?: SanityReference<Tenets>;
+  tenets?: Array<SanityKeyedReference<Tenets>>;
 
   /**
-   * Testimonials — `reference`
+   * Testimonials — `array`
    *
    *
    */
-  testimonials?: SanityReference<Testimonials>;
+  testimonials?: Array<SanityKeyedReference<Testimonials>>;
 
   /**
    * Leaders — `reference`
@@ -1694,6 +1694,29 @@ export interface Events extends SanityDocument {
   spotCounter?: number;
 }
 
+/**
+ * FAQS
+ *
+ *
+ */
+export interface Faqs extends SanityDocument {
+  _type: "faqs";
+
+  /**
+   * Question — `string`
+   *
+   *
+   */
+  question?: string;
+
+  /**
+   * Answer — `text`
+   *
+   *
+   */
+  answer?: string;
+}
+
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -1735,4 +1758,5 @@ export type Documents =
   | Venue
   | Speakers
   | EventCategory
-  | Events;
+  | Events
+  | Faqs;
