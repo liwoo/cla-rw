@@ -77,3 +77,7 @@ export type MinistryItem = Ministries & {
   leaders?: LeaderItem;
   testimonials?: Testimonials[];
 };
+
+export type SpeakerItem = Speakers & {
+  imageUrl: string
+}

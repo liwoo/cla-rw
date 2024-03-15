@@ -3,11 +3,11 @@ import { Container } from "@/components/Container";
 import { NoticeWithoutImage } from "@/components/cta/NoticeWithoutImage";
 import Discover from "@/components/ministry/Discover";
 import Testimonials from "@/components/ministry/Testimonials";
-import { getLatestNotice } from "@/sanity/home-page-data";
-import { MinistryItem } from "@/utils/types";
+import { MinistryItem} from "@/utils/types";
+import { Notices } from "@/sanity/schema";
 
-export const Ministry = async ({ ministry }: { ministry: MinistryItem }) => {
-  const notice = await getLatestNotice();
+export const Ministry = ({ ministry,notice }: { ministry: MinistryItem,notice:Notices }) => {
+  
   const heroImg = ministry.imageUrl;
   return (
     <div>
