@@ -17,16 +17,16 @@ const Discover = ({
 }) => {
   
   return (
-    <section className="my-8">
+    <section className="my-20">
       <PageTitle title={`Discover ${ministry.name}`} />
-      <Container>
+      <Container className="relative">
         <div className="my-8 grid grid-cols-1 gap-16 md:grid-cols-5">
           <div className="col-span-1 md:col-span-3">
             <Title title={ministry.name} />
             <Quote verse={ministry.description} />
             <AboutList items={ministry.tenets} />
           </div>
-          <div className="col-span-1 md:col-span-2 ">
+          <div className="sticky col-span-1 md:col-span-2">
             <PersonCard
               img={ministry.leader.imageUrl}
               name={ministry.leader.name}

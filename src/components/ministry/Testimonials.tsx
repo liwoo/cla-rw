@@ -2,8 +2,7 @@
 import { PageTitle } from "@/components/PageTitle";
 import { Container } from "@/components/Container";
 import ClientImage from "@/components/ClientImage";
-import { TestimonialItem, TestimonialsItem } from "@/utils/types";
-import { defaultImage } from "@/utils/default";
+import { TestimonialsItem } from "@/utils/types";
 import { useEffect, useState } from "react";
 
 const Testimonials = ({
@@ -35,7 +34,7 @@ const Testimonials = ({
               <ClientImage
                 fill
                 blurDataURL={
-                  "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
+                  testimonial.imageUrl
                 }
                 src={testimonial.imageUrl}
                 alt={testimonial.title}
