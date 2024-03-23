@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import ClientImage from "@/components/ClientImage";
 import { TestimonialsItem } from "@/utils/types";
 import { useEffect, useState } from "react";
+import { titles } from "@/data/ui";
 
 const Testimonials = ({
   testimonials,
@@ -21,8 +22,8 @@ const Testimonials = ({
   return (
     <section className="py-8">
       <PageTitle
-        title="Testimonials"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        title={titles.testimonials.title}
+        description={titles.testimonials.description}
       />
       <Container>
         <div className="flex items-center justify-center pb-24 pt-16">
@@ -51,7 +52,7 @@ const Testimonials = ({
               <ClientImage
                 fill
                 blurDataURL={
-                  "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
+                  activeTestimonial.imageUrl
                 }
                 src={activeTestimonial.imageUrl}
                 alt="Coming Soon"
