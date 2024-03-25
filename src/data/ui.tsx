@@ -30,3 +30,10 @@ export const eventsFilters = [
     name: "Past",
   },
 ];
+
+export const titles = {
+  testimonials: {
+    title: "Testimonials",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+  }
+}

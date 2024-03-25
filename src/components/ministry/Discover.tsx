@@ -1,41 +1,38 @@
 import { Container } from "@/components/Container";
 import { PageTitle } from "@/components/PageTitle";
 import PersonCard from "@/components/ministry/PersonCard";
+import { Tenets } from "@/sanity/schema";
+import { MinistryItem } from "@/utils/types";
 
 interface AboutItem {
   title: string;
   description: string;
   more: string;
+  tenets: Tenets[]
 }
 const Discover = ({
-  details: { title, more, description },
+  ministry
 }: {
-  details: AboutItem;
+  ministry: MinistryItem;
 }) => {
-  const items: AboutItem[] = Array.from(Array(5).keys()).map(() => ({
-    title: "Prayer",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    more: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit quidem veritatis earum! A illo temporibus error impedit voluptatem illum ducimus aut officiis obcaecati alias, amet suscipit quod autem incidunt.",
-  }));
+  
   return (
     <section className="my-20">
-      <PageTitle title={`Discover ${title}`} />
+      <PageTitle title={`Discover ${ministry.name}`} />
       <Container className="relative">
         <div className="my-8 grid grid-cols-1 gap-16 md:grid-cols-5">
           <div className="col-span-1 md:col-span-3">
-            <Title title={title} />
-            <Quote verse={more} />
-            <AboutList items={items} />
+            <Title title={ministry.name} />
+            <Quote verse={ministry.description} />
+            <AboutList items={ministry.tenets} />
           </div>
           <div className="sticky col-span-1 md:col-span-2">
             <PersonCard
-              img={
-                "https://res.cloudinary.com/c99/image/upload/v1705410832/Placeholders/Screenshot_2024-01-16_at_15.11.21.png"
-              }
-              name={"Peace Kampingo"}
-              position={"Chair Person"}
+              img={ministry.leader.imageUrl}
+              name={ministry.leader.name}
+              position={ministry.leader.title}
               about={
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae tenetur beatae veritatis voluptate assumenda minima quis delectus, laborum fugit architecto id aspernatur repellat iusto similique corporis officiis dolorum! Nesciunt?"
+                ministry.leader.description
               }
             />
           </div>
