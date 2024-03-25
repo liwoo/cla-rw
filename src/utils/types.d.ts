@@ -1,4 +1,4 @@
-import { Speakers } from "@/sanity/schema";
+import { Leaders, Tenets, Testimonials, Speakers } from "@/sanity/schema";
 import { ReactNode } from "react";
 import {
   SanityImageAsset,
@@ -17,7 +17,7 @@ export interface SEOProps {
 
 export interface SanityImageAssetLocal {
   _type: "image";
-  asset: SanityReference<SanityImageAsset> & {url: string;};
+  asset: SanityReference<SanityImageAsset> & { url: string; };
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
 }
@@ -47,8 +47,8 @@ export interface TestimonialItem {
   testimonial: string;
 }
 
-export type EventItem = Events & { 
-  audience: Audience & {imageUrl: string},
+export type EventItem = Events & {
+  audience: Audience & { imageUrl: string },
   venue: Venue,
   eventCategory: EventCategory;
   imageUrl: string
@@ -59,6 +59,24 @@ export interface PathsParams {
     slug?: string;
   };
 }
+
+export type LeaderItem = Leaders & {
+  imageUrl: string;
+};
+
+export type TestimonialsItem = Testimonials & {
+  imageUrl: string;
+}
+
+export type MinistryItem = Ministries & {
+  imageUrl: string;
+  ministryCoverImage: {
+    asset: SanityReference<SanityImageAssetLocal>;
+  };
+  tenets?: Tenets[];
+  leaders?: LeaderItem;
+  testimonials?: Testimonials[];
+};
 
 export type SpeakerItem = Speakers & {
   imageUrl: string
