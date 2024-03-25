@@ -153,13 +153,13 @@ export const Header: FC<{
                                       />
                                     </div>
                                     <div className="flex-auto">
-                                      <a
+                                      <Link
                                         href={item.href}
                                         className="block font-semibold text-gray-900"
                                       >
                                         {item.name}
                                         <span className="absolute inset-0" />
-                                      </a>
+                                      </Link>
                                       <p className="mt-1 text-gray-600">
                                         {item.description}
                                       </p>
@@ -197,13 +197,13 @@ export const Header: FC<{
                                           />
                                         </div>
                                         <div>
-                                          <a
+                                          <Link
                                             href={item.href}
                                             className="font-semibold text-gray-900"
                                           >
                                             {item.name}
                                             <span className="absolute inset-0" />
-                                          </a>
+                                          </Link>
                                           <p className="mt-1 text-gray-600">
                                             {item.description}
                                           </p>
