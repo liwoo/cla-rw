@@ -23,7 +23,7 @@ const RecentSermons = async () => {
         ))}
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default RecentSermons
+export default RecentSermons;

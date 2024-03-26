@@ -1,10 +1,10 @@
-import ClientImage from '@/components/ClientImage'
+import ClientImage from "@/components/ClientImage";
 
 interface PersonCardProps {
-  img: string
-  name: string
-  position: string
-  about: string
+  img: string;
+  name: string;
+  position: string;
+  about: string;
 }
 const PersonCard = ({ img, name, position, about }: PersonCardProps) => {
   return (
@@ -14,14 +14,14 @@ const PersonCard = ({ img, name, position, about }: PersonCardProps) => {
           fill
           quality={50}
           blurDataURL={
-            'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+            "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
           }
           src={img}
           alt="Coming Soon"
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="zoom-on-hover absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="relative flex h-full w-full items-end">
-          <div className="w-full bg-primary p-8 text-center text-white">
+          <div className="bg-primary w-full p-8 text-center text-white">
             <div className="text-2xl font-bold">{name}</div>
             <div className="text-2xl">{position}</div>
           </div>
@@ -29,7 +29,7 @@ const PersonCard = ({ img, name, position, about }: PersonCardProps) => {
       </div>
       <div className="my-8">{about}</div>
     </div>
-  )
-}
+  );
+};
 
-export default PersonCard
+export default PersonCard;

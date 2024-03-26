@@ -1,15 +1,15 @@
-import { ReactNode } from 'react'
-import { PageTitle } from '@/components/PageTitle'
-import { Container } from '@/components/Container'
-import clsx from 'clsx'
-import ClientImage from '@/components/ClientImage'
+import { ReactNode } from "react";
+import { PageTitle } from "@/components/PageTitle";
+import { Container } from "@/components/Container";
+import clsx from "clsx";
+import ClientImage from "@/components/ClientImage";
 
 interface SectionProps {
-  title: string
-  imgSrc?: string
-  children: ReactNode
-  secondaryContent?: ReactNode
-  mainContentLeft?: boolean
+  title: string;
+  imgSrc?: string;
+  children: ReactNode;
+  secondaryContent?: ReactNode;
+  mainContentLeft?: boolean;
 }
 const Section = ({
   title,
@@ -25,8 +25,8 @@ const Section = ({
         <div className="grid grid-cols-1 gap-8 md:grid-cols-9">
           <div
             className={clsx(
-              mainContentLeft ? 'order-last md:order-first' : 'order-last',
-              'md:col-span-5 md:p-8'
+              mainContentLeft ? "order-last md:order-first" : "order-last",
+              "md:col-span-5 md:p-8"
             )}
           >
             {children}
@@ -37,10 +37,7 @@ const Section = ({
             ) : (
               <div className="relative w-full overflow-hidden rounded-md pt-[100%] md:pt-[120%]">
                 {imgSrc && (
-                  <ClientImage
-                    fill
-                    src={imgSrc}
-                  />
+                  <ClientImage fill src={imgSrc} className="zoom-on-hover" />
                 )}
               </div>
             )}
@@ -48,7 +45,7 @@ const Section = ({
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;

@@ -1,13 +1,16 @@
-import EventsList from '@/components/events/EventsList/EventsList'
-import Hero from '@/components/events/Hero/Hero'
+import EventsList from "@/components/events/EventsList/EventsList";
+import Hero from "@/components/events/Hero/Hero";
+import { getAllEvents } from "@/sanity/events";
 
-const Events = () => {
+const Events = async () => {
+  const allEvents = await getAllEvents();
+
   return (
     <div>
-        <Hero/>
-        <EventsList/>
+      <Hero event={allEvents[0]} />
+      <EventsList events={allEvents} />
     </div>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;

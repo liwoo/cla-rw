@@ -377,6 +377,32 @@ export interface Audience extends SanityDocument {
   description?: string;
 
   /**
+   * Venue — `string`
+   *
+   *
+   */
+  venue?: string;
+
+  /**
+   * Meeting Time — `number`
+   *
+   *
+   */
+  meetingTime?: number;
+
+  /**
+   * Secondary Image — `image`
+   *
+   *
+   */
+  secondaryImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
    * Cover Image — `image`
    *
    *
@@ -896,6 +922,81 @@ export interface Cell extends SanityDocument {
 }
 
 /**
+ * Church Details
+ *
+ *
+ */
+export interface ChurchDetails extends SanityDocument {
+  _type: "churchDetails";
+
+  /**
+   * Brief History — `text`
+   *
+   *
+   */
+  briefHistory?: string;
+
+  /**
+   * New Here — `text`
+   *
+   *
+   */
+  newHere?: string;
+
+  /**
+   * What Should I Wear — `text`
+   *
+   *
+   */
+  whatShouldIWear?: string;
+
+  /**
+   * First Visit Plan — `text`
+   *
+   *
+   */
+  firstVisitPlan?: string;
+
+  /**
+   * Church Difference — `text`
+   *
+   *
+   */
+  churchDifference?: string;
+
+  /**
+   * Lead Pastor — `reference`
+   *
+   *
+   */
+  leadPastor?: SanityReference<Leaders>;
+
+  /**
+   * New Here Thumb — `image`
+   *
+   *
+   */
+  newHereThumb?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * New Here Cover — `image`
+   *
+   *
+   */
+  newHereCover?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
  * Ministries
  *
  *
@@ -923,6 +1024,34 @@ export interface Ministries extends SanityDocument {
    *
    */
   minstryVerse?: string;
+
+  /**
+   * Sermon Scripture Reference — `reference`
+   *
+   *
+   */
+  scripture?: SanityReference<Scripture>;
+
+  /**
+   * Tenets — `array`
+   *
+   *
+   */
+  tenets?: Array<SanityKeyedReference<Tenets>>;
+
+  /**
+   * Testimonials — `array`
+   *
+   *
+   */
+  testimonials?: Array<SanityKeyedReference<Testimonials>>;
+
+  /**
+   * Leaders — `reference`
+   *
+   *
+   */
+  leaders?: SanityReference<Leaders>;
 
   /**
    * Ministry Image — `image`
@@ -1253,6 +1382,341 @@ export interface ZoneSectionLeader extends SanityDocument {
   cellCodes?: Array<SanityKeyedReference<CellCodes>>;
 }
 
+/**
+ * Leaders
+ *
+ *
+ */
+export interface Leaders extends SanityDocument {
+  _type: "leaders";
+
+  /**
+   * Leaders names — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Leaders Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Leaders Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Leaders Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Testimonials
+ *
+ *
+ */
+export interface Testimonials extends SanityDocument {
+  _type: "testimonials";
+
+  /**
+   * Testimonial Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Testimonial Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Testimonial Subtitle — `string`
+   *
+   *
+   */
+  subtitle?: string;
+
+  /**
+   * Testimonial — `text`
+   *
+   *
+   */
+  testimonial?: string;
+
+  /**
+   * Testimonial Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Tenets
+ *
+ *
+ */
+export interface Tenets extends SanityDocument {
+  _type: "tenets";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+}
+
+/**
+ * Venue
+ *
+ *
+ */
+export interface Venue extends SanityDocument {
+  _type: "venue";
+
+  /**
+   * Venue Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Venue Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Venue Image — `image`
+   *
+   *
+   */
+  venueImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Speakers
+ *
+ *
+ */
+export interface Speakers extends SanityDocument {
+  _type: "speakers";
+
+  /**
+   * Speaker Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Speaker Image — `image`
+   *
+   *
+   */
+  speakerImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Event Category
+ *
+ *
+ */
+export interface EventCategory extends SanityDocument {
+  _type: "eventCategory";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+}
+
+/**
+ * Events
+ *
+ *
+ */
+export interface Events extends SanityDocument {
+  _type: "events";
+
+  /**
+   * Event Name  — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Event Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Event Date — `date`
+   *
+   *
+   */
+  eventDate?: string;
+
+  /**
+   * Start Time — `number`
+   *
+   *
+   */
+  startTime?: number;
+
+  /**
+   * End Time — `number`
+   *
+   *
+   */
+  endTime?: number;
+
+  /**
+   * Venue Reference — `reference`
+   *
+   *
+   */
+  venue?: SanityReference<Venue>;
+
+  /**
+   * Speakers Reference — `array`
+   *
+   *
+   */
+  speakerReference?: Array<SanityKeyedReference<Speakers>>;
+
+  /**
+   * Sign up form — `string`
+   *
+   *
+   */
+  signUpForm?: string;
+
+  /**
+   * Audience Reference — `reference`
+   *
+   *
+   */
+  audience?: SanityReference<Audience>;
+
+  /**
+   * Events Cover Image — `image`
+   *
+   *
+   */
+  eventsCoverImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Event Category Reference — `reference`
+   *
+   *
+   */
+  eventCategory?: SanityReference<EventCategory>;
+
+  /**
+   * Topics — `array`
+   *
+   *
+   */
+  topics?: Array<SanityKeyed<string>>;
+
+  /**
+   * Spot Counter — `number`
+   *
+   *
+   */
+  spotCounter?: number;
+}
+
+/**
+ * FAQS
+ *
+ *
+ */
+export interface Faqs extends SanityDocument {
+  _type: "faqs";
+
+  /**
+   * Question — `string`
+   *
+   *
+   */
+  question?: string;
+
+  /**
+   * Answer — `text`
+   *
+   *
+   */
+  answer?: string;
+}
+
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -1278,6 +1742,7 @@ export type Documents =
   | Tag
   | CellLeader
   | Cell
+  | ChurchDetails
   | Ministries
   | Notices
   | News
@@ -1286,4 +1751,12 @@ export type Documents =
   | Zone
   | ZoneLeader
   | ZoneSection
-  | ZoneSectionLeader;
+  | ZoneSectionLeader
+  | Leaders
+  | Testimonials
+  | Tenets
+  | Venue
+  | Speakers
+  | EventCategory
+  | Events
+  | Faqs;

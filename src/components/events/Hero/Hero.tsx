@@ -1,30 +1,41 @@
-import ClientImage from '@/components/ClientImage'
-import { Container } from '@/components/Container'
-import { LargeButton } from '@/components/LargeButton'
-import { ArrowRightIcon, FolderOpenIcon } from '@heroicons/react/20/solid'
+import ClientImage from "@/components/ClientImage";
+import { Container } from "@/components/Container";
+import { LargeButton } from "@/components/LargeButton";
+import Overlay from "@/components/Overlay";
+import { defaultImage } from "@/utils/default";
+import { slugify } from "@/utils/helpers";
+import { EventItem } from "@/utils/types";
+import { ArrowRightIcon, FolderOpenIcon } from "@heroicons/react/20/solid";
+import moment from "moment";
+import Link from "next/link";
 
-const Hero = () => {
+const Hero = ({ event }: { event?: EventItem }) => {
   return (
     <div className="relative min-h-[500px]">
       <ClientImage
         fill
         quality={50}
         blurDataURL={
-          'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+          "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
         }
-        src="https://res.cloudinary.com/c99/image/upload/v1705326472/Placeholders/Screenshot_2024-01-15_at_15.47.02.png"
-        alt="Coming Soon"
+        src={event.audience.imageUrl ?? defaultImage.asset.url}
+        alt={event.audience.name}
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
+      <Overlay/>
       <Container>
         <div className="relative py-40 text-white">
           <div className="my-2 text-lg font-bold md:text-2xl">
-            Upcoming Event:
+            {moment(event.eventDate, "YYYY-MM-DD").isBefore(moment())
+              ? "Recent Event:"
+              : "Upcoming Event:"}
           </div>
-          <div className="my-2 text-2xl font-bold md:text-4xl">Event Name</div>
+          <div className="my-2 text-2xl font-bold md:text-4xl">
+            {event.title}
+          </div>
           <div className="my-2 flex items-center">
             <span className="mr-4 text-lg font-bold text-yellow-300 md:text-2xl">
-              Adult
+              {event.audience.name}
             </span>
             <FolderOpenIcon className="h-8 text-yellow-300" />
           </div>
@@ -33,60 +44,59 @@ const Hero = () => {
       <div className="relative  w-full bg-yellow-300">
         <div className="absolute bottom-0 left-0 z-0 w-full bg-yellow-300"></div>
         <Container>
-          <div className="block items-center justify-evenly lg:justify-between py-6 md:py-0 md:flex">
-            <div className="relative p-6 lg:p-0 flex-1">
+          <div className="block items-center justify-evenly py-6 md:flex md:py-0 lg:justify-between">
+            <div className="relative flex-1 p-6 lg:p-0">
               <div className="block items-center justify-between md:flex">
-                <DetailItem title={'date'} value={'2 Apr'} />
+                <DetailItem
+                  title={"date"}
+                  value={moment(event.eventDate, "YYYY-MM-DD").format("DD MMM")}
+                />
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
-                <DetailItem title={'venue'} value={'Namiwawa'} />
+                <DetailItem title={"venue"} value={event.venue.name ?? ""} />
                 <div className="hidden border-[0.5px] border-black pt-[20%] md:block"></div>
-                <DetailItem title={'time'} value={'12:00'} />
+                <DetailItem title={"time"} value={moment(event.startTime, "HHmm").format("HH:mm")} />
               </div>
-              <div className="mt-8 flex items-end justify-start md:justify-end">
-                <LargeButton>Register</LargeButton>
-              </div>
+              <Link href={`events/${slugify(event.title)}`} className="mt-8 flex items-end justify-start md:justify-end">
+                <LargeButton>{event.signUpForm ? "Register" : "View More"}</LargeButton>
+              </Link>
             </div>
             <div className="relative mx-12 hidden w-[30%] pt-[25%] lg:block">
               <ClientImage
                 fill
                 quality={50}
                 blurDataURL={
-                  'https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg'
+                  "https://res.cloudinary.com/tiyeni/image/upload/c_scale,h_678,q_auto:low/v1679808591/2X0A4983.jpg"
                 }
-                src="https://res.cloudinary.com/c99/image/upload/v1705326472/Placeholders/Screenshot_2024-01-15_at_15.47.16.png"
-                alt="Coming Soon"
-                className="absolute !-top-[10%] !h-[110%] w-full object-cover"
+                src={event.imageUrl ?? defaultImage.asset.url}
+                alt={event.title}
+                className="absolute !-top-[10%] !h-[110%] w-full object-cover overlay"
               />
+              
             </div>
 
-            <div className="relative py-6 w-full lg:py-0 md:w-[35%] lg:w-[25%]">
+            <div className="relative w-full py-6 md:w-[35%] lg:w-[25%] lg:py-0">
               <div>
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolores accusamus enim totam distinctio, quibusdam quasi
-                  laboriosam provident, ducimus modi vero similique ipsum id
-                  possimus voluptatem non debitis corporis, excepturi quam.
-                </div>
-                <div className="my-4 flex items-center">
+                <div className="line-clamp-6">{event.description}</div>
+                <Link href={`events/${slugify(event.title)}`} className="my-4 flex items-center">
                   <span className="mr-2 cursor-pointer font-bold">
                     Read More
                   </span>
                   <ArrowRightIcon className="h-6" />
-                </div>
+                </Link>
               </div>
             </div>
           </div>
         </Container>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 
 interface DetailItemProps {
-  title: string
-  value: string
+  title: string;
+  value: string;
 }
 const DetailItem = ({ title, value }: DetailItemProps) => {
   return (
@@ -94,5 +104,5 @@ const DetailItem = ({ title, value }: DetailItemProps) => {
       <div className="text-2xl font-bold lg:text-3xl">{value}</div>
       <div className="my-2 font-semibold uppercase">{title}</div>
     </div>
-  )
-}
+  );
+};

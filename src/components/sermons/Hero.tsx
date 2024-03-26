@@ -41,11 +41,19 @@ const Hero =async  () => {
               <LargeButtonOutline className="mr-4 border-white">
                 <MicrophoneIcon className="h-7 text-white" />
               </LargeButtonOutline>
+              <LargeButton className="mr-4">
+                <PlayCircleIcon className="h-10" />
+              </LargeButton>
+              <LargeButtonOutline className="mr-4 border-white">
+                <MicrophoneIcon className="h-7 text-white" />
+              </LargeButtonOutline>
             </div>
           </div>
         </div>
       </div>
       <div>
+        <div className="mb-4 text-center text-2xl font-bold">
+          Listen,download & be blessed anywhere you are
         <div className="mb-4 text-center text-2xl font-bold">
           Listen,download & be blessed anywhere you are
         </div>
@@ -62,19 +70,32 @@ const Hero =async  () => {
           <div className="mr-4 w-8 md:w-12">
             <GooglePodcast />
           </div>
+        <div className="flex items-center justify-center">
+          <div className="mr-4 w-10 md:w-14">
+            <Youtube />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <Spotify />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <ApplePodcast />
+          </div>
+          <div className="mr-4 w-8 md:w-12">
+            <GooglePodcast />
+          </div>
         </div>
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 
 interface BackgroundProps {
-  src: string
-  alt: string
+  src: string;
+  alt: string;
 }
 
 const Background = ({ src, alt }: BackgroundProps) => {
-  return <ClientImage fill src={src} alt={alt} />
-}
+  return <ClientImage className="zoom-animation" fill src={src} alt={alt} />;
+};

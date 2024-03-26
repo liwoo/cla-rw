@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   CalendarIcon,
   MicrophoneIcon,
@@ -12,9 +12,9 @@ import { LargeButton } from '@/components/LargeButton'
 import LargeButtonOutline from '@/components/LargeButtonOutline'
 import { SanityImageAsset } from 'sanity-codegen'
 
-type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, 'className'> & {
-  className?: ClassValue
-}
+type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, "className"> & {
+  className?: ClassValue;
+};
 interface SermonProps extends ModifiedHTMLAttributes<HTMLDivElement> {
   title: string
   img: any
@@ -37,10 +37,10 @@ const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
                 <div className="mr-2 h-8 w-8">
                   <BookOpenIcon />
                 </div>
-                {book ?? '-'}
+                {book ?? "-"}
               </div>
               <div className="my-2 flex items-center">
-                <CalendarIcon className="mr-2 h-8" /> {date ?? '-'}
+                <CalendarIcon className="mr-2 h-8" /> {date ?? "-"}
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
       </div>
       <div className="mt-4 border-[0.9px] border-dashed border-muted"></div>
     </div>
-  )
-}
+  );
+};
 
-export default SermonCard
+export default SermonCard;

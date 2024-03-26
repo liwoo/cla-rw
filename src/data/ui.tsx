@@ -1,32 +1,39 @@
 export const sermonFilters = [
   {
-    name: 'BY BOOK',
+    name: "BY BOOK",
   },
   {
-    name: 'BY TITLE',
+    name: "BY TITLE",
   },
   {
-    name: 'BY DATE',
+    name: "BY DATE",
   },
   {
-    name: 'BY SERIES',
+    name: "BY SERIES",
   },
   {
-    name: 'BY PASTOR',
+    name: "BY PASTOR",
   },
   {
-    name: 'BY POPULAR',
+    name: "BY POPULAR",
   },
-]
+];
 
 export const eventsFilters = [
   {
-    name: 'All',
+    name: "All",
   },
   {
-    name: 'Upcoming',
+    name: "Upcoming",
   },
   {
-    name: 'Past',
+    name: "Past",
   },
-]
+];
+
+export const titles = {
+  testimonials: {
+    title: "Testimonials",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+  }
+}
