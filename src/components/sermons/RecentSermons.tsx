@@ -1,13 +1,19 @@
-import { Container } from "@/components/Container";
-import SermonCard from "@/components/sermons/SermonCard";
+import { Container } from '@/components/Container'
+import SermonCard from '@/components/sermons/SermonCard'
+import { defaultImage } from '@/utils/default'
+import { SermonItem } from '@/utils/types'
+import moment from 'moment'
 
-const RecentSermons = () => {
-  const recentSermons = Array.from(Array(2).keys()).map(() => ({
-    title: "Sermon Title",
-    img: "https://res.cloudinary.com/c99/image/upload/v1704981714/Placeholders/Church-Growth-Magazine-Article-Images-1-1280x640.png",
-    book: "2 Timothy 5",
-    date: "20, June 2021",
-  }));
+const RecentSermons =  ({sermons}:{sermons:SermonItem[]}) => {
+  
+  const recentSermons = sermons.map((sermon) => ({
+    title: sermon.title ?? '',
+    img: sermon.imageUrl ?? defaultImage.asset.url,
+    book: `${sermon.scriptureRef?.bibleBook} ${sermon.scriptureRef?.chapter}`,
+    date: sermon.publishedAt ? moment(sermon.publishedAt).format('DD MMM YYYY') : '',
+    videoLink: sermon.youtubeLink
+  }))
+  
   return (
     <section className="bg-surface py-8">
       <Container>

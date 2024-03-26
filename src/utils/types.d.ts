@@ -1,4 +1,4 @@
-import { Leaders, Tenets, Testimonials, Speakers } from "@/sanity/schema";
+import { Leaders, Tenets, Testimonials, Speakers, Sermon, Scripture } from "@/sanity/schema";
 import { ReactNode } from "react";
 import {
   SanityImageAsset,
@@ -80,4 +80,12 @@ export type MinistryItem = Ministries & {
 
 export type SpeakerItem = Speakers & {
   imageUrl: string
+}
+
+export type SermonItem = Sermon & {
+  imageUrl: string,
+  mainImage: {
+    asset: SanityReference<SanityImageAssetLocal>;
+  };
+  scriptureRef: Scripture
 }
