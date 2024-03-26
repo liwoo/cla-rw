@@ -1,7 +1,6 @@
 "use client";
 import {
   CalendarIcon,
-  MicrophoneIcon,
   PlayCircleIcon,
 } from '@heroicons/react/20/solid'
 import clsx, { ClassValue } from 'clsx'
@@ -9,8 +8,7 @@ import { HTMLAttributes } from 'react'
 import ClientImage from '@/components/ClientImage'
 import BookOpenIcon from '@/components/icons/BookOpenIcon'
 import { LargeButton } from '@/components/LargeButton'
-import LargeButtonOutline from '@/components/LargeButtonOutline'
-import { SanityImageAsset } from 'sanity-codegen'
+import Link from 'next/link';
 
 type ModifiedHTMLAttributes<T> = Omit<HTMLAttributes<T>, "className"> & {
   className?: ClassValue;
@@ -20,8 +18,9 @@ interface SermonProps extends ModifiedHTMLAttributes<HTMLDivElement> {
   img: any
   book?: string
   date?: string
+  videoLink?: string
 }
-const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
+const SermonCard = ({ title, img, book, date, videoLink, className }: SermonProps) => {
   return (
     <div className={clsx(className)}>
       <div className="block items-end justify-between md:flex">
@@ -47,12 +46,14 @@ const SermonCard = ({ title, img, book, date, className }: SermonProps) => {
         </div>
         <div>
           <div className="flex justify-center md:justify-end">
-            <LargeButton className="mr-4">
-              <PlayCircleIcon className="h-10" />
-            </LargeButton>
-            <LargeButtonOutline className="mr-4 border-secondary">
-              <MicrophoneIcon className="h-7 text-secondary" />
-            </LargeButtonOutline>
+            {
+              videoLink && <Link href={videoLink} target='__blank'>
+                <LargeButton className="mr-4">
+                  <PlayCircleIcon className="h-10" />
+                </LargeButton>
+              </Link>
+            }
+
           </div>
         </div>
       </div>

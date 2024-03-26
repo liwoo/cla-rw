@@ -1,17 +1,17 @@
 import { Container } from '@/components/Container'
 import SermonCard from '@/components/sermons/SermonCard'
-import { getAllSermons } from '@/sanity/sermons'
 import { defaultImage } from '@/utils/default'
+import { SermonItem } from '@/utils/types'
 import moment from 'moment'
 
-const RecentSermons = async () => {
-  const sermons=await getAllSermons()
-
+const RecentSermons =  ({sermons}:{sermons:SermonItem[]}) => {
+  
   const recentSermons = sermons.map((sermon) => ({
     title: sermon.title ?? '',
-    img: sermon.mainImage?.asset.url ?? defaultImage.asset.url,
-    book: `${sermon.scripture?.bibleBook} ${sermon.scripture?.chapter}`,
+    img: sermon.imageUrl ?? defaultImage.asset.url,
+    book: `${sermon.scriptureRef?.bibleBook} ${sermon.scriptureRef?.chapter}`,
     date: sermon.publishedAt ? moment(sermon.publishedAt).format('DD MMM YYYY') : '',
+    videoLink: sermon.youtubeLink
   }))
   
   return (
